@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Barsha | Our Love Across Continents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;300;400;500&family=Pinyon+Script&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --rose-gold: #e5b3a3;
+            --rose-gold-light: #f4dcd1;
+            --rose-gold-dark: #d9987e;
+            --ivory: #fdfaf7;
+            --deep-text: #4a3f3b;
+            --soft-brown: #8b7355;
+            --love-red: #d4a5a5;
+            --gold: #d4af37;
+            --glass: rgba(255, 255, 255, 0.85);
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --shadow-medium: rgba(0, 0, 0, 0.1);
+            --nepal-red: #dc143c;
+            --nepal-blue: #003893;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--ivory);
+            color: var(--deep-text);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(229, 179, 163, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 20%);
+        }
+
+        /* --- BIRTHDAY COUNTDOWN --- */
+        #birthday-countdown {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            transition: opacity 1.5s ease, visibility 1.5s ease;
+        }
+
+        .countdown-container {
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--rose-gold);
+            text-shadow: 0 0 20px rgba(229, 179, 163, 0.5);
+        }
+
+        .countdown-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .birthday-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 50px;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: white;
+            min-width: 120px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--rose-gold-light);
+        }
+
+        .countdown-message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            font-style: italic;
+        }
+
+        .enter-btn {
+            background: transparent;
+            border: 2px solid var(--rose-gold);
+            color: var(--rose-gold);
+            padding: 18px 50px;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enter-btn:hover {
+            background: var(--rose-gold);
+            color: #16213e;
+            letter-spacing: 5px;
+            padding: 18px 55px;
+            box-shadow: 0 0 30px rgba(229, 179, 163, 0.5);
+        }
+
+        .enter-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .enter-btn:disabled:hover {
+            background: transparent;
+            color: var(--rose-gold);
+            letter-spacing: 3px;
+            padding: 18px 50px;
+            box-shadow: none;
+        }
+
+        .countdown-timezone {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 30px;
+            letter-spacing: 1px;
+        }
+
+        .nepal-flag {
+            display: inline-flex;
+            margin: 0 10px;
+        }
+
+        .nepal-flag span {
+            display: inline-block;
+            width: 15px;
+            height: 10px;
+            margin: 0 2px;
+        }
+
+        .nepal-red {
+            background-color: var(--nepal-red);
+        }
+
+        .nepal-blue {
+            background-color: var(--nepal-blue);
+        }
+
+     
+        /* --- MAIN WEBSITE --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        .container.show {
+            opacity: 1;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.5rem;
+            color: var(--deep-text);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--soft-brown);
+            margin-bottom: 60px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .distance-note {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgba(229, 179, 163, 0.1);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: var(--soft-brown);
+            border: 1px solid rgba(229, 179, 163, 0.3);
+            margin-bottom: 40px;
+        }
+
+        /* --- OUR STORY SECTION --- */
+        .story-section {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 70px;
+            color: var(--deep-text);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--rose-gold), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 80px;
+            width: 45%;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid rgba(229, 179, 163, 0.2);
+            transition: transform 0.5s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--rose-gold);
+            box-shadow: 0 0 0 8px var(--ivory);
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(odd):before {
+            right: -47px;
+        }
+
+        .timeline-item:nth-child(even):before {
+            left: -47px;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--rose-gold);
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--deep-text);
+        }
+
+        .timeline-quote {
+            font-style: italic;
+            padding-left: 20px;
+            border-left: 3px solid var(--rose-gold-light);
+            margin-top: 15px;
+            color: var(--soft-brown);
+        }
+
+        /* --- PHOTO GALLERY --- */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 100px;
+        }
+
+        .photo-frame {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            height: 300px;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-frame:hover {
+            transform: translateY(-10px);
+        }
+
+        .photo-frame:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(229, 179, 163, 0.1), transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--rose-gold-light), var(--ivory));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--soft-brown);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+        }
+
+        .photo-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--rose-gold);
+        }
+
+        /* --- LOVE LETTER --- */
+        .love-letter-section {
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .letter-container {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--rose-gold), var(--gold), var(--rose-gold));
+        }
+
+        .letter-content {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            line-height: 2.2;
+            color: var(--deep-text);
+            position: relative;
+            z-index: 2;
+        }
+
+        .letter-content p {
+            margin-bottom: 35px;
+        }
+
+        .letter-dropcap {
+            font-size: 5rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            color: var(--rose-gold);
+            font-family: 'Dancing Script', cursive;
+            font-weight: 600;
+        }
+
+        .letter-highlight {
+            background: linear-gradient(120deg, rgba(229, 179, 163, 0.2) 0%, rgba(229, 179, 163, 0.2) 100%);
+            background-position: 0 88%;
+            background-repeat: no-repeat;
+            background-size: 100% 0.4em;
+            transition: background-size 0.5s ease;
+        }
+
+        .letter-highlight:hover {
+            background-size: 100% 88%;
+        }
+
+        .letter-signature {
+            text-align: right;
+            margin-top: 60px;
+        }
+
+        .signature-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--rose-gold);
+            margin-bottom: 10px;
+        }
+
+        .signature-date {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: var(--soft-brown);
+        }
+
+        /* --- PROMISES SECTION --- */
+        .promises-section {
+            margin-bottom: 100px;
+        }
+
+        .promises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .promise-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid rgba(229, 179, 163, 0.2);
+            text-align: center;
+            transition: transform 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promise-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .promise-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--rose-gold), var(--gold));
+        }
+
+        .promise-icon {
+            font-size: 2.5rem;
+            color: var(--rose-gold);
+            margin-bottom: 25px;
+        }
+
+        .promise-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--deep-text);
+        }
+
+        .promise-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--soft-brown);
+        }
+
+        /* --- DISTANCE MAP --- */
+        .distance-section {
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        .map-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(229, 179, 163, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .map-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--deep-text);
+        }
+
+        .map-illustration {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .location {
+            text-align: center;
+        }
+
+        .location-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--rose-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(229, 179, 163, 0.3);
+        }
+
+        .location-name {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--deep-text);
+            margin-bottom: 10px;
+        }
+
+        .location-detail {
+            font-size: 0.9rem;
+            color: var(--soft-brown);
+        }
+
+        .distance-line {
+            flex-grow: 1;
+            height: 3px;
+            background: linear-gradient(90deg, var(--rose-gold), var(--gold), var(--rose-gold));
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .distance-line:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            height: 13px;
+            background: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(229, 179, 163, 0.5) 10px, rgba(229, 179, 163, 0.5) 20px);
+        }
+
+        .distance-text {
+            font-size: 1.2rem;
+            color: var(--soft-brown);
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* --- FINAL CTA --- */
+        .final-cta {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .cta-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--deep-text);
+            margin-bottom: 30px;
+        }
+
+        .cta-box {
+            display: inline-block;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(229, 179, 163, 0.1), rgba(212, 175, 55, 0.1));
+            border-radius: 20px;
+            border: 2px dashed var(--rose-gold);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        .cta-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            line-height: 1.8;
+            color: var(--deep-text);
+            margin-bottom: 40px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: white;
+            padding: 22px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+            letter-spacing: 4px;
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .footer-heart {
+            color: var(--rose-gold);
+            font-size: 2rem;
+            animation: heartbeat 1.5s infinite;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--soft-brown);
+            margin-bottom: 10px;
+        }
+
+        .footer-date {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--soft-brown);
+            opacity: 0.7;
+        }
+
+        /* --- MUSIC CONTROL --- */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--rose-gold);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1);
+            background: var(--rose-gold-dark);
+        }
+
+        .music-control i {
+            font-size: 1.5rem;
+        }
+
+        /* --- FLOATING HEARTS --- */
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0;
+            font-size: 24px;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(110vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .countdown-number {
+                font-size: 3rem;
+                min-width: 100px;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                margin-right: 0 !important;
+            }
+            
+            .timeline-item:before {
+                left: -47px !important;
+                right: auto !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 15px;
+            }
+            
+            .countdown-number {
+                font-size: 2.5rem;
+                min-width: 80px;
+                padding: 15px;
+            }
+            
+            .countdown-display {
+                gap: 15px;
+            }
+            
+            .letter-content {
+                font-size: 1.3rem;
+                padding: 30px;
+            }
+            
+            .letter-container {
+                padding: 40px 30px;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .cta-title {
+                font-size: 2.5rem;
+            }
+            
+            .map-illustration {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .distance-line {
+                width: 3px;
+                height: 100px;
+                margin: 20px 0;
+            }
+            
+            .distance-line:before {
+                width: 13px;
+                height: 100%;
+                background: repeating-linear-gradient(180deg, transparent, transparent 10px, rgba(229, 179, 163, 0.5) 10px, rgba(229, 179, 163, 0.5) 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countdown-title {
+                font-size: 2.5rem;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+                min-width: 70px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .letter-dropcap {
+                font-size: 3.5rem;
+            }
+            
+            .cta-box {
+                padding: 30px 20px;
+            }
+            
+            .cta-message {
+                font-size: 1.4rem;
+            }
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TESTING OVERLAY (Remove this section before sending to Barsha) -->
+    <div id="testing-overlay">
+        <div>TEST MODE</div>
+        <button class="test-btn" onclick="forceAccess()">Simulate Feb 19 Access</button>
+        <button class="test-btn" onclick="toggleTestMode()">Hide This Panel</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="https://assets.codepen.io/1468070/gentle-piano.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- BIRTHDAY COUNTDOWN (Shows first until February 19th Nepal Time) -->
+    <div id="birthday-countdown">
+        <div class="countdown-container">
+            <h1 class="countdown-title">A Surprise for Barsha</h1>
+            <p class="countdown-subtitle">Counting down to something special just for you</p>
+            
+            <div class="birthday-date">
+                <i class="far fa-calendar-alt"></i> February 19
+            </div>
+            
+            <div class="countdown-display">
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="countdown-days">13</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="countdown-hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="countdown-minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="countdown-seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <p class="countdown-message">
+                "My love, something beautiful is waiting for you. Every second brings us closer to February 19th, when you'll discover a special gift made just for you."
+            </p>
+            
+            <button class="enter-btn" id="enterWebsite" disabled>
+                <i class="fas fa-lock"></i> Available on February 19
+            </button>
+            
+            <p class="countdown-timezone">
+                Counting down in Nepal Time <span class="nepal-flag"><span class="nepal-red"></span><span class="nepal-blue"></span></span> 
+                | Current Nepal Time: <span id="nepal-time">Loading...</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- MAIN WEBSITE (Hidden until birthday) -->
+    <div class="container" id="mainWebsite">
+        <div class="music-control" id="musicControl" onclick="toggleMusic()">
+            <i class="fas fa-music"></i>
+        </div>
+
+        <section class="hero-section">
+            <h1 class="hero-title">Barsha</h1>
+            <p class="hero-subtitle">Born February 19, 2001 • The day my world gained meaning</p>
+            
+            <div class="distance-note">
+                <i class="fas fa-heart"></i> 11 Months Together & Forever Connected <i class="fas fa-heart"></i>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <h2 class="section-title">Our Story</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <i class="fas fa-video timeline-icon"></i> APRIL 3, 2025
+                    </div>
+                    <div class="timeline-content">
+                        Our first video call at 5 AM Germany time. That blurry screen that showed me the most beautiful smile I'd ever seen.
+                        <div class="timeline-quote">
+                            "The moment I saw you, I knew distance was just a number."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <i class="fas fa-calendar-day timeline-icon"></i> APRIL 11, 2025
+                    </div>
+                    <div class="timeline-content">
+                       We started talking every single day. Those conversations that stretched from dawn till dusk, connecting us through the distance.
+                        <div class="timeline-quote">
+                            "You became my sunrise and sunset, my first and last thought every day."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <i class="fas fa-heart timeline-icon"></i> MAY 2025
+                    </div>
+                    <div class="timeline-content">
+                        After a month of growing closeness, I confessed my love for you. The bravest and best decision of my life.
+                        <div class="timeline-quote">
+                            "Three words that changed everything: I love you."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <i class="fas fa-hourglass-half timeline-icon"></i> 11 MONTHS TOGETHER
+                    </div>
+                    <div class="timeline-content">
+                        Eleven months of laughter, tears, arguments, and making up. Every challenge making us stronger, every mile between us proving our resilience.
+                        <div class="timeline-quote">
+                            "We fought, we cried, but we never let go. That's our strength."
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <i class="fas fa-birthday-cake timeline-icon"></i> FEBRUARY 19, 2026
+                    </div>
+                    <div class="timeline-content">
+                        Your birthday today. Celebrating the incredible woman you are, and promising to celebrate every one to come.
+                        <div class="timeline-quote">
+                            "Today, and every day, I celebrate you."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-gallery">
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <i class="fas fa-heart"></i>
+                    <span>Our First Video Call Memory</span>
+                    <span style="font-size: 0.9rem; margin-top: 10px;">April 3, 2025 • 5 AM</span>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <i class="fas fa-moon"></i>
+                    <span>Late Night Conversations</span>
+                    <span style="font-size: 0.9rem; margin-top: 10px;">April 11, 2025 onwards</span>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>My Love Confession</span>
+                    <span style="font-size: 0.9rem; margin-top: 10px;">May 2025</span>
+                </div>
+            </div>
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <i class="fas fa-infinity"></i>
+                    <span>Our Future Together</span>
+                    <span style="font-size: 0.9rem; margin-top: 10px;">Forever</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="love-letter-section">
+            <div class="letter-container">
+                <div class="letter-content">
+                    <p>
+                        <span class="letter-dropcap">M</span>y dearest Barsha,
+                    </p>
+                    
+                    <p>
+                        As I write this, I'm thinking about <span class="letter-highlight">April 3rd, 2025 at 5 AM German time</span>—the moment my world shifted on its axis. That first video call introduced me to the woman who would become my everything. I was nervous, tired, and completely unprepared for how one smile could change everything.
+                    </p>
+                    
+                    <p>
+                        Then came <span class="letter-highlight">April 11th</span>, when our conversations became daily rituals. You became the highlight of every day, the voice I waited for, the person I shared everything with. For a month, I held my feelings close, afraid to disrupt what we were building. But in <span class="letter-highlight">May 2025</span>, I couldn't hold it in anymore. Telling you I loved you was both terrifying and liberating.
+                    </p>
+                    
+                    <p>
+                        These <span class="letter-highlight">11 months</span> have been a journey I could never have imagined. There were days when the distance felt overwhelming, moments when I questioned if we could make it through the challenges. <span class="letter-highlight">But you, my love, you never wavered.</span> When I felt like giving up, you held on tighter. When I was weak, you were strong. When I doubted, you believed—for both of us.
+                    </p>
+                    
+                    <p>
+                        We've fought—oh, how we've fought—but every argument has only brought us closer. Every tear has only watered the roots of what we're growing together. The miles between you and me have taught us that love isn't about proximity; it's about connection. And our connection transcends geography, time zones, and every obstacle thrown our way.
+                    </p>
+                    
+                    <p>
+                        On your birthday, February 19th, I want you to know this: <span class="letter-highlight">You deserve every happiness this world can offer.</span> You deserve to be cherished, celebrated, and loved beyond measure. And I promise you this—I will spend my life making sure you have all the joy, peace, and love you've been missing. I will be the shelter in your storms, the laughter in your quiet moments, the hand that always reaches for yours—no matter the distance.
+                    </p>
+                    
+                    <p>
+                        Happy birthday to the woman who taught me that love knows no borders, that patience is a virtue, and that sometimes the strongest bonds are built across continents. I may not be there physically today, but my heart is entirely with you—today, tomorrow, and all the days after.
+                    </p>
+                    
+                    <div class="letter-signature">
+                        <div class="signature-name">Forever Yours,</div>
+                        <div class="signature-name">Jivan</div>
+                        <div class="signature-date">FEBRUARY 19, 2026</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="promises-section">
+            <h2 class="section-title">My Promises to You</h2>
+            
+            <div class="promises-grid">
+                <div class="promise-card">
+                    <div class="promise-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="promise-title">I Will Never Give Up</h3>
+                    <p class="promise-text">
+                        No matter how hard it gets, no matter the distance or challenges, I will always fight for us. You held on when I was weak, and I promise to do the same.
+                    </p>
+                </div>
+                
+                <div class="promise-card">
+                    <div class="promise-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="promise-title">I Will Close the Distance</h3>
+                    <p class="promise-text">
+                        I will work tirelessly until the day I can hold you in my arms. Every mile between us is temporary, but our love is permanent.
+                    </p>
+                </div>
+                
+                <div class="promise-card">
+                    <div class="promise-icon">
+                        <i class="fas fa-laugh-beam"></i>
+                    </div>
+                    <h3 class="promise-title">I Will Bring You Joy</h3>
+                    <p class="promise-text">
+                        You deserve a lifetime of happiness, and I promise to fill your days with laughter, your heart with peace, and your life with love.
+                    </p>
+                </div>
+                
+                <div class="promise-card">
+                    <div class="promise-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="promise-title">I Will Protect Your Heart</h3>
+                    <p class="promise-text">
+                        Your trust is my most precious gift. I will honor it, cherish it, and protect it with everything I am.
+                    </p>
+                </div>
+                
+                <div class="promise-card">
+                    <div class="promise-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="promise-title">I Will Build Our Future</h3>
+                    <p class="promise-text">
+                        Together, we will create a home filled with love, understanding, and the beautiful life you deserve.
+                    </p>
+                </div>
+                
+                <div class="promise-card">
+                    <div class="promise-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3 class="promise-title">I Will Love You Forever</h3>
+                    <p class="promise-text">
+                        From our first video call to our last breath, my love for you is eternal. 11 months, 11 years, 11 lifetimes—it will never fade.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="distance-section">
+            <div class="map-container">
+                <h2 class="map-title">The Distance Between Our Hearts: Zero</h2>
+                
+                <div class="map-illustration">
+                    <div class="location">
+                        <div class="location-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="location-name">Germany</div>
+                        <div class="location-detail">Where I wait for you</div>
+                    </div>
+                    
+                    <div class="distance-line"></div>
+                    
+                    <div class="location">
+                        <div class="location-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="location-name">Nepal</div>
+                        <div class="location-detail">Where my heart resides</div>
+                    </div>
+                </div>
+                
+                <p class="distance-text">
+                    "They say long-distance relationships are hard. They're right. But what they don't say is that when you find someone worth the wait, 
+                    the distance doesn't matter. Because every mile between us is just proof of how far I'm willing to go for you."
+                </p>
+            </div>
+        </section>
+
+        <section class="final-cta">
+            <h2 class="cta-title">My Love,</h2>
+            
+            <div class="cta-box">
+                <p class="cta-message">
+                    This website is my promise to you—a promise that no matter the distance, no matter the challenges, 
+                    my love for you is unwavering. I may not be there to hold you today, but I'm here in every way that matters.
+                </p>
+                
+                <a href="https://wa.me/4915755197114?text=❤️" 
+                   class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Send Me Your Response
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-heart">
+                <i class="fas fa-heart"></i>
+            </div>
+            <p class="footer-text">CREATED WITH ALL MY LOVE FOR BARSHA</p>
+            <p class="footer-text">From Jivan </p>
+            <p class="footer-date">Our Journey: April 3, 2025 - Forever</p>
+        </footer>
+    </div>
+
+    <script>
+        // FIXED: Correct Nepal time calculation
+        // Nepal is UTC+5:45 (5 hours 45 minutes ahead of UTC)
+        const NEPAL_OFFSET = 5 * 60 * 60 * 1000 + 45 * 60 * 1000; // 5 hours 45 minutes in milliseconds
+        
+        function getNepalTime() {
+            const now = new Date();
+            const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const nepalTime = new Date(utcTime + NEPAL_OFFSET);
+            return nepalTime;
+        }
+
+        function updateNepalTime() {
+            const nepalTime = getNepalTime();
+            
+            // Format time as 04:10 (24-hour format)
+            const hours = nepalTime.getHours().toString().padStart(2, '0');
+            const minutes = nepalTime.getMinutes().toString().padStart(2, '0');
+            
+            // Format date
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            const dayName = days[nepalTime.getDay()];
+            const monthName = months[nepalTime.getMonth()];
+            const date = nepalTime.getDate();
+            const year = nepalTime.getFullYear();
+            
+            document.getElementById('nepal-time').textContent = `${hours}:${minutes} | ${dayName}, ${date} ${monthName} ${year} (GMT+5:45)`;
+        }
+
+        // Update Nepal time every second
+        setInterval(updateNepalTime, 1000);
+        updateNepalTime();
+
+        // FIXED: Accurate birthday countdown (February 19th, Nepal time)
+        function updateBirthdayCountdown() {
+            const now = getNepalTime();
+            const currentYear = now.getFullYear();
+            
+            // Create February 19th in Nepal time
+            let nextBirthday = new Date(currentYear, 1, 19, 0, 0, 0); // February is month 1
+            // Convert to Nepal time by adding Nepal offset to UTC time
+            const utcBirthday = nextBirthday.getTime() - (nextBirthday.getTimezoneOffset() * 60000);
+            nextBirthday = new Date(utcBirthday + NEPAL_OFFSET);
+            
+            // If birthday has passed this year, set for next year
+            if (now > nextBirthday) {
+                nextBirthday.setFullYear(currentYear + 1);
+            }
+            
+            const diff = nextBirthday - now;
+            
+            // Calculate time units
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // Update countdown display
+            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            // Check if it's her birthday (February 19th, Nepal time)
+            const isBirthday = now.getMonth() === 1 && now.getDate() === 19;
+            
+            const enterButton = document.getElementById('enterWebsite');
+            const countdownSection = document.getElementById('birthday-countdown');
+            const mainWebsite = document.getElementById('mainWebsite');
+            
+            if (isBirthday) {
+                // It's her birthday! Enable access
+                enterButton.disabled = false;
+                enterButton.innerHTML = '<i class="fas fa-unlock"></i> Enter Your Birthday Gift';
+                
+                // Add click event to enter website
+                enterButton.onclick = function() {
+                    grantAccess();
+                };
+            } else {
+                // Not her birthday yet
+                enterButton.disabled = true;
+                enterButton.innerHTML = '<i class="fas fa-lock"></i> Available on February 19';
+                
+                // Remove any existing click event
+                enterButton.onclick = null;
+            }
+        }
+
+        // Function to grant access (used for birthday and testing)
+        function grantAccess() {
+            // Play music
+            const audio = document.getElementById('bgMusic');
+            audio.volume = 0.4;
+            audio.play().then(() => {
+                musicPlaying = true;
+                document.getElementById('musicControl').innerHTML = '<i class="fas fa-pause"></i>';
+            }).catch(e => {
+                console.log("Autoplay prevented.");
+            });
+            
+            // Hide countdown and show main website
+            const countdownSection = document.getElementById('birthday-countdown');
+            const mainWebsite = document.getElementById('mainWebsite');
+            
+            countdownSection.style.opacity = '0';
+            countdownSection.style.visibility = 'hidden';
+            
+            // Show main website with animation
+            setTimeout(() => {
+                mainWebsite.classList.add('show');
+                
+                // Start floating hearts
+                startFloatingHearts();
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 800);
+        }
+
+        // Update countdown every second
+        setInterval(updateBirthdayCountdown, 1000);
+        updateBirthdayCountdown();
+
+        // Music control
+        let musicPlaying = false;
+        const audio = document.getElementById('bgMusic');
+        
+        function toggleMusic() {
+            const musicControl = document.getElementById('musicControl');
+            if (musicPlaying) {
+                audio.pause();
+                musicControl.innerHTML = '<i class="fas fa-music"></i>';
+                musicPlaying = false;
+            } else {
+                audio.play();
+                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+                musicPlaying = true;
+            }
+        }
+
+        
+
+        // Floating hearts animation
+        function startFloatingHearts() {
+            const heartIcons = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💕', '💞', '💓', '💗', '💖', '💘'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+                
+                // Random properties
+                const size = Math.random() * 20 + 15;
+                const duration = Math.random() * 15 + 15;
+                const delay = Math.random() * 5;
+                const startX = Math.random() * 100;
+                
+                heart.style.left = startX + 'vw';
+                heart.style.fontSize = size + 'px';
+                heart.style.animationDuration = duration + 's';
+                heart.style.animationDelay = delay + 's';
+                
+                document.body.appendChild(heart);
+                
+                // Remove heart after animation
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.parentNode.removeChild(heart);
+                    }
+                }, (duration + delay) * 1000);
+                
+            }, 500);
+        }
+
+        // Add some initial floating hearts on the countdown page
+        setInterval(() => {
+            if (!document.getElementById('mainWebsite').classList.contains('show')) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '❤️';
+                
+                const size = Math.random() * 15 + 10;
+                const duration = Math.random() * 10 + 10;
+                const startX = Math.random() * 100;
+                
+                heart.style.left = startX + 'vw';
+                heart.style.fontSize = size + 'px';
+                heart.style.animationDuration = duration + 's';
+                heart.style.color = '#e5b3a3';
+                
+                document.getElementById('birthday-countdown').appendChild(heart);
+                
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.parentNode.removeChild(heart);
+                    }
+                }, duration * 1000);
+            }
+        }, 1000);
+
+        // Add scroll reveal animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all timeline items, promise cards, etc.
+            document.querySelectorAll('.timeline-item, .promise-card, .photo-frame').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
