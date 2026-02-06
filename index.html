@@ -2125,30 +2125,49 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         
-        // FIXED: Accurate birthday countdown
-        function updateBirthdayCountdown() {
-            const now = getNepalTime();
-            const currentYear = now.getFullYear();
-            
-            let nextBirthday = new Date(currentYear, 1, 19, 0, 0, 0);
-            const utcBirthday = nextBirthday.getTime() - (nextBirthday.getTimezoneOffset() * 60000);
-            nextBirthday = new Date(utcBirthday + NEPAL_OFFSET);
-            
-            if (now > nextBirthday) {
-                nextBirthday.setFullYear(currentYear + 1);
-            }
-            
-            const diff = nextBirthday - now;
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
-        }
+    
+ // ==================== FIXED COUNTDOWN FUNCTION ONLY ====================
+function updateBirthdayCountdown() {
+    // Get current Nepal time
+    const nowNepal = getNepalTime();
+    
+    // Get current year
+    const currentYear = nowNepal.getFullYear();
+    
+    // Create February 19 of current year at midnight Nepal time
+    // February is month 1 (0-indexed)
+    let nextBirthday = new Date(currentYear, 1, 19, 0, 0, 0, 0);
+    
+    // Convert to Nepal time by adding Nepal offset
+    const nepalOffset = 5.75 * 60 * 60 * 1000; // 5.75 hours in milliseconds
+    nextBirthday = new Date(nextBirthday.getTime() + nepalOffset);
+    
+    // If birthday has already passed this year, set to next year
+    if (nowNepal > nextBirthday) {
+        nextBirthday = new Date(currentYear + 1, 1, 19, 0, 0, 0, 0);
+        nextBirthday = new Date(nextBirthday.getTime() + nepalOffset);
+    }
+    
+    // Calculate difference in milliseconds
+    const diff = nextBirthday - nowNepal;
+    
+    // Calculate days, hours, minutes, seconds
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    // Update countdown display
+    document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+    
+    // Debug: Log the calculation
+    console.log("Current Nepal Time:", nowNepal.toLocaleString());
+    console.log("Next Birthday (Nepal Time):", nextBirthday.toLocaleString());
+    console.log("Days until birthday:", days);
+}
 
         // Music control
         let musicPlaying = false;
