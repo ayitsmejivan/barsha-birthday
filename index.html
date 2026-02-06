@@ -2126,42 +2126,124 @@
         }
         
     // ==================== SIMPLER FIXED COUNTDOWN FUNCTION ====================
-function updateBirthdayCountdown() {
-    // Get current Nepal time
-    const nowNepal = getNepalTime();
+<script>
+    // ==================== TIME FUNCTIONS ====================
     
-    // Get current date in Nepal
-    const currentYear = nowNepal.getFullYear();
-    const currentMonth = nowNepal.getMonth();
-    const currentDate = nowNepal.getDate();
-    
-    // Check if February 19 has passed this year
-    let targetYear = currentYear;
-    if (currentMonth > 1 || (currentMonth === 1 && currentDate >= 19)) {
-        targetYear = currentYear + 1;
+    // Get current Nepal time (GMT+5:45) - THIS IS WORKING CORRECTLY
+    function getNepalTime() {
+        const now = new Date();
+        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+        // Nepal is GMT+5:45 (5.75 hours)
+        const nepalOffset = 5.75 * 60 * 60 * 1000;
+        return new Date(utc + nepalOffset);
     }
     
-    // Create target birthday date (Feb 19) in Nepal time
-    const targetBirthday = new Date(targetYear, 1, 19, 0, 0, 0, 0);
+    // Get current Germany time (GMT+1)
+    function getGermanyTime() {
+        const now = new Date();
+        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+        const germanyOffset = 1 * 60 * 60 * 1000;
+        return new Date(utc + germanyOffset);
+    }
     
-    // Apply Nepal timezone offset (5:45 ahead of UTC)
-    const nepalOffset = 5.75 * 60 * 60 * 1000;
-    const targetBirthdayNepal = new Date(targetBirthday.getTime() + nepalOffset);
+    // Format time as HH:MM:SS (24-hour format)
+    function formatTime(date) {
+        return date.toLocaleTimeString('en-GB', { hour12: false });
+    }
     
-    // Calculate difference
-    const diff = targetBirthdayNepal - nowNepal;
+    // Format date as Day, Month DD, YYYY
+    function formatDate(date) {
+        return date.toLocaleDateString('en-US', { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+    }
     
-    // Calculate and display
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    // ==================== FIXED COUNTDOWN USING CURRENT NEPAL TIME ====================
+    function updateBirthdayCountdown() {
+        // Use the SAME Nepal time that's displayed on screen
+        const nowNepal = getNepalTime();
+        
+        // Get the components of current Nepal time
+        const currentYear = nowNepal.getFullYear();
+        const currentMonth = nowNepal.getMonth(); // 0 = Jan, 1 = Feb, etc.
+        const currentDate = nowNepal.getDate();
+        const currentHours = nowNepal.getHours();
+        const currentMinutes = nowNepal.getMinutes();
+        const currentSeconds = nowNepal.getSeconds();
+        
+        // Determine target year for next birthday
+        let targetYear = currentYear;
+        
+        // If we're past February 19 this year, target next year
+        if (currentMonth > 1 || (currentMonth === 1 && currentDate > 19)) {
+            targetYear = currentYear + 1;
+        }
+        // If we're on February 19 but past midnight, also target next year
+        else if (currentMonth === 1 && currentDate === 19) {
+            // If it's already February 19, the birthday is either today or next year
+            // For countdown, we want to count to midnight of Feb 19
+            // So if it's already Feb 19, target should be next year
+            targetYear = currentYear + 1;
+        }
+        
+        // Create target birthday: February 19 at 00:00:00 Nepal time
+        // Using the SAME timezone logic as getNepalTime()
+        const targetBirthdayUTC = new Date(Date.UTC(
+            targetYear, 
+            1,  // February (0-indexed)
+            19, // 19th
+            0,  // 0 hours
+            0,  // 0 minutes
+            0   // 0 seconds
+        ));
+        
+        // Convert to Nepal time using the same offset
+        const nepalOffset = 5.75 * 60 * 60 * 1000;
+        const targetBirthdayNepal = new Date(targetBirthdayUTC.getTime() + nepalOffset);
+        
+        // Calculate difference between current Nepal time and target Nepal time
+        const diff = targetBirthdayNepal - nowNepal;
+        
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        // Update countdown display
+        document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+        
+        // Debug info (remove in production)
+        console.log("Current Nepal Time:", nowNepal.toLocaleString());
+        console.log("Target Birthday (Nepal):", targetBirthdayNepal.toLocaleString());
+        console.log("Difference (ms):", diff);
+        console.log("Countdown:", days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+    }
     
-    document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
-    document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
-    document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
-}
+    // ==================== UPDATE ALL TIME DISPLAYS ====================
+    function updateAllTimeDisplays() {
+        const nepalTime = getNepalTime();
+        const germanyTime = getGermanyTime();
+        
+        // Update countdown page Nepal time
+        document.getElementById('nepal-time').textContent = 
+            `${formatTime(nepalTime)} | ${formatDate(nepalTime)} (GMT+5:45)`;
+        
+        // Update main website time displays
+        if (document.getElementById('nepal-time-main')) {
+            document.getElementById('nepal-time-main').textContent = formatTime(nepalTime);
+            document.getElementById('nepal-date').textContent = formatDate(nepalTime);
+            
+            document.getElementById('germany-time').textContent = formatTime(germanyTime);
+            document.getElementById('germany-date').textContent = formatDate(germanyTime);
+        }
+    }
  
         // Music control
         let musicPlaying = true;
