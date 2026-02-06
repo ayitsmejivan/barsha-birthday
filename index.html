@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Prevent reader mode access -->
+<meta name="robots" content="noarchive, nosnippet, notranslate, noimageindex">
+<meta name="googlebot" content="noarchive, nosnippet, notranslate, noimageindex">
+<meta name="referrer" content="no-referrer">
+    /* Reader mode protection */
+@media (prefers-color-scheme: light) {
+    /* This confuses reader mode parsers */
+}
+
+.letter-content, .timeline-content, .promise-text {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Make text harder to extract */
+.letter-content p {
+    background-image: linear-gradient(to right, transparent 50%, rgba(229, 179, 163, 0.05) 50%);
+    background-size: 200% 100%;
+}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Barsha | Our Love Across Continents</title>
