@@ -59,7 +59,116 @@
             --success-green: #51cf66;
         }
 
-        /* NEW: Magic Cursor Trail */
+        /* NEW: Birthday Celebration Animation */
+        .birthday-celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease, visibility 1s ease;
+            overflow: hidden;
+        }
+
+        .birthday-celebration.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .birthday-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 6rem;
+            margin-bottom: 20px;
+            color: var(--rose-gold);
+            text-shadow: 0 0 30px rgba(229, 179, 163, 0.8);
+            z-index: 10;
+        }
+
+        .birthday-subtitle {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 40px;
+            z-index: 10;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .birthday-message {
+            font-size: 1.5rem;
+            max-width: 700px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            z-index: 10;
+            padding: 0 20px;
+        }
+
+        .birthday-continue-btn {
+            background: transparent;
+            border: 2px solid var(--rose-gold);
+            color: var(--rose-gold);
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            border-radius: 50px;
+            margin-top: 30px;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .birthday-continue-btn:hover {
+            background: var(--rose-gold);
+            color: #16213e;
+            letter-spacing: 5px;
+            padding: 20px 55px;
+            box-shadow: 0 0 40px rgba(229, 179, 163, 0.6);
+        }
+
+        /* Fireworks */
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .firework-burst {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: burst 1s ease-out forwards;
+        }
+
+        @keyframes burst {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--burst-x), var(--burst-y)) scale(0);
+            }
+        }
+
+        /* Magic Cursor Trail */
         .cursor-star {
             position: fixed;
             pointer-events: none;
@@ -85,7 +194,7 @@
             100% { opacity: 1; transform: scale(1.1); }
         }
 
-        /* NEW: Grand Reveal Celebration */
+        /* Grand Reveal Celebration */
         .reveal-celebration {
             position: fixed;
             top: 0;
@@ -122,7 +231,7 @@
             }
         }
 
-        /* NEW: Shared Time Widget */
+        /* Shared Time Widget */
         .shared-time-widget {
             display: flex;
             justify-content: center;
@@ -446,6 +555,18 @@
             .time-display {
                 font-size: 1.8rem;
             }
+
+            .birthday-title {
+                font-size: 4rem;
+            }
+
+            .birthday-subtitle {
+                font-size: 2rem;
+            }
+
+            .birthday-message {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -472,6 +593,18 @@
             .time-card {
                 width: 100%;
                 max-width: 280px;
+            }
+
+            .birthday-title {
+                font-size: 3rem;
+            }
+
+            .birthday-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .birthday-message {
+                font-size: 1rem;
             }
         }
 
@@ -1384,14 +1517,35 @@
     </style>
 </head>
 <body>
+    <!-- Birthday Celebration with Fireworks -->
+    <div class="birthday-celebration" id="birthdayCelebration">
+        <div id="fireworksContainer"></div>
+        <h1 class="birthday-title animate__animated animate__bounceIn">Happy Birthday!</h1>
+        <h2 class="birthday-subtitle animate__animated animate__fadeIn animate__delay-1s">My Dearest Barsha</h2>
+        <p class="birthday-message animate__animated animate__fadeIn animate__delay-2s">
+            Today, February 19th, marks the day the world was blessed with your presence.<br>
+            May this year bring you all the joy, love, and happiness you deserve.<br>
+            This celebration is just the beginning of what's to come.
+        </p>
+        <button class="birthday-continue-btn animate__animated animate__fadeIn animate__delay-3s" id="continueToWebsite">
+            Continue to Your Special Gift
+        </button>
+    </div>
+
     <!-- Anti-screenshot overlay -->
     <div class="anti-screenshot" id="antiScreenshot"></div>
 
     <!-- Grand Reveal Celebration Container -->
     <div class="reveal-celebration" id="revealCelebration"></div>
 
-    <audio id="bgMusic" loop>
+    <!-- Background Music - Happy Birthday Theme -->
+    <audio id="bgMusic" loop preload="auto">
         <source src="https://assets.codepen.io/1468070/gentle-piano.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Happy Birthday Music (auto-plays on celebration) -->
+    <audio id="birthdayMusic" preload="auto">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
     </audio>
 
     <!-- BIRTHDAY COUNTDOWN with Password Access -->
@@ -1401,12 +1555,12 @@
             <p class="countdown-subtitle">Counting down to something special just for you</p>
             
             <div class="birthday-date">
-                <i class="far fa-calendar-alt"></i> February 19
+                <i class="far fa-calendar-alt"></i> February 19, 2026
             </div>
             
             <div class="countdown-display">
                 <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-days">13</div>
+                    <div class="countdown-number" id="countdown-days">00</div>
                     <div class="countdown-label">Days</div>
                 </div>
                 <div class="countdown-unit">
@@ -1424,7 +1578,7 @@
             </div>
             
             <p class="countdown-message">
-                "My love, something beautiful is waiting for you. Every second brings us closer to February 19th, when you'll discover a special gift made just for you."
+                "My love, something beautiful is waiting for you. Every second brings us closer to February 19th, 2026, when you'll discover a special gift made just for you."
             </p>
             
             <!-- Password Access Section -->
@@ -1464,7 +1618,7 @@
             
             <p class="countdown-timezone">
                 Counting down in Nepal Time <span class="nepal-flag"><span class="nepal-red"></span><span class="nepal-blue"></span></span> 
-                | Current Nepal Time: <span id="nepal-time">Loading...</span>
+                | Current Nepal Time: <span id="current-nepal-time">Loading...</span>
             </p>
         </div>
     </div>
@@ -1479,7 +1633,7 @@
             <h1 class="hero-title">Barsha</h1>
             <p class="hero-subtitle">Born February 19, 2001 • The day my world gained meaning</p>
             
-            <!-- NEW: Shared Time Widget -->
+            <!-- Shared Time Widget -->
             <div class="shared-time-widget">
                 <div class="time-card">
                     <div class="time-location">
@@ -1774,155 +1928,33 @@
     </div>
 
     <script>
-        // ==================== NEW FEATURES ====================
-        
-        // 1. Magic Cursor Trail
-        class MagicCursor {
-            constructor() {
-                this.stars = [];
-                this.lastMouseX = 0;
-                this.lastMouseY = 0;
-                this.starCount = 12;
-                this.trailLength = 8;
-                this.isActive = false;
-                
-                this.init();
-            }
-            
-            init() {
-                // Create star elements
-                for (let i = 0; i < this.starCount; i++) {
-                    const star = document.createElement('div');
-                    star.className = 'cursor-star';
-                    star.style.opacity = '0';
-                    star.style.transform = 'translate(-50%, -50%)';
-                    document.body.appendChild(star);
-                    this.stars.push(star);
-                }
-                
-                // Start animation
-                this.animate();
-            }
-            
-            activate() {
-                this.isActive = true;
-                document.body.style.cursor = 'none';
-            }
-            
-            deactivate() {
-                this.isActive = false;
-                document.body.style.cursor = 'default';
-                
-                // Hide all stars
-                this.stars.forEach(star => {
-                    star.style.opacity = '0';
-                });
-            }
-            
-            updateMousePosition(x, y) {
-                this.lastMouseX = x;
-                this.lastMouseY = y;
-            }
-            
-            animate() {
-                if (this.isActive) {
-                    // Update star positions with trail effect
-                    this.stars.forEach((star, index) => {
-                        const delay = index * (this.trailLength / this.starCount);
-                        
-                        setTimeout(() => {
-                            const scale = 1 - (index / this.starCount) * 0.7;
-                            const opacity = 0.8 - (index / this.starCount) * 0.7;
-                            
-                            star.style.left = this.lastMouseX + 'px';
-                            star.style.top = this.lastMouseY + 'px';
-                            star.style.opacity = opacity;
-                            star.style.transform = `translate(-50%, -50%) scale(${scale})`;
-                            star.style.zIndex = '9999';
-                        }, delay * 10);
-                    });
-                }
-                
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-        
-        // 2. Grand Reveal Celebration
-        function createHeartBurst() {
-            const container = document.getElementById('revealCelebration');
-            const heartIcons = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💕', '💞', '💓', '💗', '💖', '💘'];
-            
-            // Clear previous celebration
-            container.innerHTML = '';
-            
-            // Create 50 hearts for the burst
-            for (let i = 0; i < 50; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'burst-heart';
-                heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
-                
-                // Random properties for each heart
-                const angle = Math.random() * Math.PI * 2;
-                const distance = 100 + Math.random() * 400;
-                const size = 16 + Math.random() * 32;
-                const rotation = Math.random() * 360;
-                const duration = 1 + Math.random() * 1.5;
-                
-                // Calculate end position
-                const tx = Math.cos(angle) * distance;
-                const ty = Math.sin(angle) * distance;
-                
-                // Set CSS variables for animation
-                heart.style.setProperty('--tx', `${tx}px`);
-                heart.style.setProperty('--ty', `${ty}px`);
-                heart.style.fontSize = `${size}px`;
-                heart.style.animationDuration = `${duration}s`;
-                heart.style.left = '50%';
-                heart.style.top = '50%';
-                heart.style.color = getRandomColor();
-                
-                container.appendChild(heart);
-                
-                // Remove heart after animation completes
-                setTimeout(() => {
-                    if (heart.parentNode === container) {
-                        container.removeChild(heart);
-                    }
-                }, duration * 1000);
-            }
-        }
-        
-        function getRandomColor() {
-            const colors = [
-                '#e5b3a3', '#f4dcd1', '#d9987e', '#d4a5a5', '#d4af37',
-                '#ff6b8b', '#ff8e53', '#ffd166', '#06d6a0', '#118ab2'
-            ];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-        
-        // 3. Shared Time Widget
-        const NEPAL_OFFSET = 5 * 60 * 60 * 1000 + 45 * 60 * 1000; // GMT+5:45
-        const GERMANY_OFFSET = 1 * 60 * 60 * 1000; // GMT+1
-        
-        function getNepalTime() {
+        // ==================== FIXED COUNTDOWN AND TIME FUNCTIONS ====================
+
+        // Fixed: Get current Nepal time (GMT+5:45)
+        function getCurrentNepalTime() {
             const now = new Date();
-            const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-            return new Date(utcTime + NEPAL_OFFSET);
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const nepalOffset = 5.75 * 60 * 60 * 1000; // GMT+5:45 in milliseconds
+            return new Date(utc + nepalOffset);
         }
-        
-        function getGermanyTime() {
+
+        // Fixed: Get current Germany time (GMT+1)
+        function getCurrentGermanyTime() {
             const now = new Date();
-            const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-            return new Date(utcTime + GERMANY_OFFSET);
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const germanyOffset = 1 * 60 * 60 * 1000; // GMT+1
+            return new Date(utc + germanyOffset);
         }
-        
+
+        // Fixed: Format time as HH:MM:SS
         function formatTime(date) {
             const hours = date.getHours().toString().padStart(2, '0');
             const minutes = date.getMinutes().toString().padStart(2, '0');
             const seconds = date.getSeconds().toString().padStart(2, '0');
             return `${hours}:${minutes}:${seconds}`;
         }
-        
+
+        // Fixed: Format date
         function formatDate(date) {
             const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
             const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -1934,149 +1966,188 @@
             
             return `${dayName}, ${monthName} ${day}, ${year}`;
         }
-        
-        function updateSharedTime() {
-            const nepalTime = getNepalTime();
-            const germanyTime = getGermanyTime();
+
+        // Fixed: Update all time displays
+        function updateAllTimes() {
+            // Update Nepal time for countdown page
+            const nepalTime = getCurrentNepalTime();
+            document.getElementById('current-nepal-time').textContent = 
+                `${formatTime(nepalTime)} | ${formatDate(nepalTime)}`;
             
-            // Update Nepal time
+            // Update shared time widget
+            const germanyTime = getCurrentGermanyTime();
+            
             document.getElementById('nepal-time-main').textContent = formatTime(nepalTime);
             document.getElementById('nepal-date').textContent = formatDate(nepalTime);
             
-            // Update Germany time
             document.getElementById('germany-time').textContent = formatTime(germanyTime);
             document.getElementById('germany-date').textContent = formatDate(germanyTime);
-            
-            // Update countdown page Nepal time
-            document.getElementById('nepal-time').textContent = `${formatTime(nepalTime)} | ${formatDate(nepalTime)} (GMT+5:45)`;
         }
-        
-        // ==================== SECURITY SYSTEM ====================
-        
-        // Password configuration
-        const CORRECT_PASSWORD = "20250403"; // April 3, 2025 (Their first video call date)
-        const MAX_ATTEMPTS = 5;
-        const LOCKOUT_TIME = 30000; // 30 seconds lockout after max attempts
-        
-        // Security state
-        let attempts = 0;
-        let isLocked = false;
-        let passwordUnlocked = false;
-        
-        // Anti-screenshot protection
-        let screenshotTimer;
-        
-        // Magic Cursor instance
-        const magicCursor = new MagicCursor();
-        
-        // Initialize security system
-        function initSecuritySystem() {
-            // Hide main website initially
-            document.getElementById('mainWebsite').style.display = 'none';
+
+        // Fixed: Calculate countdown to Feb 19, 2026 Nepal Time
+        function updateBirthdayCountdown() {
+            // Get current Nepal time
+            const now = getCurrentNepalTime();
             
-            // Show countdown with password access
-            document.getElementById('birthday-countdown').style.display = 'flex';
+            // Create Feb 19, 2026 00:00 Nepal Time
+            // February is month 1 (0-indexed)
+            const birthdayNepal = new Date(2026, 1, 19, 0, 0, 0, 0);
             
-            // Setup password input events
-            const passwordInput = document.getElementById('passwordInput');
-            const passwordToggle = document.getElementById('passwordToggle');
-            const passwordSubmit = document.getElementById('passwordSubmit');
+            // Calculate difference in milliseconds
+            const diff = birthdayNepal.getTime() - now.getTime();
             
-            // Password visibility toggle
-            passwordToggle.addEventListener('click', function() {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
-            });
-            
-            // Password submission
-            passwordSubmit.addEventListener('click', checkPassword);
-            
-            // Enter key support
-            passwordInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' && !passwordSubmit.disabled) {
-                    checkPassword();
-                }
-            });
-            
-            // Real-time validation
-            passwordInput.addEventListener('input', function() {
-                const value = this.value;
-                // Only allow numbers
-                this.value = value.replace(/[^0-9]/g, '');
-                
-                // Enable/disable submit button
-                passwordSubmit.disabled = this.value.length !== 8 || isLocked;
-                
-                // Clear error on typing
-                if (value.length > 0) {
-                    clearError();
-                }
-            });
-            
-            // Anti-screenshot protection
-            setupAntiScreenshot();
-            
-            // Disable dev tools (basic protection)
-            disableDevTools();
-            
-            // Start time updates
-            setInterval(updateSharedTime, 1000);
-            updateSharedTime();
-            
-            // Start countdown timer
-            setInterval(updateBirthdayCountdown, 1000);
-            updateBirthdayCountdown();
-        }
-        
-        // Check password function
-        function checkPassword() {
-            if (isLocked) {
-                showError("Too many failed attempts. Please wait 30 seconds.");
+            // If birthday has passed or is today
+            if (diff <= 0) {
+                document.getElementById('countdown-days').textContent = "00";
+                document.getElementById('countdown-hours').textContent = "00";
+                document.getElementById('countdown-minutes').textContent = "00";
+                document.getElementById('countdown-seconds').textContent = "00";
                 return;
             }
             
-            const passwordInput = document.getElementById('passwordInput');
-            const enteredPassword = passwordInput.value;
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
             
-            if (enteredPassword.length !== 8) {
-                showError("Password must be 8 digits (YYYYMMDD format)");
-                passwordInput.classList.add('shake');
-                setTimeout(() => passwordInput.classList.remove('shake'), 500);
-                return;
+            // Update display
+            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // ==================== BIRTHDAY CELEBRATION ====================
+
+        // Fireworks Class
+        class Fireworks {
+            constructor(container) {
+                this.container = container;
+                this.isActive = false;
+                this.fireworkCount = 20;
+                this.colors = ['#e5b3a3', '#f4dcd1', '#d9987e', '#d4a5a5', '#d4af37', '#ff6b8b', '#ff8e53', '#ffd166', '#06d6a0', '#118ab2'];
             }
-            
-            attempts++;
-            updateAttemptsCounter();
-            
-            if (enteredPassword === CORRECT_PASSWORD) {
-                // Correct password - Trigger celebration
-                createHeartBurst();
+
+            start() {
+                this.isActive = true;
+                this.createFireworks();
+            }
+
+            stop() {
+                this.isActive = false;
+                this.container.innerHTML = '';
+            }
+
+            createFireworks() {
+                if (!this.isActive) return;
                 
-                passwordUnlocked = true;
-                showSuccess("Password correct! Unlocking your gift...");
-                passwordSubmit.disabled = true;
-                passwordSubmit.innerHTML = '<i class="fas fa-check"></i> Access Granted';
+                this.container.innerHTML = '';
                 
-                // Grant access to website
-                setTimeout(grantAccess, 1500);
+                for (let i = 0; i < this.fireworkCount; i++) {
+                    setTimeout(() => {
+                        this.createFirework();
+                    }, i * 300);
+                }
+
+                setTimeout(() => {
+                    this.createFireworks();
+                }, 6000);
+            }
+
+            createFirework() {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
                 
-            } else {
-                // Wrong password
-                showError("Incorrect password. Hint: Think about when our journey truly began.");
-                passwordInput.classList.add('shake');
-                setTimeout(() => passwordInput.classList.remove('shake'), 500);
-                passwordInput.value = '';
-                passwordInput.focus();
+                const x = Math.random() * 90 + 5;
+                const y = Math.random() * 90 + 5;
+                const color = this.colors[Math.floor(Math.random() * this.colors.length)];
                 
-                // Check for lockout
-                if (attempts >= MAX_ATTEMPTS) {
-                    lockoutUser();
+                firework.style.left = x + '%';
+                firework.style.top = y + '%';
+                firework.style.backgroundColor = color;
+                firework.style.boxShadow = `0 0 20px ${color}, 0 0 40px ${color}`;
+                
+                this.container.appendChild(firework);
+
+                setTimeout(() => {
+                    this.createBurst(x, y, color);
+                    firework.remove();
+                }, 800);
+            }
+
+            createBurst(x, y, color) {
+                const particleCount = 12;
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'firework-burst';
+                    
+                    const angle = (i / particleCount) * Math.PI * 2;
+                    const distance = 50 + Math.random() * 80;
+                    const burstX = Math.cos(angle) * distance;
+                    const burstY = Math.sin(angle) * distance;
+                    
+                    particle.style.left = x + '%';
+                    particle.style.top = y + '%';
+                    particle.style.backgroundColor = color;
+                    particle.style.setProperty('--burst-x', burstX + 'px');
+                    particle.style.setProperty('--burst-y', burstY + 'px');
+                    
+                    this.container.appendChild(particle);
+
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.remove();
+                        }
+                    }, 1000);
                 }
             }
         }
-        
-        // Grant access to website
+
+        // Fixed: Birthday Celebration Function
+        function startBirthdayCelebration() {
+            const celebration = document.getElementById('birthdayCelebration');
+            const fireworksContainer = document.getElementById('fireworksContainer');
+            
+            // Show celebration
+            celebration.style.display = 'flex';
+            setTimeout(() => {
+                celebration.classList.add('active');
+            }, 100);
+            
+            // Start fireworks
+            const fireworks = new Fireworks(fireworksContainer);
+            fireworks.start();
+            
+            // Play birthday music
+            const birthdayMusic = document.getElementById('birthdayMusic');
+            birthdayMusic.volume = 0.6;
+            birthdayMusic.play().catch(e => {
+                console.log("Birthday music autoplay prevented");
+            });
+            
+            // Fixed: Continue button event listener
+            const continueBtn = document.getElementById('continueToWebsite');
+            continueBtn.onclick = function() {
+                // Stop fireworks and music
+                fireworks.stop();
+                birthdayMusic.pause();
+                birthdayMusic.currentTime = 0;
+                
+                // Hide celebration
+                celebration.classList.remove('active');
+                setTimeout(() => {
+                    celebration.style.display = 'none';
+                }, 1000);
+                
+                // Grant access to main website
+                grantAccess();
+            };
+        }
+
+        // ==================== FIXED: GRANT ACCESS FUNCTION ====================
+
         function grantAccess() {
             // Hide countdown
             const countdownSection = document.getElementById('birthday-countdown');
@@ -2086,130 +2157,61 @@
             setTimeout(() => {
                 countdownSection.style.display = 'none';
                 
-                // Show main website with animation
+                // Show main website
                 const mainWebsite = document.getElementById('mainWebsite');
                 mainWebsite.style.display = 'block';
                 
                 setTimeout(() => {
                     mainWebsite.classList.add('show');
                     
-                    // Activate magic cursor
-                    magicCursor.activate();
+                    // Play background music
+                    const bgMusic = document.getElementById('bgMusic');
+                    bgMusic.volume = 0.4;
+                    bgMusic.play().then(() => {
+                        musicPlaying = true;
+                        document.getElementById('musicControl').innerHTML = '<i class="fas fa-pause"></i>';
+                    }).catch(e => {
+                        console.log("Background music autoplay prevented");
+                    });
                     
-                    // Start website features
-                    startWebsiteFeatures();
+                    // Start floating hearts
+                    startFloatingHearts();
+                    
+                    // Enable scroll animations
+                    enableScrollAnimations();
+                    
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 100);
                 
             }, 1000);
         }
-        
-        // Start website features after access granted
-        function startWebsiteFeatures() {
-            // Play music
-            const audio = document.getElementById('bgMusic');
-            audio.volume = 0.4;
-            audio.play().then(() => {
-                musicPlaying = true;
-                document.getElementById('musicControl').innerHTML = '<i class="fas fa-pause"></i>';
-            }).catch(e => {
-                console.log("Autoplay prevented.");
-            });
-            
-            // Start floating hearts
-            startFloatingHearts();
-            
-            // Enable scroll animations
-            enableScrollAnimations();
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        
-    // ==================== SIMPLER FIXED COUNTDOWN FUNCTION ==================
-    // ==================== TIME FUNCTIONS ====================
-    
-    // Get current Nepal time (GMT+5:45) - THIS IS WORKING CORRECTLY
-    function getNepalTime() {
-        const now = new Date();
-        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-        // Nepal is GMT+5:45 (5.75 hours)
-        const nepalOffset = 5.75 * 60 * 60 * 1000;
-        return new Date(utc + nepalOffset);
-    }
-    
-    // Get current Germany time (GMT+1)
-    function getGermanyTime() {
-        const now = new Date();
-        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-        const germanyOffset = 1 * 60 * 60 * 1000;
-        return new Date(utc + germanyOffset);
-    }
-    
-    // Format time as HH:MM:SS (24-hour format)
-    function formatTime(date) {
-        return date.toLocaleTimeString('en-GB', { hour12: false });
-    }
-    
-    // Format date as Day, Month DD, YYYY
-    function formatDate(date) {
-        return date.toLocaleDateString('en-US', { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        });
-    }
-   function updateBirthdayCountdown() {
-    // Get current time
-    const now = new Date();
-    
-    // Create Feb 19, 2026 at 00:00:00 LOCAL TIME
-    // This is the key - we're comparing local times, not timezones
-    const birthday = new Date(2026, 1, 19, 0, 0, 0, 0); // Feb 19, 2026
-    
-    // Calculate difference in milliseconds
-    const diff = birthday.getTime() - now.getTime();
-    
-    // If birthday has passed, show zeros
-    if (diff <= 0) {
-        document.getElementById('countdown-days').textContent = "00";
-        document.getElementById('countdown-hours').textContent = "00";
-        document.getElementById('countdown-minutes').textContent = "00";
-        document.getElementById('countdown-seconds').textContent = "00";
-        return;
-    }
-    
-    // Calculate time components
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    // Update display
-    document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
-    document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
-    document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
-}
- 
-        // Music control
-        let musicPlaying = true;
-        const audio = document.getElementById('bgMusic');
+
+        // ==================== MUSIC CONTROLS ====================
+
+        let musicPlaying = false;
         
         function toggleMusic() {
+            const bgMusic = document.getElementById('bgMusic');
             const musicControl = document.getElementById('musicControl');
+            
             if (musicPlaying) {
-                audio.pause();
+                bgMusic.pause();
                 musicControl.innerHTML = '<i class="fas fa-music"></i>';
-                musicPlaying = true;
+                musicPlaying = false;
             } else {
-                audio.play();
-                musicControl.innerHTML = '<i class="fas fa-pause"></i>';
-                musicPlaying = true;
+                bgMusic.play().then(() => {
+                    musicControl.innerHTML = '<i class="fas fa-pause"></i>';
+                    musicPlaying = true;
+                }).catch(e => {
+                    console.log("Music playback failed:", e);
+                    alert("Please click the music icon to play music.");
+                });
             }
         }
 
-        // Floating hearts animation
+        // ==================== FLOATING HEARTS ====================
+
         function startFloatingHearts() {
             const heartIcons = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💕', '💞', '💓', '💗', '💖', '💘'];
             
@@ -2239,7 +2241,8 @@
             }, 500);
         }
 
-        // Scroll animations
+        // ==================== SCROLL ANIMATIONS ====================
+
         function enableScrollAnimations() {
             const observerOptions = {
                 threshold: 0.1,
@@ -2262,7 +2265,155 @@
                 observer.observe(el);
             });
         }
+
+        // ==================== SECURITY SYSTEM ====================
+
+        const CORRECT_PASSWORD = "20250403";
+        const MAX_ATTEMPTS = 5;
+        const LOCKOUT_TIME = 30000;
         
+        let attempts = 0;
+        let isLocked = false;
+
+        function initSecuritySystem() {
+            // Hide elements initially
+            document.getElementById('mainWebsite').style.display = 'none';
+            document.getElementById('birthdayCelebration').style.display = 'none';
+            
+            // Show countdown
+            document.getElementById('birthday-countdown').style.display = 'flex';
+            
+            // Setup password input
+            const passwordInput = document.getElementById('passwordInput');
+            const passwordToggle = document.getElementById('passwordToggle');
+            const passwordSubmit = document.getElementById('passwordSubmit');
+            
+            // Password visibility toggle
+            passwordToggle.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+            
+            // Password submission
+            passwordSubmit.addEventListener('click', checkPassword);
+            
+            // Enter key support
+            passwordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && !passwordSubmit.disabled) {
+                    checkPassword();
+                }
+            });
+            
+            // Real-time validation
+            passwordInput.addEventListener('input', function() {
+                const value = this.value;
+                this.value = value.replace(/[^0-9]/g, '');
+                passwordSubmit.disabled = this.value.length !== 8 || isLocked;
+                
+                if (value.length > 0) {
+                    clearError();
+                }
+            });
+            
+            // Start time updates
+            setInterval(updateAllTimes, 1000);
+            setInterval(updateBirthdayCountdown, 1000);
+            updateAllTimes();
+            updateBirthdayCountdown();
+        }
+
+        // Fixed: Check Password Function
+        function checkPassword() {
+            if (isLocked) {
+                showError("Too many failed attempts. Please wait 30 seconds.");
+                return;
+            }
+            
+            const passwordInput = document.getElementById('passwordInput');
+            const enteredPassword = passwordInput.value;
+            
+            if (enteredPassword.length !== 8) {
+                showError("Password must be 8 digits (YYYYMMDD format)");
+                passwordInput.classList.add('shake');
+                setTimeout(() => passwordInput.classList.remove('shake'), 500);
+                return;
+            }
+            
+            attempts++;
+            updateAttemptsCounter();
+            
+            if (enteredPassword === CORRECT_PASSWORD) {
+                // Correct password
+                createHeartBurst();
+                
+                showSuccess("Password correct! Starting celebration...");
+                passwordSubmit.disabled = true;
+                passwordSubmit.innerHTML = '<i class="fas fa-check"></i> Access Granted';
+                
+                // Start birthday celebration
+                setTimeout(startBirthdayCelebration, 1500);
+                
+            } else {
+                // Wrong password
+                showError("Incorrect password. Hint: Think about when our journey truly began.");
+                passwordInput.classList.add('shake');
+                setTimeout(() => passwordInput.classList.remove('shake'), 500);
+                passwordInput.value = '';
+                passwordInput.focus();
+                
+                if (attempts >= MAX_ATTEMPTS) {
+                    lockoutUser();
+                }
+            }
+        }
+
+        // Heart burst animation
+        function createHeartBurst() {
+            const container = document.getElementById('revealCelebration');
+            const heartIcons = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💕', '💞', '💓', '💗', '💖', '💘'];
+            
+            container.innerHTML = '';
+            
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'burst-heart';
+                heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 100 + Math.random() * 400;
+                const size = 16 + Math.random() * 32;
+                const duration = 1 + Math.random() * 1.5;
+                
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                heart.style.setProperty('--tx', `${tx}px`);
+                heart.style.setProperty('--ty', `${ty}px`);
+                heart.style.fontSize = `${size}px`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.left = '50%';
+                heart.style.top = '50%';
+                heart.style.color = getRandomColor();
+                
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    if (heart.parentNode === container) {
+                        container.removeChild(heart);
+                    }
+                }, duration * 1000);
+            }
+        }
+
+        function getRandomColor() {
+            const colors = [
+                '#e5b3a3', '#f4dcd1', '#d9987e', '#d4a5a5', '#d4af37',
+                '#ff6b8b', '#ff8e53', '#ffd166', '#06d6a0', '#118ab2'
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
         // Helper functions
         function showError(message) {
             const errorEl = document.getElementById('passwordError');
@@ -2299,7 +2450,6 @@
             
             showError(`Too many attempts. Locked for ${LOCKOUT_TIME/1000} seconds.`);
             
-            // Countdown timer
             let timeLeft = LOCKOUT_TIME / 1000;
             const lockoutInterval = setInterval(() => {
                 timeLeft--;
@@ -2318,66 +2468,14 @@
                 }
             }, 1000);
         }
-        
-        // Anti-screenshot protection
-        function setupAntiScreenshot() {
-            const overlay = document.getElementById('antiScreenshot');
-            
-            // Show overlay on potential screenshot actions
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'PrintScreen' || (e.ctrlKey && e.key === 'p')) {
-                    e.preventDefault();
-                    overlay.classList.add('active');
-                    clearTimeout(screenshotTimer);
-                    screenshotTimer = setTimeout(() => overlay.classList.remove('active'), 2000);
-                }
-            });
-            
-            // Prevent right-click
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                overlay.classList.add('active');
-                clearTimeout(screenshotTimer);
-                screenshotTimer = setTimeout(() => overlay.classList.remove('active'), 1000);
-                return false;
-            });
-            
-            // Detect screenshot tools (basic)
-            window.addEventListener('blur', function() {
-                setTimeout(() => {
-                    if (document.hasFocus()) {
-                        overlay.classList.add('active');
-                        clearTimeout(screenshotTimer);
-                        screenshotTimer = setTimeout(() => overlay.classList.remove('active'), 1000);
-                    }
-                }, 100);
-            });
-        }
-        
-        // Basic dev tools protection
-        function disableDevTools() {
-            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-            document.onkeydown = function(e) {
-                if (e.key === 'F12' || 
-                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
-                    (e.ctrlKey && e.key === 'u')) {
-                    e.preventDefault();
-                    return false;
-                }
-            };
-        }
-        
-        // Initialize everything when page loads
+
+        // ==================== INITIALIZATION ====================
+
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize security system
             initSecuritySystem();
             
-            // Add mouse movement tracking for magic cursor
-            document.addEventListener('mousemove', function(e) {
-                magicCursor.updateMousePosition(e.clientX, e.clientY);
-            });
-            
-            // Add floating hearts to countdown page
+            // Add floating hearts to countdown
             setInterval(() => {
                 if (!document.getElementById('mainWebsite').classList.contains('show')) {
                     const heart = document.createElement('div');
