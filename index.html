@@ -1989,9 +1989,12 @@
             // Get current Nepal time
             const now = getCurrentNepalTime();
             
-            // Create Feb 19, 2027 00:00 Nepal Time
-            // February is month 1 (0-indexed)
-            const birthdayNepal = new Date(2027, 1, 19, 0, 0, 0, 0);
+            // Create Feb 19, 2027 00:00 Nepal Time using same method as getCurrentNepalTime()
+            // Feb 19, 2027 00:00 Nepal = Feb 18, 2027 18:15 UTC (subtract GMT+5:45 offset)
+            const nepalOffset = 5.75 * 60 * 60 * 1000; // GMT+5:45 in milliseconds
+            const birthdayRealUtcMs = Date.UTC(2027, 1, 19, 0, 0, 0) - nepalOffset;
+            const tempBirthday = new Date(birthdayRealUtcMs);
+            const birthdayNepal = new Date(birthdayRealUtcMs + (tempBirthday.getTimezoneOffset() * 60000) + nepalOffset);
             
             // Calculate difference in milliseconds
             const diff = birthdayNepal.getTime() - now.getTime();
