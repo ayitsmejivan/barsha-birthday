@@ -1658,6 +1658,427 @@
             0% { background-position: 0% center; }
             100% { background-position: 200% center; }
         }
+
+        /* ==================== SECRET GALLERY SECTION ==================== */
+        .secret-gallery-section {
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .secret-gallery-section .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* --- Gallery Lock Screen --- */
+        .gallery-lock-screen {
+            background: rgba(139, 92, 246, 0.06);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-radius: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(139, 92, 246, 0.1);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .gallery-lock-screen::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--accent-pink), var(--accent-cyan), transparent);
+            animation: shimmer 3s linear infinite;
+        }
+
+        .gallery-lock-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 15px var(--glow-purple));
+        }
+
+        .gallery-lock-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            background: linear-gradient(90deg, var(--primary-light), var(--accent-pink), var(--accent-cyan), var(--primary-light));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientText 4s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        .gallery-lock-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 35px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .gallery-password-group {
+            display: flex;
+            align-items: center;
+            max-width: 380px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .gallery-password-input {
+            flex: 1;
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50px 0 0 50px;
+            padding: 14px 20px;
+            color: var(--text-bright);
+            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-password-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2), 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .gallery-password-input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .gallery-password-toggle {
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-left: none;
+            color: var(--text-muted);
+            padding: 14px 14px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .gallery-password-toggle:hover {
+            color: var(--primary-light);
+        }
+
+        .gallery-unlock-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            border: none;
+            border-radius: 0 50px 50px 0;
+            color: white;
+            padding: 14px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .gallery-unlock-btn:hover:not(:disabled) {
+            box-shadow: 0 0 35px var(--glow-purple), 0 0 20px var(--glow-pink);
+            transform: translateX(2px);
+        }
+
+        .gallery-unlock-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .gallery-error {
+            min-height: 24px;
+            font-size: 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .gallery-hint {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 15px;
+        }
+
+        .gallery-hint i {
+            color: var(--accent-pink);
+            margin-right: 5px;
+        }
+
+        /* Floating particles around lock screen */
+        .gallery-particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: floatParticle 4s ease-in-out infinite;
+        }
+
+        @keyframes floatParticle {
+            0% { opacity: 0; transform: translateY(20px) scale(0); }
+            20% { opacity: 0.8; }
+            80% { opacity: 0.5; }
+            100% { opacity: 0; transform: translateY(-80px) scale(1.5); }
+        }
+
+        /* --- Gallery Content (shown after unlock) --- */
+        .gallery-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .gallery-content.visible {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-unlocked-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-unlocked-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--primary-light), var(--accent-pink));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientText 4s linear infinite;
+            margin-bottom: 8px;
+        }
+
+        .gallery-unlocked-subtitle {
+            color: var(--text-muted);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        /* --- Photo Carousel --- */
+        .photo-carousel-wrapper {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(139, 92, 246, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 60px rgba(139, 92, 246, 0.1);
+        }
+
+        .photo-carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        .photo-slide {
+            min-width: 100%;
+            position: relative;
+            height: 520px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .photo-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+
+        .photo-slide:hover img {
+            transform: scale(1.04);
+        }
+
+        .photo-slide-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.08) 50%, rgba(34, 211, 238, 0.08) 100%);
+            color: var(--text-secondary);
+        }
+
+        .photo-slide-placeholder i {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 20px var(--glow-purple));
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .photo-slide-placeholder .slide-photo-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 0 40px;
+        }
+
+        /* Photo overlay caption */
+        .photo-caption-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(6, 9, 24, 0.9) 0%, transparent 100%);
+            padding: 40px 40px 30px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .photo-slide:hover .photo-caption-overlay {
+            transform: translateY(0);
+        }
+
+        .photo-caption-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--text-bright);
+            margin-bottom: 6px;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+        }
+
+        .photo-caption-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Neon border glow on carousel */
+        .photo-carousel-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 26px;
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink), var(--accent-cyan), var(--primary));
+            background-size: 300% 300%;
+            z-index: -1;
+            animation: borderGlow 4s ease infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(139, 92, 246, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            color: var(--text-bright);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-nav-btn:hover {
+            background: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 0 20px var(--glow-purple);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav-prev { left: 20px; }
+        .carousel-nav-next { right: 20px; }
+
+        /* Carousel Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 0 10px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.3);
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            box-shadow: 0 0 10px var(--glow-purple);
+            transform: scale(1.3);
+        }
+
+        /* Shake animation for wrong gallery password */
+        .gallery-shake {
+            animation: galleryShake 0.4s ease;
+        }
+
+        @keyframes galleryShake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-8px); }
+            40% { transform: translateX(8px); }
+            60% { transform: translateX(-6px); }
+            80% { transform: translateX(6px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-lock-screen {
+                padding: 40px 20px;
+            }
+            .gallery-lock-title {
+                font-size: 2.2rem;
+            }
+            .photo-slide {
+                height: 360px;
+            }
+            .gallery-password-group {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-slide {
+                height: 280px;
+            }
+            .gallery-lock-title {
+                font-size: 1.8rem;
+            }
+            .carousel-nav-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1907,6 +2328,100 @@
                 </div>
             </div>
         </section>
+
+        <!-- ==================== SECRET PHOTO GALLERY ==================== -->
+        <section class="secret-gallery-section" id="secretGallerySection">
+            <h2 class="section-title">Our Secret Gallery</h2>
+
+            <!-- Lock Screen -->
+            <div class="gallery-lock-screen" id="galleryLockScreen">
+                <div class="gallery-particle" style="left:10%;top:20%;background:var(--primary);animation-delay:0s;animation-duration:5s;"></div>
+                <div class="gallery-particle" style="left:25%;top:70%;background:var(--accent-pink);animation-delay:1s;animation-duration:4s;"></div>
+                <div class="gallery-particle" style="left:75%;top:30%;background:var(--accent-cyan);animation-delay:0.5s;animation-duration:6s;"></div>
+                <div class="gallery-particle" style="left:88%;top:65%;background:var(--primary-light);animation-delay:2s;animation-duration:5.5s;"></div>
+                <div class="gallery-particle" style="left:50%;top:10%;background:var(--accent-pink);animation-delay:1.5s;animation-duration:4.5s;"></div>
+
+                <div class="gallery-lock-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3 class="gallery-lock-title">Locked with Love</h3>
+                <p class="gallery-lock-subtitle">Enter the secret password to reveal our most precious memories</p>
+
+                <div class="gallery-password-group" id="galleryPasswordGroup">
+                    <input type="password"
+                           id="galleryPasswordInput"
+                           class="gallery-password-input"
+                           placeholder="Enter secret password"
+                           autocomplete="off"
+                           maxlength="30">
+                    <button type="button" class="gallery-password-toggle" id="galleryPasswordToggle" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="gallery-unlock-btn" id="galleryUnlockBtn" disabled>
+                        <i class="fas fa-unlock-alt"></i> Unlock
+                    </button>
+                </div>
+
+                <div id="galleryError" class="gallery-error"></div>
+
+                <p class="gallery-hint">
+                    <i class="fas fa-heart"></i> Hint: Six letters, the most beautiful name I know
+                </p>
+            </div>
+
+            <!-- Gallery Content (revealed after correct password) -->
+            <div class="gallery-content" id="galleryContent">
+                <div class="gallery-unlocked-header">
+                    <p class="gallery-unlocked-title">Our Beautiful Moments</p>
+                    <p class="gallery-unlocked-subtitle">Swipe or use arrows to explore ✨</p>
+                </div>
+
+                <div class="photo-carousel-wrapper" id="photoCarouselWrapper">
+                    <div class="photo-carousel-track" id="carouselTrack">
+
+                        <!-- Slide 1: Forest Portrait -->
+                        <div class="photo-slide">
+                            <div class="photo-slide-placeholder">
+                                <i class="fas fa-tree"></i>
+                                <span class="slide-photo-title">Lost in the Forest, Found in Your Eyes</span>
+                            </div>
+                            <div class="photo-caption-overlay">
+                                <p class="photo-caption-title">The Forest Portrait</p>
+                                <p class="photo-caption-text">Where nature's beauty meets yours — a moment frozen forever 🌿</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Cultural Landmark -->
+                        <div class="photo-slide">
+                            <div class="photo-slide-placeholder" style="background: linear-gradient(135deg, rgba(34,211,238,0.12) 0%, rgba(139,92,246,0.08) 50%, rgba(236,72,153,0.08) 100%);">
+                                <i class="fas fa-landmark"></i>
+                                <span class="slide-photo-title">Rooted in Culture, Blooming in Love</span>
+                            </div>
+                            <div class="photo-caption-overlay">
+                                <p class="photo-caption-title">The Cultural Landmark</p>
+                                <p class="photo-caption-text">A piece of our heritage, a piece of your soul — timeless and beautiful 🏛️</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <button class="carousel-nav-btn carousel-nav-prev" id="carouselPrev" aria-label="Previous photo">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav-btn carousel-nav-next" id="carouselNext" aria-label="Next photo">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Dots indicator -->
+                <div class="carousel-dots" id="carouselDots">
+                    <div class="carousel-dot active" data-index="0"></div>
+                    <div class="carousel-dot" data-index="1"></div>
+                </div>
+            </div>
+        </section>
+        <!-- ==================== END SECRET PHOTO GALLERY ==================== -->
 
         <section class="love-letter-section">
             <div class="letter-container">
@@ -2619,6 +3134,9 @@
             // Initialize security system
             initSecuritySystem();
             
+            // Initialize secret gallery
+            initSecretGallery();
+            
             // Add floating hearts to countdown
             setInterval(() => {
                 if (!document.getElementById('mainWebsite').classList.contains('show')) {
@@ -2645,6 +3163,143 @@
                 }
             }, 1000);
         });
+
+        // ==================== SECRET GALLERY ====================
+        // Note: Password is validated client-side as this is a personal gift website,
+        // not a security-sensitive application.
+        const GALLERY_PASSWORD = "barsha";
+        let galleryCurrentSlide = 0;
+        const GALLERY_TOTAL_SLIDES = 2;
+        let galleryTouchStartX = 0;
+        let galleryTouchEndX = 0;
+
+        function initSecretGallery() {
+            const input = document.getElementById('galleryPasswordInput');
+            const toggle = document.getElementById('galleryPasswordToggle');
+            const unlockBtn = document.getElementById('galleryUnlockBtn');
+
+            if (!input || !toggle || !unlockBtn) return;
+
+            // Enable/disable unlock button based on input
+            input.addEventListener('input', function() {
+                unlockBtn.disabled = this.value.trim().length === 0;
+                document.getElementById('galleryError').innerHTML = '';
+            });
+
+            // Enter key support
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && !unlockBtn.disabled) {
+                    galleryCheckPassword();
+                }
+            });
+
+            // Toggle password visibility
+            toggle.addEventListener('click', function() {
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+                this.querySelector('i').className = type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+            });
+
+            // Unlock button click
+            unlockBtn.addEventListener('click', galleryCheckPassword);
+
+            // Carousel navigation
+            document.getElementById('carouselPrev').addEventListener('click', function() {
+                galleryGoToSlide((galleryCurrentSlide - 1 + GALLERY_TOTAL_SLIDES) % GALLERY_TOTAL_SLIDES);
+            });
+            document.getElementById('carouselNext').addEventListener('click', function() {
+                galleryGoToSlide((galleryCurrentSlide + 1) % GALLERY_TOTAL_SLIDES);
+            });
+
+            // Dot navigation
+            document.querySelectorAll('.carousel-dot').forEach(function(dot) {
+                dot.addEventListener('click', function() {
+                    galleryGoToSlide(parseInt(this.dataset.index));
+                });
+            });
+
+            // Touch/swipe support
+            const wrapper = document.getElementById('photoCarouselWrapper');
+            wrapper.addEventListener('touchstart', function(e) {
+                if (e.changedTouches && e.changedTouches.length > 0) {
+                    galleryTouchStartX = e.changedTouches[0].screenX;
+                }
+            }, { passive: true });
+            wrapper.addEventListener('touchend', function(e) {
+                if (!e.changedTouches || e.changedTouches.length === 0) return;
+                galleryTouchEndX = e.changedTouches[0].screenX;
+                const diff = galleryTouchStartX - galleryTouchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        galleryGoToSlide((galleryCurrentSlide + 1) % GALLERY_TOTAL_SLIDES);
+                    } else {
+                        galleryGoToSlide((galleryCurrentSlide - 1 + GALLERY_TOTAL_SLIDES) % GALLERY_TOTAL_SLIDES);
+                    }
+                }
+            }, { passive: true });
+
+            // Auto-advance carousel every 5 seconds
+            setInterval(function() {
+                const content = document.getElementById('galleryContent');
+                if (content && content.classList.contains('visible')) {
+                    galleryGoToSlide((galleryCurrentSlide + 1) % GALLERY_TOTAL_SLIDES);
+                }
+            }, 5000);
+        }
+
+        function galleryCheckPassword() {
+            const input = document.getElementById('galleryPasswordInput');
+            const errorEl = document.getElementById('galleryError');
+            const entered = input.value.trim().toLowerCase();
+
+            if (entered === GALLERY_PASSWORD) {
+                // Correct — animate unlock
+                const lockScreen = document.getElementById('galleryLockScreen');
+                const content = document.getElementById('galleryContent');
+                const unlockBtn = document.getElementById('galleryUnlockBtn');
+
+                errorEl.style.color = 'var(--success-green)';
+                errorEl.innerHTML = '<i class="fas fa-check-circle"></i> Unlocked! Revealing your gallery...';
+                unlockBtn.disabled = true;
+                unlockBtn.innerHTML = '<i class="fas fa-check"></i> Unlocked!';
+
+                setTimeout(function() {
+                    lockScreen.style.opacity = '0';
+                    lockScreen.style.transform = 'scale(0.95)';
+                    setTimeout(function() {
+                        lockScreen.style.display = 'none';
+                        content.style.display = 'block';
+                        requestAnimationFrame(function() {
+                            requestAnimationFrame(function() {
+                                content.classList.add('visible');
+                            });
+                        });
+                    }, 500);
+                }, 800);
+
+            } else {
+                // Wrong password
+                errorEl.style.color = 'var(--error-red)';
+                errorEl.innerHTML = '<i class="fas fa-times-circle"></i> Incorrect password. Try again with love 💜';
+                const group = document.getElementById('galleryPasswordGroup');
+                group.classList.add('gallery-shake');
+                setTimeout(function() { group.classList.remove('gallery-shake'); }, 400);
+                input.value = '';
+                input.focus();
+                document.getElementById('galleryUnlockBtn').disabled = true;
+            }
+        }
+
+        function galleryGoToSlide(index) {
+            galleryCurrentSlide = index;
+            const track = document.getElementById('carouselTrack');
+            if (track) {
+                track.style.transform = 'translateX(-' + (index * 100) + '%)';
+            }
+            document.querySelectorAll('.carousel-dot').forEach(function(dot) {
+                dot.classList.toggle('active', parseInt(dot.dataset.index) === index);
+            });
+        }
     </script>
 </body>
 </html>
