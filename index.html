@@ -8,6 +8,11 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https:">
     
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="A heartfelt birthday celebration for Barsha - our love across continents">
+    <link rel="manifest" href="/manifest.json">
+    
     <title>For Barsha | Our Love Across Continents</title>
     
     <!-- Disable text selection and context menu -->
@@ -2079,9 +2084,307 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* ===== THEME TOGGLE ===== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            background: var(--glass-card);
+            border: 1px solid var(--glass-border-accent);
+            border-radius: 50px;
+            padding: 8px 16px;
+            cursor: pointer;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .theme-toggle:hover {
+            background: var(--glass-border-accent);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--glow-purple);
+        }
+        /* Light theme variables */
+        body.light-theme {
+            --bg-deep: #f0e6ff;
+            --bg-mid: #e9d5ff;
+            --bg-light: #ddd6fe;
+            --text-bright: #1e1b4b;
+            --text-primary: #2d1b69;
+            --text-secondary: #4c1d95;
+            --text-muted: #6d28d9;
+            --glass: rgba(139, 92, 246, 0.08);
+            --glass-card: rgba(139, 92, 246, 0.12);
+            --glass-border: rgba(139, 92, 246, 0.2);
+        }
+        body.light-theme .countdown-container,
+        body.light-theme #birthday-countdown {
+            background: linear-gradient(135deg, var(--bg-deep), var(--bg-mid));
+        }
+
+        /* ===== THREE.JS CANVAS ===== */
+        #three-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* ===== CURSOR TRAIL ===== */
+        .cursor-trail {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99998;
+            mix-blend-mode: screen;
+            transition: transform 0.1s ease;
+            animation: trailFade 0.6s ease forwards;
+        }
+        @keyframes trailFade {
+            0% { opacity: 0.9; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.2); }
+        }
+
+        /* ===== SCROLL QUOTE POPUP ===== */
+        .scroll-quote {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--glass-card);
+            border: 1px solid var(--glass-border-accent);
+            border-radius: 16px;
+            padding: 16px 28px;
+            color: var(--text-secondary);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            max-width: 400px;
+            text-align: center;
+            z-index: 9990;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+            opacity: 0;
+            pointer-events: none;
+            box-shadow: 0 8px 32px var(--glow-purple);
+        }
+        .scroll-quote.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* ===== QR CODE SECTION ===== */
+        .qr-section {
+            text-align: center;
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        .qr-btn {
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            border: none;
+            color: white;
+            padding: 14px 32px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px var(--glow-purple);
+            margin-bottom: 20px;
+        }
+        .qr-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px var(--glow-purple);
+        }
+        #qr-code-display {
+            display: none;
+            margin: 20px auto;
+            padding: 16px;
+            background: white;
+            border-radius: 12px;
+            width: fit-content;
+        }
+        #qr-code-display.visible {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        .qr-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* ===== KONAMI EASTER EGG ===== */
+        .konami-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 9, 24, 0.95);
+            z-index: 99997;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+        }
+        .konami-overlay.active {
+            display: flex;
+            animation: fadeIn 0.5s ease;
+        }
+        .konami-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, #c084fc, #ec4899, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(192, 132, 252, 0.7));
+        }
+        .konami-msg {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 500px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .konami-close {
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .konami-close:hover { transform: scale(1.05); }
+
+        /* ===== COUNTDOWN MODE TOGGLE ===== */
+        .countdown-mode-toggle {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0 10px;
+            flex-wrap: wrap;
+        }
+        .mode-btn {
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--glass-border-accent);
+            background: var(--glass-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .mode-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 0 15px var(--glow-purple);
+        }
+        .mode-btn:hover:not(.active) {
+            border-color: var(--primary);
+            color: var(--text-bright);
+        }
+        .countdown-mode-label {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ===== ACHIEVEMENT TOAST ===== */
+        .achievement-toast {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: var(--glass-card);
+            border: 1px solid var(--glass-border-accent);
+            border-radius: 16px;
+            padding: 16px 20px;
+            color: var(--text-primary);
+            font-family: 'Space Grotesk', sans-serif;
+            z-index: 9995;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px var(--glow-purple);
+            max-width: 280px;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .achievement-toast.show {
+            transform: translateX(0);
+        }
+        .achievement-toast .achievement-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .achievement-toast .achievement-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--primary-light);
+        }
+        .achievement-toast .achievement-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
     </style>
 </head>
 <body>
+    <!-- Three.js Particle Canvas -->
+    <canvas id="three-canvas" aria-hidden="true"></canvas>
+    
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle dark/light theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+        <span id="themeLabel" style="font-size:0.8rem;font-family:'Space Grotesk',sans-serif;">Dark</span>
+    </button>
+    
+    <!-- Scroll Quote Popup -->
+    <div class="scroll-quote" id="scrollQuote" role="status" aria-live="polite"></div>
+    
+    <!-- Konami Code Easter Egg -->
+    <div class="konami-overlay" id="konamiOverlay" role="dialog" aria-modal="true" aria-label="Secret message">
+        <div class="konami-title">🎉 You Found Our Secret! 🎉</div>
+        <p class="konami-msg">
+            You discovered the secret portal! 💜<br><br>
+            "Distance means so little when someone means so much."<br><br>
+            Thank you for visiting this little corner of the internet made entirely out of love for the most wonderful person — Barsha. 🌸
+        </p>
+        <button class="konami-close" id="konamiClose">Close Secret Portal ✨</button>
+    </div>
+    
+    <!-- Achievement Toast -->
+    <div class="achievement-toast" id="achievementToast" role="alert" aria-live="assertive">
+        <span class="achievement-icon" id="achieveIcon">🏆</span>
+        <div class="achievement-name" id="achieveName">Achievement Unlocked!</div>
+        <div class="achievement-desc" id="achieveDesc"></div>
+    </div>
     <!-- Birthday Celebration with Fireworks -->
     <div class="birthday-celebration" id="birthdayCelebration">
         <div id="fireworksContainer"></div>
@@ -2121,6 +2424,14 @@
             
             <div class="birthday-date">
                 <i class="far fa-calendar-alt"></i> February 19, 2027
+            </div>
+            
+            <!-- Countdown Mode Toggle -->
+            <p class="countdown-mode-label">Counting down to:</p>
+            <div class="countdown-mode-toggle">
+                <button class="mode-btn active" data-mode="birthday" onclick="setCountdownMode('birthday')">🎂 Birthday</button>
+                <button class="mode-btn" data-mode="together" onclick="setCountdownMode('together')">💜 1 Year Together</button>
+                <button class="mode-btn" data-mode="custom" onclick="setCountdownMode('custom')">⭐ Next Special Day</button>
             </div>
             
             <div class="countdown-display">
@@ -2574,6 +2885,15 @@
                     <i class="fab fa-whatsapp"></i> Send Me Your Response
                 </a>
             </div>
+        </section>
+
+        <!-- QR Code Sharing Section -->
+        <section class="qr-section">
+            <button class="qr-btn" id="qrBtn" onclick="generateQRCode()">
+                <i class="fas fa-qrcode"></i> Share This Love Story
+            </button>
+            <div id="qr-code-display"></div>
+            <p class="qr-label" id="qrLabel" style="display:none;">Scan to share this special page 💜</p>
         </section>
 
         <footer class="footer">
@@ -3298,6 +3618,314 @@
             }
             document.querySelectorAll('.carousel-dot').forEach(function(dot) {
                 dot.classList.toggle('active', parseInt(dot.dataset.index) === index);
+            });
+        }
+    </script>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- QRCode.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <script>
+        // ==================== THREE.JS PARTICLE BACKGROUND ====================
+        (function initThreeParticles() {
+            if (typeof THREE === 'undefined') return;
+            
+            const canvas = document.getElementById('three-canvas');
+            if (!canvas) return;
+            
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+            
+            // Create star field particles
+            const geometry = new THREE.BufferGeometry();
+            const count = 1500;
+            const positions = new Float32Array(count * 3);
+            const colors = new Float32Array(count * 3);
+            
+            const colorPalette = [
+                new THREE.Color('#8b5cf6'),
+                new THREE.Color('#ec4899'),
+                new THREE.Color('#22d3ee'),
+                new THREE.Color('#c4b5fd'),
+                new THREE.Color('#f0abfc')
+            ];
+            
+            for (let i = 0; i < count; i++) {
+                positions[i * 3]     = (Math.random() - 0.5) * 20;
+                positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+                positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+                
+                const c = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+                colors[i * 3]     = c.r;
+                colors[i * 3 + 1] = c.g;
+                colors[i * 3 + 2] = c.b;
+            }
+            
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            
+            const material = new THREE.PointsMaterial({
+                size: 0.04,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.8,
+                sizeAttenuation: true
+            });
+            
+            const particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+            
+            // Animate
+            let animId;
+            function animate() {
+                animId = requestAnimationFrame(animate);
+                particles.rotation.x += 0.0003;
+                particles.rotation.y += 0.0005;
+                renderer.render(scene, camera);
+            }
+            animate();
+            
+            // Handle resize
+            window.addEventListener('resize', function() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        })();
+
+        // ==================== DARK/LIGHT THEME TOGGLE ====================
+        (function initTheme() {
+            const toggle = document.getElementById('themeToggle');
+            const icon = document.getElementById('themeIcon');
+            const label = document.getElementById('themeLabel');
+            
+            // Restore saved theme
+            const savedTheme = localStorage.getItem('barsha-theme') || 'dark';
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+                icon.className = 'fas fa-sun';
+                label.textContent = 'Light';
+            }
+            
+            toggle.addEventListener('click', function() {
+                const isLight = document.body.classList.toggle('light-theme');
+                icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+                label.textContent = isLight ? 'Light' : 'Dark';
+                localStorage.setItem('barsha-theme', isLight ? 'light' : 'dark');
+            });
+        })();
+
+        // ==================== CURSOR TRAIL ====================
+        (function initCursorTrail() {
+            const colors = ['#8b5cf6', '#ec4899', '#22d3ee', '#c4b5fd', '#f0abfc'];
+            
+            document.addEventListener('mousemove', function(e) {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = (e.clientX - 4) + 'px';
+                trail.style.top = (e.clientY - 4) + 'px';
+                trail.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                trail.style.boxShadow = '0 0 6px ' + trail.style.backgroundColor;
+                document.body.appendChild(trail);
+                setTimeout(() => { if (trail.parentNode) trail.parentNode.removeChild(trail); }, 600);
+            });
+        })();
+
+        // ==================== SCROLL QUOTES ====================
+        (function initScrollQuotes() {
+            const quotes = [
+                '"Love is not about how many days you\'ve been together, but how much you\'ve grown together." 💜',
+                '"Distance means nothing when someone means everything." 🌸',
+                '"In a sea of people, my eyes will always search for you." 💫',
+                '"Every love story is beautiful, but ours is my favorite." ❤️',
+                '"You are my today and all of my tomorrows." 🌙',
+                '"When I saw you, I fell in love — and you smiled because you knew." ✨',
+                '"The best thing to hold onto in life is each other." 🤝',
+                '"I love you not only for what you are, but for what I am when I am with you." 💕'
+            ];
+            
+            const quoteEl = document.getElementById('scrollQuote');
+            if (!quoteEl) return;
+            
+            let lastScrollY = 0;
+            let quoteTimer = null;
+            let quoteIndex = 0;
+            let lastQuoteScrollY = 0;
+            
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                const delta = Math.abs(scrollY - lastQuoteScrollY);
+                lastScrollY = scrollY;
+                
+                if (delta > 400) {
+                    lastQuoteScrollY = scrollY;
+                    
+                    if (quoteTimer) clearTimeout(quoteTimer);
+                    
+                    quoteEl.textContent = quotes[quoteIndex % quotes.length];
+                    quoteIndex++;
+                    quoteEl.classList.add('visible');
+                    
+                    quoteTimer = setTimeout(() => {
+                        quoteEl.classList.remove('visible');
+                    }, 4000);
+                }
+            }, { passive: true });
+        })();
+
+        // ==================== KONAMI CODE EASTER EGG ====================
+        (function initKonami() {
+            const sequence = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+            let progress = 0;
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === sequence[progress]) {
+                    progress++;
+                    if (progress === sequence.length) {
+                        progress = 0;
+                        document.getElementById('konamiOverlay').classList.add('active');
+                    }
+                } else {
+                    progress = e.key === sequence[0] ? 1 : 0;
+                }
+            });
+            
+            document.getElementById('konamiClose').addEventListener('click', function() {
+                document.getElementById('konamiOverlay').classList.remove('active');
+                showAchievement('🎮', 'Secret Explorer!', 'You discovered the Konami code easter egg!');
+            });
+        })();
+
+        // ==================== ACHIEVEMENT SYSTEM ====================
+        function showAchievement(icon, name, desc) {
+            const toast = document.getElementById('achievementToast');
+            document.getElementById('achieveIcon').textContent = icon;
+            document.getElementById('achieveName').textContent = name;
+            document.getElementById('achieveDesc').textContent = desc;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        // Track scroll achievements
+        (function initAchievements() {
+            const achievements = {
+                halfway: false,
+                bottom: false
+            };
+            
+            window.addEventListener('scroll', function() {
+                const scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                if (!achievements.halfway && scrollPct >= 50) {
+                    achievements.halfway = true;
+                    showAchievement('🌟', 'Halfway Explorer!', 'You reached the middle of this love story.');
+                }
+                if (!achievements.bottom && scrollPct >= 95) {
+                    achievements.bottom = true;
+                    showAchievement('💜', 'Love Story Complete!', 'You read every word of this heartfelt journey.');
+                }
+            }, { passive: true });
+        })();
+
+        // ==================== MULTIPLE COUNTDOWN MODES ====================
+        let countdownMode = 'birthday';
+        // April 3, 2026 = 1 year together
+        const countdownTargets = {
+            birthday: new Date(2027, 1, 19, 0, 0, 0),    // Feb 19, 2027
+            together: new Date(2026, 3, 3, 0, 0, 0),       // April 3, 2026 (1yr together)
+            custom:   new Date(2026, 5, 1, 0, 0, 0)        // Jun 1, 2026 (next special day placeholder)
+        };
+        const countdownLabels = {
+            birthday: ['🎂 Birthday', 'Feb 19, 2027'],
+            together: ['💜 1 Year Together', 'Apr 3, 2026'],
+            custom:   ['⭐ Next Special Day', 'Jun 1, 2026']
+        };
+
+        function setCountdownMode(mode) {
+            countdownMode = mode;
+            // Update active button
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.mode === mode);
+            });
+            // Update date display
+            const dateEl = document.querySelector('.birthday-date');
+            if (dateEl) {
+                const labels = countdownLabels[mode];
+                dateEl.innerHTML = `<i class="far fa-calendar-alt"></i> ${labels[1]}`;
+            }
+        }
+
+        // Override the existing updateBirthdayCountdown to use mode
+        window.updateBirthdayCountdown = function() {
+            const now = getCurrentNepalTime();
+            const target = countdownTargets[countdownMode] || countdownTargets.birthday;
+            const diff = target.getTime() - now.getTime();
+            
+            if (diff <= 0) {
+                ['days','hours','minutes','seconds'].forEach(u => {
+                    document.getElementById('countdown-' + u).textContent = '00';
+                });
+                return;
+            }
+            
+            const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-days').textContent    = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').textContent   = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+        };
+
+        // ==================== QR CODE GENERATOR ====================
+        function generateQRCode() {
+            const display = document.getElementById('qr-code-display');
+            const label = document.getElementById('qrLabel');
+            const btn = document.getElementById('qrBtn');
+            
+            if (display.classList.contains('visible')) {
+                display.classList.remove('visible');
+                display.innerHTML = '';
+                label.style.display = 'none';
+                btn.innerHTML = '<i class="fas fa-qrcode"></i> Share This Love Story';
+                return;
+            }
+            
+            display.innerHTML = '';
+            
+            if (typeof QRCode !== 'undefined') {
+                new QRCode(display, {
+                    text: window.location.href || 'https://barsha.love',
+                    width: 180,
+                    height: 180,
+                    colorDark: '#8b5cf6',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.M
+                });
+                display.classList.add('visible');
+                label.style.display = 'block';
+                btn.innerHTML = '<i class="fas fa-times"></i> Hide QR Code';
+                showAchievement('📱', 'Share the Love!', 'QR code generated for sharing!');
+            } else {
+                display.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem;">QR code library loading…</p>';
+                display.classList.add('visible');
+            }
+        }
+
+        // ==================== SERVICE WORKER REGISTRATION ====================
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function(err) {
+                    console.log('SW registration failed (normal in dev):', err);
+                });
             });
         }
     </script>
