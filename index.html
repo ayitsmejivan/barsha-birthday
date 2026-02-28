@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="robots" content="noindex, nofollow">
     <meta name="googlebot" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -2370,18 +2371,18 @@
     
     <!-- Konami Code Easter Egg -->
     <div class="konami-overlay" id="konamiOverlay" role="dialog" aria-modal="true" aria-label="Secret message">
-        <div class="konami-title">🎉 You Found Our Secret! 🎉</div>
+        <div class="konami-title"><i class="fas fa-magic"></i> You Found Our Secret! <i class="fas fa-magic"></i></div>
         <p class="konami-msg">
-            You discovered the secret portal! 💜<br><br>
+            You discovered the secret portal! <i class="fas fa-heart" style="color:var(--accent-pink)"></i><br><br>
             "Distance means so little when someone means so much."<br><br>
-            Thank you for visiting this little corner of the internet made entirely out of love for the most wonderful person — Barsha. 🌸
+            Thank you for visiting this little corner of the internet made entirely out of love for the most wonderful person &mdash; Barsha. <i class="fas fa-seedling" style="color:var(--accent-cyan)"></i>
         </p>
-        <button class="konami-close" id="konamiClose">Close Secret Portal ✨</button>
+        <button class="konami-close" id="konamiClose">Close Secret Portal <i class="fas fa-star"></i></button>
     </div>
     
     <!-- Achievement Toast -->
     <div class="achievement-toast" id="achievementToast" role="alert" aria-live="assertive">
-        <span class="achievement-icon" id="achieveIcon">🏆</span>
+        <span class="achievement-icon" id="achieveIcon"><i class="fas fa-trophy"></i></span>
         <div class="achievement-name" id="achieveName">Achievement Unlocked!</div>
         <div class="achievement-desc" id="achieveDesc"></div>
     </div>
@@ -2429,9 +2430,9 @@
             <!-- Countdown Mode Toggle -->
             <p class="countdown-mode-label">Counting down to:</p>
             <div class="countdown-mode-toggle">
-                <button class="mode-btn active" data-mode="birthday" onclick="setCountdownMode('birthday')">🎂 Birthday</button>
-                <button class="mode-btn" data-mode="together" onclick="setCountdownMode('together')">💜 1 Year Together</button>
-                <button class="mode-btn" data-mode="custom" onclick="setCountdownMode('custom')">⭐ Next Special Day</button>
+                <button class="mode-btn active" data-mode="birthday" onclick="setCountdownMode('birthday')"><i class="fas fa-birthday-cake"></i> Birthday</button>
+                <button class="mode-btn" data-mode="together" onclick="setCountdownMode('together')"><i class="fas fa-heart"></i> 1 Year Together</button>
+                <button class="mode-btn" data-mode="custom" onclick="setCountdownMode('custom')"><i class="fas fa-star"></i> Next Special Day</button>
             </div>
             
             <div class="countdown-display">
@@ -2893,7 +2894,7 @@
                 <i class="fas fa-qrcode"></i> Share This Love Story
             </button>
             <div id="qr-code-display"></div>
-            <p class="qr-label" id="qrLabel" style="display:none;">Scan to share this special page 💜</p>
+            <p class="qr-label" id="qrLabel" style="display:none;">Scan to share this special page &#x1F49C;</p>
         </section>
 
         <footer class="footer">
@@ -3192,12 +3193,13 @@
         // ==================== FLOATING HEARTS ====================
 
         function startFloatingHearts() {
-            const heartIcons = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💕', '💞', '💓', '💗', '💖', '💘'];
+            const heartColors = ['#ec4899', '#c084fc', '#22d3ee', '#a78bfa', '#f0abfc', '#8b5cf6', '#34d399', '#fbbf24'];
             
             setInterval(() => {
                 const heart = document.createElement('div');
                 heart.className = 'floating-heart';
-                heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+                const color = heartColors[Math.floor(Math.random() * heartColors.length)];
+                heart.innerHTML = `<i class="fas fa-heart" style="color:${color}"></i>`;
                 
                 const size = Math.random() * 20 + 15;
                 const duration = Math.random() * 15 + 15;
@@ -3462,7 +3464,7 @@
                 if (!document.getElementById('mainWebsite').classList.contains('show')) {
                     const heart = document.createElement('div');
                     heart.className = 'floating-heart';
-                    heart.innerHTML = '❤️';
+                    heart.innerHTML = '<i class="fas fa-heart" style="color:#c084fc"></i>';
                     
                     const size = Math.random() * 15 + 10;
                     const duration = Math.random() * 10 + 10;
@@ -3623,9 +3625,13 @@
     </script>
 
     <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+            integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9"
+            crossorigin="anonymous"></script>
     <!-- QRCode.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+            integrity="sha384-3zSEDfvllQohrq0PHL1fOXJuC/jSOO34H46t6UQfobFOmxE5BpjjaIJY5F2/bMnU"
+            crossorigin="anonymous"></script>
     
     <script>
         // ==================== THREE.JS PARTICLE BACKGROUND ====================
@@ -3741,14 +3747,14 @@
         // ==================== SCROLL QUOTES ====================
         (function initScrollQuotes() {
             const quotes = [
-                '"Love is not about how many days you\'ve been together, but how much you\'ve grown together." 💜',
-                '"Distance means nothing when someone means everything." 🌸',
-                '"In a sea of people, my eyes will always search for you." 💫',
-                '"Every love story is beautiful, but ours is my favorite." ❤️',
-                '"You are my today and all of my tomorrows." 🌙',
-                '"When I saw you, I fell in love — and you smiled because you knew." ✨',
-                '"The best thing to hold onto in life is each other." 🤝',
-                '"I love you not only for what you are, but for what I am when I am with you." 💕'
+                '"Love is not about how many days you\'ve been together, but how much you\'ve grown together."',
+                '"Distance means nothing when someone means everything."',
+                '"In a sea of people, my eyes will always search for you."',
+                '"Every love story is beautiful, but ours is my favorite."',
+                '"You are my today and all of my tomorrows."',
+                '"When I saw you, I fell in love \u2014 and you smiled because you knew."',
+                '"The best thing to hold onto in life is each other."',
+                '"I love you not only for what you are, but for what I am when I am with you."'
             ];
             
             const quoteEl = document.getElementById('scrollQuote');
@@ -3799,14 +3805,14 @@
             
             document.getElementById('konamiClose').addEventListener('click', function() {
                 document.getElementById('konamiOverlay').classList.remove('active');
-                showAchievement('🎮', 'Secret Explorer!', 'You discovered the Konami code easter egg!');
+                showAchievement('<i class="fas fa-gamepad"></i>', 'Secret Explorer!', 'You discovered the Konami code easter egg!');
             });
         })();
 
         // ==================== ACHIEVEMENT SYSTEM ====================
         function showAchievement(icon, name, desc) {
             const toast = document.getElementById('achievementToast');
-            document.getElementById('achieveIcon').textContent = icon;
+            document.getElementById('achieveIcon').innerHTML = icon;
             document.getElementById('achieveName').textContent = name;
             document.getElementById('achieveDesc').textContent = desc;
             toast.classList.add('show');
@@ -3824,11 +3830,11 @@
                 const scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
                 if (!achievements.halfway && scrollPct >= 50) {
                     achievements.halfway = true;
-                    showAchievement('🌟', 'Halfway Explorer!', 'You reached the middle of this love story.');
+                    showAchievement('<i class="fas fa-star"></i>', 'Halfway Explorer!', 'You reached the middle of this love story.');
                 }
                 if (!achievements.bottom && scrollPct >= 95) {
                     achievements.bottom = true;
-                    showAchievement('💜', 'Love Story Complete!', 'You read every word of this heartfelt journey.');
+                    showAchievement('<i class="fas fa-heart"></i>', 'Love Story Complete!', 'You read every word of this heartfelt journey.');
                 }
             }, { passive: true });
         })();
@@ -3842,9 +3848,9 @@
             custom:   new Date(2026, 5, 1, 0, 0, 0)        // Jun 1, 2026 (next special day placeholder)
         };
         const countdownLabels = {
-            birthday: ['🎂 Birthday', 'Feb 19, 2027'],
-            together: ['💜 1 Year Together', 'Apr 3, 2026'],
-            custom:   ['⭐ Next Special Day', 'Jun 1, 2026']
+            birthday: ['Birthday', 'Feb 19, 2027'],
+            together: ['1 Year Together', 'Apr 3, 2026'],
+            custom:   ['Next Special Day', 'Jun 1, 2026']
         };
 
         function setCountdownMode(mode) {
@@ -3903,7 +3909,7 @@
             
             if (typeof QRCode !== 'undefined') {
                 new QRCode(display, {
-                    text: window.location.href || 'https://barsha.love',
+                    text: window.location.href,
                     width: 180,
                     height: 180,
                     colorDark: '#8b5cf6',
@@ -3913,7 +3919,7 @@
                 display.classList.add('visible');
                 label.style.display = 'block';
                 btn.innerHTML = '<i class="fas fa-times"></i> Hide QR Code';
-                showAchievement('📱', 'Share the Love!', 'QR code generated for sharing!');
+                showAchievement('<i class="fas fa-qrcode"></i>', 'Share the Love!', 'QR code generated for sharing!');
             } else {
                 display.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem;">QR code library loading…</p>';
                 display.classList.add('visible');
