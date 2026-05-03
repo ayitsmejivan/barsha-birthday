@@ -2,3938 +2,690 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https:">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <meta name="theme-color" content="#8b5cf6">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="description" content="A heartfelt birthday celebration for Barsha - our love across continents">
-    <link rel="manifest" href="/manifest.json">
+    <meta name="description" content="Our Love Story Across Continents | A romantic journey of two hearts connected beyond distance">
+    <title>Our Love Story | Hearts Across Continents</title>
     
-    <title>For Barsha | Our Love Across Continents</title>
-    
-    <!-- Disable text selection and context menu -->
-    <style>
-        * {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        input, textarea {
-            -webkit-user-select: text;
-            -khtml-user-select: text;
-            -moz-user-select: text;
-            -ms-user-select: text;
-            user-select: text;
-        }
-        
-        body {
-            -webkit-tap-highlight-color: transparent;
-            cursor: default;
-        }
-    </style>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <!-- Secure Fonts & Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
     <style>
-        /* Modern Color Scheme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         :root {
-            --primary: #8b5cf6;
-            --primary-light: #c4b5fd;
-            --primary-dark: #6d28d9;
-            --accent-pink: #ec4899;
-            --accent-cyan: #22d3ee;
-            --accent-neon: #a78bfa;
-            --bg-deep: #060918;
-            --bg-mid: #0c0824;
-            --bg-light: #160640;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-card: rgba(139, 92, 246, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-border-accent: rgba(139, 92, 246, 0.35);
-            --text-bright: #f8fafc;
-            --text-primary: #e2d9f3;
-            --text-secondary: #c4b5fd;
-            --text-muted: #8b7fd4;
+            --romance-pink: #f472b6;
+            --romance-deep: #db2777;
+            --romance-lavender: #c084fc;
+            --romance-gold: #fbbf24;
+            --romance-bg-dark: #0b081a;
+            --romance-bg-mid: #19113b;
+            --romance-bg-light: #2a1e5c;
+            --glass: rgba(255,255,255,0.05);
+            --glass-card: rgba(244, 114, 182, 0.08);
+            --text-bright: #fdf8ff;
+            --text-soft: #fbcfe8;
+            --text-muted: #c4b5fd;
+            --glow-pink: rgba(236, 72, 153, 0.6);
             --glow-purple: rgba(139, 92, 246, 0.5);
-            --glow-pink: rgba(236, 72, 153, 0.4);
-            --glow-cyan: rgba(34, 211, 238, 0.5);
-            /* Backward compatibility mappings */
-            --rose-gold: #c084fc;
-            --rose-gold-light: #e9d5ff;
-            --rose-gold-dark: #9333ea;
-            --ivory: #060918;
-            --deep-text: #f0e6ff;
-            --soft-brown: #b09fd4;
-            --love-red: #ec4899;
-            --gold: #a78bfa;
-            --shadow-light: rgba(0, 0, 0, 0.25);
-            --shadow-medium: rgba(0, 0, 0, 0.5);
-            --nepal-red: #dc143c;
-            --nepal-blue: #003893;
-            --error-red: #ff6b6b;
-            --success-green: #34d399;
         }
-
-        /* Birthday Celebration Animation */
-        .birthday-celebration {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 50%, var(--bg-light) 100%);
-            z-index: 99999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 1s ease, visibility 1s ease;
-            overflow: hidden;
-        }
-
-        .birthday-celebration.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .birthday-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 6rem;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #c084fc, #ec4899, #22d3ee, #c084fc);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientText 3s linear infinite;
-            filter: drop-shadow(0 0 20px rgba(192, 132, 252, 0.6));
-            z-index: 10;
-        }
-
-        .birthday-subtitle {
-            font-size: 2.5rem;
-            color: var(--accent-cyan);
-            margin-bottom: 40px;
-            z-index: 10;
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            text-shadow: 0 0 20px var(--glow-cyan);
-        }
-
-        .birthday-message {
-            font-size: 1.4rem;
-            max-width: 700px;
-            line-height: 1.9;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            z-index: 10;
-            padding: 0 20px;
-        }
-
-        .birthday-continue-btn {
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            border: none;
-            color: white;
-            padding: 20px 50px;
-            font-size: 1.1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border-radius: 50px;
-            margin-top: 30px;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-            z-index: 10;
-            box-shadow: 0 0 30px var(--glow-purple), 0 0 60px var(--glow-pink);
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-        }
-
-        .birthday-continue-btn:hover {
-            transform: translateY(-3px) scale(1.03);
-            letter-spacing: 4px;
-            box-shadow: 0 0 50px var(--glow-purple), 0 0 80px var(--glow-pink);
-        }
-
-        /* Fireworks */
-        .firework {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 5;
-        }
-
-        .firework-burst {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: burst 1s ease-out forwards;
-        }
-
-        @keyframes burst {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(var(--burst-x), var(--burst-y)) scale(0);
-            }
-        }
-
-        /* Magic Cursor Trail */
-        .cursor-star {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            font-size: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .cursor-star::before {
-            content: '✦';
-            font-size: 16px;
-            color: var(--accent-cyan);
-            text-shadow: 0 0 10px var(--glow-cyan),
-                        0 0 20px var(--glow-cyan),
-                        0 0 30px rgba(34, 211, 238, 0.3);
-            display: block;
-            animation: starTwinkle 1.5s infinite alternate;
-        }
-
-        @keyframes starTwinkle {
-            0% { opacity: 0.3; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-
-        /* Grand Reveal Celebration */
-        .reveal-celebration {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9998;
-            overflow: hidden;
-        }
-
-        .burst-heart {
-            position: absolute;
-            font-size: 24px;
-            opacity: 0;
-            pointer-events: none;
-            animation: burstAnimation 2s ease-out forwards;
-        }
-
-        @keyframes burstAnimation {
-            0% {
-                opacity: 0;
-                transform: translate(0, 0) scale(0) rotate(0deg);
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                opacity: 0;
-                transform: translate(var(--tx), var(--ty)) scale(1.5) rotate(360deg);
-            }
-        }
-
-        /* Shared Time Widget */
-        .shared-time-widget {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px auto 60px;
-            max-width: 600px;
-            flex-wrap: wrap;
-        }
-
-        .time-card {
-            background: rgba(139, 92, 246, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 25px 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(139, 92, 246, 0.2);
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            text-align: center;
-            min-width: 220px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .time-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 92, 246, 0.2);
-        }
-
-        .time-location {
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-weight: 500;
-        }
-
-        .time-location i {
-            color: var(--accent-pink);
-            font-size: 1rem;
-        }
-
-        .time-display {
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-size: 2.1rem;
-            font-weight: 600;
-            color: var(--accent-cyan);
-            margin: 15px 0;
-            letter-spacing: 3px;
-            text-shadow: 0 0 15px var(--glow-cyan);
-        }
-
-        .time-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-        }
-
-        .time-zone {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            opacity: 0.7;
-            margin-top: 5px;
-        }
-
-        .time-connection {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .time-connection-line {
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--accent-pink));
-            margin: 0 10px;
-        }
-
-        .time-connection i {
-            color: var(--accent-pink);
-            font-size: 1.2rem;
-            animation: heartbeat 1.5s infinite;
-            filter: drop-shadow(0 0 8px var(--glow-pink));
-        }
-
-        /* Fix scroll issue */
-        html, body {
-            overflow-x: hidden;
-            overflow-y: auto;
-            height: 100%;
-        }
-
-        #mainWebsite.show {
-            overflow: visible;
-        }
-
-        /* Password access section in countdown */
-        .password-access {
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(139, 92, 246, 0.2);
-            position: relative;
-        }
-
-        .password-title-small {
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .password-input-group-small {
-            position: relative;
-            max-width: 400px;
-            margin: 0 auto 20px;
-        }
-
-        .password-input-small {
-            width: 100%;
-            padding: 18px 25px;
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 15px;
-            color: var(--text-bright);
-            font-size: 1.1rem;
-            letter-spacing: 3px;
-            text-align: center;
-            transition: all 0.3s ease;
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            backdrop-filter: blur(10px);
-        }
-
-        .password-input-small:focus {
-            outline: none;
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 25px var(--glow-cyan), 0 0 50px rgba(34, 211, 238, 0.1);
-            background: rgba(34, 211, 238, 0.08);
-        }
-
-        .password-input-small::placeholder {
-            color: rgba(196, 181, 253, 0.4);
-            letter-spacing: 1px;
-        }
-
-        .password-toggle-small {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        .password-toggle-small:hover {
-            color: var(--accent-cyan);
-        }
-
-        .password-submit-small {
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            border: none;
-            color: white;
-            padding: 15px 40px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border-radius: 50px;
-            margin-top: 10px;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 20px var(--glow-purple);
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-        }
-
-        .password-submit-small:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 0 35px var(--glow-purple), 0 0 60px var(--glow-pink);
-            letter-spacing: 3px;
-        }
-
-        .password-submit-small:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-            filter: grayscale(0.5);
-        }
-
-        .password-error-small {
-            color: var(--error-red);
-            font-size: 0.85rem;
-            margin-top: 15px;
-            min-height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .password-success-small {
-            color: var(--success-green);
-            font-size: 0.85rem;
-            margin-top: 15px;
-            min-height: 25px;
-        }
-
-        .attempts-counter-small {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 20px;
-            letter-spacing: 2px;
-        }
-
-        .attempts-warning {
-            color: #fbbf24;
-            animation: pulse 1.5s infinite;
-        }
-
-        .access-note {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 30px;
-            line-height: 1.8;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .access-note i {
-            color: var(--accent-pink);
-            margin: 0 5px;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-
-        .shake {
-            animation: shake 0.5s ease-in-out;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-
-        /* Anti-screenshot overlay */
-        .anti-screenshot {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(255, 0, 0, 0.03) 0px,
-                rgba(255, 0, 0, 0.03) 1px,
-                transparent 1px,
-                transparent 3px
-            );
-            pointer-events: none;
-            z-index: 999999;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .anti-screenshot.active {
-            opacity: 1;
-        }
-
-        /* Add to existing body styles */
+        
         body {
-            background: linear-gradient(135deg, #060918 0%, #0c0824 40%, #160640 100%);
+            background: linear-gradient(135deg, #0b081a 0%, #19113b 50%, #2a1e5c 100%);
             background-attachment: fixed;
-            color: var(--text-primary);
+            color: var(--text-bright);
             font-family: 'Space Grotesk', 'Montserrat', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
         }
-
+        
         body::before {
             content: '';
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background:
-                radial-gradient(ellipse at 20% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(34, 211, 238, 0.04) 0%, transparent 60%);
+            background: radial-gradient(circle at 30% 40%, rgba(244, 114, 182, 0.12) 0%, transparent 55%),
+                        radial-gradient(circle at 85% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 60%);
             pointer-events: none;
             z-index: 0;
-            animation: bgShift 15s ease-in-out infinite alternate;
+            animation: softBreathing 12s infinite alternate;
         }
-
-        @keyframes bgShift {
-            0% { opacity: 1; }
-            50% { opacity: 0.6; transform: scale(1.05); }
-            100% { opacity: 1; }
+        
+        @keyframes softBreathing {
+            0% { opacity: 0.5; transform: scale(1);}
+            100% { opacity: 1; transform: scale(1.08);}
         }
-
-        /* Prevent mobile reading mode */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #060918 0%, #0c0824 40%, #160640 100%) !important;
-                background-attachment: fixed !important;
-                color: var(--text-primary) !important;
-            }
-        }
-
-        /* Add to existing responsive design */
-        @media (max-width: 768px) {
-            .password-input-small {
-                padding: 16px 20px;
-                font-size: 1rem;
-            }
-            
-            .password-submit-small {
-                padding: 14px 30px;
-                font-size: 0.85rem;
-            }
-            
-            .password-title-small {
-                font-size: 1rem;
-            }
-
-            .shared-time-widget {
-                gap: 20px;
-            }
-
-            .time-card {
-                min-width: 180px;
-                padding: 20px;
-            }
-
-            .time-display {
-                font-size: 1.8rem;
-            }
-
-            .birthday-title {
-                font-size: 4rem;
-            }
-
-            .birthday-subtitle {
-                font-size: 2rem;
-            }
-
-            .birthday-message {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .password-input-small {
-                padding: 14px 18px;
-                font-size: 0.95rem;
-            }
-            
-            .password-submit-small {
-                padding: 12px 25px;
-                font-size: 0.8rem;
-            }
-            
-            .access-note {
-                font-size: 0.8rem;
-                padding: 0 10px;
-            }
-
-            .shared-time-widget {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .time-card {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .birthday-title {
-                font-size: 3rem;
-            }
-
-            .birthday-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .birthday-message {
-                font-size: 1rem;
-            }
-        }
-
-        /* Existing styles continue below... */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* --- BIRTHDAY COUNTDOWN --- */
-        #birthday-countdown {
+        
+        /* Heart lock screen (romantic access) */
+        .access-lovelock {
             position: fixed;
             inset: 0;
-            background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 50%, var(--bg-light) 100%);
+            background: linear-gradient(145deg, #0a041a, #1e1245);
             z-index: 10000;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 20px;
-            color: white;
-            transition: opacity 1.5s ease, visibility 1.5s ease;
-            overflow-y: auto;
+            transition: opacity 1.5s ease;
+            backdrop-filter: blur(2px);
         }
-
-        .countdown-container {
-            max-width: 820px;
+        
+        .love-card {
+            max-width: 500px;
             padding: 50px 40px;
-            background: rgba(139, 92, 246, 0.08);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-radius: 28px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            box-shadow:
-                0 25px 80px rgba(0, 0, 0, 0.5),
-                0 0 0 1px rgba(139, 92, 246, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            background: rgba(244, 114, 182, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 48px;
+            border: 1px solid rgba(244, 114, 182, 0.3);
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(236,72,153,0.2);
             margin: 20px;
-            position: relative;
-            overflow: hidden;
-            z-index: 10;
         }
-
-        .countdown-container::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--accent-pink), var(--accent-cyan), var(--primary), transparent);
-            background-size: 200% auto;
-            animation: shimmer 4s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-
-        .countdown-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.8rem;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #c084fc, #ec4899, #22d3ee, #c084fc);
-            background-size: 200% auto;
+        
+        .love-lock-icon {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #f472b6, #c084fc);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientText 4s linear infinite;
-            filter: drop-shadow(0 0 15px rgba(192, 132, 252, 0.5));
+            color: transparent;
+            margin-bottom: 20px;
         }
-
-        .countdown-subtitle {
-            font-size: 1rem;
+        
+        .love-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #f472b6, #fbcfe8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .love-sub {
+            color: var(--text-soft);
             margin-bottom: 35px;
-            color: var(--text-secondary);
-            letter-spacing: 3px;
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-weight: 400;
-            text-transform: uppercase;
+            font-size: 0.95rem;
         }
-
-        .birthday-date {
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            color: var(--accent-cyan);
-            margin-bottom: 45px;
-            padding: 14px 28px;
-            background: rgba(34, 211, 238, 0.08);
-            border-radius: 14px;
-            display: inline-block;
-            border: 1px solid rgba(34, 211, 238, 0.2);
-            text-shadow: 0 0 15px var(--glow-cyan);
-            font-weight: 500;
-        }
-
-        .countdown-display {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 45px;
-            flex-wrap: wrap;
-        }
-
-        .countdown-unit {
+        
+        .password-group {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 15px;
+            max-width: 300px;
+            margin: 0 auto;
         }
-
-        .countdown-number {
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--accent-cyan);
-            min-width: 120px;
-            padding: 20px 15px;
-            background: rgba(34, 211, 238, 0.06);
-            border-radius: 18px;
-            margin-bottom: 12px;
-            text-shadow: 0 0 20px var(--glow-cyan), 0 0 40px rgba(34, 211, 238, 0.2);
-            border: 1px solid rgba(34, 211, 238, 0.2);
-            box-shadow: 0 0 30px rgba(34, 211, 238, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-            animation: numberPulse 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes numberPulse {
-            0% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
-            100% { box-shadow: 0 0 40px rgba(34, 211, 238, 0.25), 0 0 60px rgba(34, 211, 238, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
-        }
-
-        .countdown-label {
-            font-size: 0.8rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-weight: 500;
-        }
-
-        .countdown-message {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            line-height: 1.9;
-            margin-bottom: 35px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            font-style: italic;
-        }
-
-        .enter-btn {
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            border: none;
+        
+        .romance-input {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(244,114,182,0.4);
+            border-radius: 60px;
+            padding: 14px 20px;
             color: white;
-            padding: 18px 50px;
             font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 25px var(--glow-purple), 0 0 50px var(--glow-pink);
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-        }
-
-        .enter-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            letter-spacing: 4px;
-            box-shadow: 0 0 40px var(--glow-purple), 0 0 70px var(--glow-pink);
-        }
-
-        .enter-btn:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-
-        .enter-btn:disabled:hover {
-            transform: none;
-            letter-spacing: 3px;
-            box-shadow: 0 0 25px var(--glow-purple);
-        }
-
-        .countdown-timezone {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 30px;
+            text-align: center;
             letter-spacing: 2px;
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
+            outline: none;
+            transition: all 0.3s;
         }
-
-        .nepal-flag {
-            display: inline-flex;
-            margin: 0 10px;
+        
+        .romance-input:focus {
+            border-color: #f472b6;
+            box-shadow: 0 0 20px rgba(244,114,182,0.4);
         }
-
-        .nepal-flag span {
-            display: inline-block;
-            width: 15px;
-            height: 10px;
-            margin: 0 2px;
+        
+        .unlock-btn {
+            background: linear-gradient(90deg, #db2777, #c084fc);
+            border: none;
+            padding: 14px;
+            border-radius: 60px;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(219,39,119,0.4);
         }
-
-        .nepal-red {
-            background-color: var(--nepal-red);
+        
+        .unlock-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(219,39,119,0.6);
         }
-
-        .nepal-blue {
-            background-color: var(--nepal-blue);
+        
+        .love-hint {
+            font-size: 0.8rem;
+            color: #c4b5fd;
+            margin-top: 20px;
         }
-
-     
-        /* --- MAIN WEBSITE --- */
-        .container {
+        
+        /* Main romantic story container */
+        .romance-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 24px;
             position: relative;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 2s ease;
+            z-index: 5;
             display: none;
         }
-
-        .container.show {
-            opacity: 1;
+        
+        .romance-container.show {
             display: block;
+            animation: fadeRise 1.2s ease;
         }
-
-        /* --- HERO SECTION --- */
-        .hero-section {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
+        
+        @keyframes fadeRise {
+            0% { opacity: 0; transform: translateY(30px);}
+            100% { opacity: 1; transform: translateY(0);}
         }
-
-        .hero-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 5.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-            background: linear-gradient(90deg, #c084fc, #ec4899, #22d3ee, #a78bfa, #c084fc);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientText 5s linear infinite;
-            filter: drop-shadow(0 0 25px rgba(192, 132, 252, 0.5));
-        }
-
-        .hero-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--accent-pink), transparent);
-        }
-
-        .hero-subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.7rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        .distance-note {
-            display: inline-block;
-            padding: 14px 30px;
-            background: rgba(139, 92, 246, 0.08);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: var(--text-secondary);
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            margin-bottom: 40px;
-        }
-
-        .distance-note i {
-            color: var(--accent-pink);
-        }
-
-        /* --- OUR STORY SECTION --- */
-        .story-section {
-            margin-bottom: 100px;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
+        
+        /* Hero romantic section */
+        .romantic-hero {
             text-align: center;
             margin-bottom: 70px;
-            position: relative;
-            background: linear-gradient(90deg, var(--primary-light), var(--accent-pink), var(--accent-cyan));
+        }
+        
+        .couple-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.2rem;
+            background: linear-gradient(135deg, #fbcfe8, #f472b6, #c084fc);
             background-size: 200% auto;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradientText 6s linear infinite;
+            color: transparent;
+            animation: shimmerText 4s infinite;
         }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--accent-pink), transparent);
+        
+        @keyframes shimmerText {
+            0% { background-position: 0% center;}
+            100% { background-position: 200% center;}
         }
-
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 0;
+        
+        .distance-tag {
+            display: inline-flex;
+            margin-top: 20px;
+            gap: 12px;
+            background: rgba(244,114,182,0.12);
+            backdrop-filter: blur(12px);
+            padding: 12px 28px;
+            border-radius: 60px;
+            border: 1px solid rgba(244,114,182,0.3);
+            font-size: 0.9rem;
         }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, var(--primary), var(--accent-pink), transparent);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 80px;
-            width: 45%;
-            padding: 30px;
-            background: rgba(139, 92, 246, 0.07);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(139, 92, 246, 0.15);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 92, 246, 0.2);
-        }
-
-        .timeline-item:nth-child(odd) {
-            margin-left: 0;
-            margin-right: auto;
-        }
-
-        .timeline-item:nth-child(even) {
-            margin-left: auto;
-            margin-right: 0;
-        }
-
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            box-shadow: 0 0 15px var(--glow-purple), 0 0 30px rgba(139, 92, 246, 0.3);
-            z-index: 2;
-        }
-
-        .timeline-item:nth-child(odd):before {
-            right: -47px;
-        }
-
-        .timeline-item:nth-child(even):before {
-            left: -47px;
-        }
-
-        .timeline-date {
-            font-size: 0.85rem;
-            color: var(--accent-pink);
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: 3px;
+        
+        /* Shared time widget */
+        .time-romance-widget {
             display: flex;
-            align-items: center;
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-        }
-
-        .timeline-icon {
-            margin-right: 10px;
-            font-size: 1.1rem;
-        }
-
-        .timeline-content {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
-            line-height: 1.9;
-            color: var(--text-primary);
-        }
-
-        .timeline-quote {
-            font-style: italic;
-            padding-left: 20px;
-            border-left: 2px solid var(--primary);
-            margin-top: 15px;
-            color: var(--text-secondary);
-        }
-
-        /* --- PHOTO GALLERY --- */
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 100px;
-        }
-
-        .photo-frame {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            height: 300px;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-
-        .photo-frame:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 92, 246, 0.2);
-        }
-
-        .photo-frame:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.05));
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.08));
-            display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            color: var(--text-secondary);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            gap: 35px;
+            margin: 45px auto;
+            flex-wrap: wrap;
         }
-
-        .photo-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--primary-light);
-            filter: drop-shadow(0 0 10px var(--glow-purple));
+        
+        .time-card-romance {
+            background: var(--glass-card);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 22px 30px;
+            border: 1px solid rgba(244,114,182,0.2);
+            min-width: 210px;
+            text-align: center;
+            transition: all 0.3s;
         }
-
-        /* --- LOVE LETTER --- */
-        .love-letter-section {
-            margin-bottom: 100px;
+        
+        .time-location i { color: #f472b6; margin-right: 8px; }
+        .time-display-romance { font-size: 2rem; font-weight: 600; color: #fbcfe8; letter-spacing: 2px; margin: 12px 0; }
+        
+        /* Story timeline romantic */
+        .story-timeline {
             position: relative;
+            margin: 70px 0;
         }
-
-        .letter-container {
-            background: rgba(139, 92, 246, 0.06);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-radius: 24px;
-            padding: 60px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+        
+        .timeline-item-romance {
+            background: rgba(255,255,255,0.04);
+            border-radius: 32px;
+            padding: 28px 30px;
+            margin-bottom: 35px;
+            border-left: 8px solid #f472b6;
+            transition: all 0.3s;
+        }
+        
+        .timeline-item-romance:hover {
+            transform: translateX(8px);
+            background: rgba(244,114,182,0.08);
+        }
+        
+        .timeline-date-romance {
+            color: #f472b6;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+        }
+        
+        .promises-grid-romance {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .promise-card-romance {
+            background: rgba(244,114,182,0.05);
+            padding: 35px 25px;
+            border-radius: 32px;
+            text-align: center;
+            border: 1px solid rgba(244,114,182,0.2);
+            transition: 0.3s;
+        }
+        
+        .promise-card-romance i { font-size: 2.8rem; color: #f472b6; margin-bottom: 20px; }
+        
+        .love-letter-box {
+            background: rgba(0,0,0,0.3);
+            padding: 55px 45px;
+            border-radius: 48px;
+            margin: 60px 0;
             position: relative;
-            overflow: hidden;
-        }
-
-        .letter-container:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent-pink), var(--accent-cyan), var(--primary));
-            background-size: 200% auto;
-            animation: shimmer 4s linear infinite;
-        }
-
-        .letter-content {
+            border: 1px solid rgba(244,114,182,0.3);
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            line-height: 2.2;
-            color: var(--text-primary);
-            position: relative;
-            z-index: 2;
+            line-height: 1.7;
         }
-
-        .letter-content p {
-            margin-bottom: 35px;
-        }
-
+        
         .letter-dropcap {
             font-size: 5rem;
             float: left;
             line-height: 0.8;
-            margin-right: 15px;
-            margin-bottom: 10px;
-            color: var(--primary-light);
+            margin-right: 20px;
+            color: #f472b6;
             font-family: 'Dancing Script', cursive;
-            font-weight: 600;
-            filter: drop-shadow(0 0 15px var(--glow-purple));
         }
-
-        .letter-highlight {
-            background: linear-gradient(120deg, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%);
-            background-position: 0 88%;
-            background-repeat: no-repeat;
-            background-size: 100% 0.4em;
-            transition: background-size 0.5s ease;
-            border-radius: 3px;
-        }
-
-        .letter-highlight:hover {
-            background-size: 100% 100%;
-        }
-
-        .letter-signature {
+        
+        .signature {
             text-align: right;
-            margin-top: 60px;
-        }
-
-        .signature-name {
+            margin-top: 40px;
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: var(--primary-light);
-            margin-bottom: 10px;
-            filter: drop-shadow(0 0 10px var(--glow-purple));
-        }
-
-        .signature-date {
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            color: var(--text-muted);
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-        }
-
-        /* --- PROMISES SECTION --- */
-        .promises-section {
-            margin-bottom: 100px;
-        }
-
-        .promises-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .promise-card {
-            background: rgba(139, 92, 246, 0.07);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            text-align: center;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .promise-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(139, 92, 246, 0.2);
-        }
-
-        .promise-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--accent-pink));
-        }
-
-        .promise-icon {
-            font-size: 2.5rem;
-            color: var(--primary-light);
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 10px var(--glow-purple));
-        }
-
-        .promise-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.7rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .promise-text {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-
-        /* --- DISTANCE MAP --- */
-        .distance-section {
-            margin-bottom: 100px;
-            text-align: center;
-        }
-
-        .map-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 50px 40px;
-            background: rgba(139, 92, 246, 0.06);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-
-        .map-container:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .map-title {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--text-primary);
+            color: #fbcfe8;
         }
-
-        .map-illustration {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 50px;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .location {
-            text-align: center;
-        }
-
-        .location-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 0 25px var(--glow-purple), 0 0 50px var(--glow-pink);
-        }
-
-        .location-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 10px;
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-        }
-
-        .location-detail {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .distance-line {
-            flex-grow: 1;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--accent-pink), var(--accent-cyan));
-            margin: 0 30px;
-            position: relative;
-        }
-
-        .distance-line:before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: 0;
-            width: 100%;
-            height: 12px;
-            background: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(139, 92, 246, 0.3) 10px, rgba(139, 92, 246, 0.3) 20px);
-        }
-
-        .distance-text {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-top: 20px;
-            font-family: 'Cormorant Garamond', serif;
-            line-height: 1.8;
-        }
-
-        /* --- FINAL CTA --- */
-        .final-cta {
-            text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .cta-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: var(--primary-light);
-            margin-bottom: 30px;
-            filter: drop-shadow(0 0 15px var(--glow-purple));
-        }
-
-        .cta-box {
-            display: inline-block;
-            padding: 50px;
-            background: rgba(139, 92, 246, 0.08);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            max-width: 700px;
-            margin-bottom: 40px;
-        }
-
-        .cta-message {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.7rem;
-            line-height: 1.9;
-            color: var(--text-primary);
-            margin-bottom: 40px;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #25D366;
-            color: white;
-            padding: 22px 50px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            font-weight: 600;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.4);
-            letter-spacing: 4px;
-        }
-
-        .whatsapp-btn i {
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-
-        /* --- FOOTER --- */
-        .footer {
-            text-align: center;
-            padding: 60px 0 40px;
-            border-top: 1px solid rgba(139, 92, 246, 0.15);
-            position: relative;
-        }
-
-        .footer-heart {
-            color: var(--accent-pink);
-            font-size: 2rem;
-            animation: heartbeat 1.5s infinite;
-            display: block;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px var(--glow-pink));
-        }
-
-        .footer-text {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
-            font-weight: 500;
-        }
-
-        .footer-date {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            opacity: 0.6;
-        }
-
-        /* --- MUSIC CONTROL --- */
-        .music-control {
+        
+        .floating-hearts-container {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .audio-control {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #db2777, #c084fc);
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 100;
-            box-shadow: 0 0 20px var(--glow-purple), 0 0 40px var(--glow-pink);
-            transition: all 0.3s ease;
+            z-index: 1001;
+            box-shadow: 0 0 20px var(--glow-pink);
         }
-
-        .music-control:hover {
-            transform: scale(1.15);
-            box-shadow: 0 0 35px var(--glow-purple), 0 0 60px var(--glow-pink);
+        
+        .footer-romance {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px 0;
+            border-top: 1px solid rgba(244,114,182,0.2);
         }
-
-        .music-control i {
-            font-size: 1.4rem;
+        
+        /* responsive */
+        @media (max-width: 700px) {
+            .couple-name { font-size: 3.2rem; }
+            .love-letter-box { padding: 30px 25px; font-size: 1.3rem; }
         }
-
-        /* --- FLOATING HEARTS --- */
-        .floating-heart {
-            position: fixed;
-            pointer-events: none;
-            z-index: 5;
-            opacity: 0;
-            font-size: 24px;
-            animation: float linear infinite;
+        
+        .heart-beat {
+            animation: heartbeat 1.2s infinite;
         }
-
-        @keyframes float {
-            0% {
-                transform: translateY(110vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-10vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 4rem;
-            }
-            
-            .countdown-number {
-                font-size: 3rem;
-                min-width: 100px;
-            }
-            
-            .timeline:before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: calc(100% - 80px);
-                margin-left: 80px !important;
-                margin-right: 0 !important;
-            }
-            
-            .timeline-item:before {
-                left: -47px !important;
-                right: auto !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 60px 15px;
-            }
-            
-            .countdown-number {
-                font-size: 2.5rem;
-                min-width: 80px;
-                padding: 15px;
-            }
-            
-            .countdown-display {
-                gap: 15px;
-            }
-            
-            .letter-content {
-                font-size: 1.3rem;
-                padding: 30px;
-            }
-            
-            .letter-container {
-                padding: 40px 30px;
-            }
-            
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .cta-title {
-                font-size: 2.5rem;
-            }
-            
-            .map-illustration {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .distance-line {
-                width: 2px;
-                height: 100px;
-                margin: 20px 0;
-            }
-            
-            .distance-line:before {
-                width: 12px;
-                height: 100%;
-                background: repeating-linear-gradient(180deg, transparent, transparent 10px, rgba(139, 92, 246, 0.3) 10px, rgba(139, 92, 246, 0.3) 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .countdown-title {
-                font-size: 2.5rem;
-            }
-            
-            .countdown-number {
-                font-size: 2rem;
-                min-width: 70px;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .letter-dropcap {
-                font-size: 3.5rem;
-            }
-            
-            .cta-box {
-                padding: 30px 20px;
-            }
-            
-            .cta-message {
-                font-size: 1.4rem;
-            }
-        }
-
+        
         @keyframes heartbeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% { transform: scale(1);}
+            50% { transform: scale(1.2);}
+            100% { transform: scale(1);}
         }
-
-        @keyframes gradientText {
-            0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
-        }
-
-        /* ==================== SECRET GALLERY SECTION ==================== */
-        .secret-gallery-section {
-            margin-bottom: 100px;
-            position: relative;
-        }
-
-        .secret-gallery-section .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        /* --- Gallery Lock Screen --- */
-        .gallery-lock-screen {
-            background: rgba(139, 92, 246, 0.06);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-radius: 24px;
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(139, 92, 246, 0.1);
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .gallery-lock-screen::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--accent-pink), var(--accent-cyan), transparent);
-            animation: shimmer 3s linear infinite;
-        }
-
-        .gallery-lock-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 0 15px var(--glow-purple));
-        }
-
-        .gallery-lock-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.8rem;
-            background: linear-gradient(90deg, var(--primary-light), var(--accent-pink), var(--accent-cyan), var(--primary-light));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientText 4s linear infinite;
-            margin-bottom: 10px;
-        }
-
-        .gallery-lock-subtitle {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-bottom: 35px;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .gallery-password-group {
-            display: flex;
-            align-items: center;
-            max-width: 380px;
-            margin: 0 auto 20px;
-            position: relative;
-        }
-
-        .gallery-password-input {
-            flex: 1;
-            background: rgba(139, 92, 246, 0.08);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 50px 0 0 50px;
-            padding: 14px 20px;
-            color: var(--text-bright);
-            font-size: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-            outline: none;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-password-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2), 0 0 20px rgba(139, 92, 246, 0.3);
-        }
-
-        .gallery-password-input::placeholder {
-            color: var(--text-muted);
-            opacity: 0.7;
-        }
-
-        .gallery-password-toggle {
-            background: rgba(139, 92, 246, 0.12);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-left: none;
-            color: var(--text-muted);
-            padding: 14px 14px;
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-
-        .gallery-password-toggle:hover {
-            color: var(--primary-light);
-        }
-
-        .gallery-unlock-btn {
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            border: none;
-            border-radius: 0 50px 50px 0;
-            color: white;
-            padding: 14px 28px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
-        }
-
-        .gallery-unlock-btn:hover:not(:disabled) {
-            box-shadow: 0 0 35px var(--glow-purple), 0 0 20px var(--glow-pink);
-            transform: translateX(2px);
-        }
-
-        .gallery-unlock-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .gallery-error {
-            min-height: 24px;
-            font-size: 0.9rem;
-            font-family: 'Space Grotesk', sans-serif;
-            transition: all 0.3s ease;
-            margin-bottom: 10px;
-        }
-
-        .gallery-hint {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-family: 'Space Grotesk', sans-serif;
-            margin-top: 15px;
-        }
-
-        .gallery-hint i {
-            color: var(--accent-pink);
-            margin-right: 5px;
-        }
-
-        /* Floating particles around lock screen */
-        .gallery-particle {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            pointer-events: none;
-            opacity: 0;
-            animation: floatParticle 4s ease-in-out infinite;
-        }
-
-        @keyframes floatParticle {
-            0% { opacity: 0; transform: translateY(20px) scale(0); }
-            20% { opacity: 0.8; }
-            80% { opacity: 0.5; }
-            100% { opacity: 0; transform: translateY(-80px) scale(1.5); }
-        }
-
-        /* --- Gallery Content (shown after unlock) --- */
-        .gallery-content {
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .gallery-content.visible {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .gallery-unlocked-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .gallery-unlocked-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--primary-light), var(--accent-pink));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientText 4s linear infinite;
-            margin-bottom: 8px;
-        }
-
-        .gallery-unlocked-subtitle {
-            color: var(--text-muted);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.95rem;
-        }
-
-        /* --- Photo Carousel --- */
-        .photo-carousel-wrapper {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            background: rgba(139, 92, 246, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 60px rgba(139, 92, 246, 0.1);
-        }
-
-        .photo-carousel-track {
-            display: flex;
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            will-change: transform;
-        }
-
-        .photo-slide {
-            min-width: 100%;
-            position: relative;
-            height: 520px;
-            flex-shrink: 0;
-            overflow: hidden;
-        }
-
-        .photo-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-            display: block;
-        }
-
-        .photo-slide:hover img {
-            transform: scale(1.04);
-        }
-
-        .photo-slide-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.08) 50%, rgba(34, 211, 238, 0.08) 100%);
-            color: var(--text-secondary);
-        }
-
-        .photo-slide-placeholder i {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 20px var(--glow-purple));
-            background: linear-gradient(135deg, var(--primary-light), var(--accent-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .photo-slide-placeholder .slide-photo-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            color: var(--text-secondary);
-            text-align: center;
-            padding: 0 40px;
-        }
-
-        /* Photo overlay caption */
-        .photo-caption-overlay {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            background: linear-gradient(to top, rgba(6, 9, 24, 0.9) 0%, transparent 100%);
-            padding: 40px 40px 30px;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-
-        .photo-slide:hover .photo-caption-overlay {
-            transform: translateY(0);
-        }
-
-        .photo-caption-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.8rem;
-            color: var(--text-bright);
-            margin-bottom: 6px;
-            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
-        }
-
-        .photo-caption-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        /* Neon border glow on carousel */
-        .photo-carousel-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 26px;
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink), var(--accent-cyan), var(--primary));
-            background-size: 300% 300%;
-            z-index: -1;
-            animation: borderGlow 4s ease infinite;
-            opacity: 0.6;
-        }
-
-        @keyframes borderGlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Carousel Navigation */
-        .carousel-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(139, 92, 246, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(139, 92, 246, 0.4);
-            color: var(--text-bright);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .carousel-nav-btn:hover {
-            background: rgba(139, 92, 246, 0.5);
-            box-shadow: 0 0 20px var(--glow-purple);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .carousel-nav-prev { left: 20px; }
-        .carousel-nav-next { right: 20px; }
-
-        /* Carousel Dots */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px 0 10px;
-        }
-
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(139, 92, 246, 0.3);
-            border: 1px solid rgba(139, 92, 246, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-dot.active {
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            box-shadow: 0 0 10px var(--glow-purple);
-            transform: scale(1.3);
-        }
-
-        /* Shake animation for wrong gallery password */
-        .gallery-shake {
-            animation: galleryShake 0.4s ease;
-        }
-
-        @keyframes galleryShake {
-            0%, 100% { transform: translateX(0); }
-            20% { transform: translateX(-8px); }
-            40% { transform: translateX(8px); }
-            60% { transform: translateX(-6px); }
-            80% { transform: translateX(6px); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .gallery-lock-screen {
-                padding: 40px 20px;
-            }
-            .gallery-lock-title {
-                font-size: 2.2rem;
-            }
-            .photo-slide {
-                height: 360px;
-            }
-            .gallery-password-group {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .photo-slide {
-                height: 280px;
-            }
-            .gallery-lock-title {
-                font-size: 1.8rem;
-            }
-            .carousel-nav-btn {
-                width: 38px;
-                height: 38px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* ===== THEME TOGGLE ===== */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            background: var(--glass-card);
-            border: 1px solid var(--glass-border-accent);
-            border-radius: 50px;
-            padding: 8px 16px;
-            cursor: pointer;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .theme-toggle:hover {
-            background: var(--glass-border-accent);
-            transform: scale(1.05);
-            box-shadow: 0 0 15px var(--glow-purple);
-        }
-        /* Light theme variables */
-        body.light-theme {
-            --bg-deep: #f0e6ff;
-            --bg-mid: #e9d5ff;
-            --bg-light: #ddd6fe;
-            --text-bright: #1e1b4b;
-            --text-primary: #2d1b69;
-            --text-secondary: #4c1d95;
-            --text-muted: #6d28d9;
-            --glass: rgba(139, 92, 246, 0.08);
-            --glass-card: rgba(139, 92, 246, 0.12);
-            --glass-border: rgba(139, 92, 246, 0.2);
-        }
-        body.light-theme .countdown-container,
-        body.light-theme #birthday-countdown {
-            background: linear-gradient(135deg, var(--bg-deep), var(--bg-mid));
-        }
-
-        /* ===== THREE.JS CANVAS ===== */
-        #three-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.6;
-        }
-
-        /* ===== CURSOR TRAIL ===== */
-        .cursor-trail {
+        
+        .cursor-trail-romance {
             position: fixed;
             width: 8px;
             height: 8px;
             border-radius: 50%;
             pointer-events: none;
-            z-index: 99998;
-            mix-blend-mode: screen;
-            transition: transform 0.1s ease;
-            animation: trailFade 0.6s ease forwards;
-        }
-        @keyframes trailFade {
-            0% { opacity: 0.9; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0.2); }
-        }
-
-        /* ===== SCROLL QUOTE POPUP ===== */
-        .scroll-quote {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--glass-card);
-            border: 1px solid var(--glass-border-accent);
-            border-radius: 16px;
-            padding: 16px 28px;
-            color: var(--text-secondary);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            font-style: italic;
-            max-width: 400px;
-            text-align: center;
-            z-index: 9990;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
-            opacity: 0;
-            pointer-events: none;
-            box-shadow: 0 8px 32px var(--glow-purple);
-        }
-        .scroll-quote.visible {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
-        /* ===== QR CODE SECTION ===== */
-        .qr-section {
-            text-align: center;
-            padding: 40px 20px;
-            margin: 20px auto;
-            max-width: 400px;
-        }
-        .qr-btn {
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            border: none;
-            color: white;
-            padding: 14px 32px;
-            font-size: 1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            letter-spacing: 1px;
-            box-shadow: 0 0 20px var(--glow-purple);
-            margin-bottom: 20px;
-        }
-        .qr-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 35px var(--glow-purple);
-        }
-        #qr-code-display {
-            display: none;
-            margin: 20px auto;
-            padding: 16px;
-            background: white;
-            border-radius: 12px;
-            width: fit-content;
-        }
-        #qr-code-display.visible {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        .qr-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 10px;
-        }
-
-        /* ===== KONAMI EASTER EGG ===== */
-        .konami-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(6, 9, 24, 0.95);
-            z-index: 99997;
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px;
-            backdrop-filter: blur(20px);
-        }
-        .konami-overlay.active {
-            display: flex;
-            animation: fadeIn 0.5s ease;
-        }
-        .konami-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            background: linear-gradient(90deg, #c084fc, #ec4899, #22d3ee);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(192, 132, 252, 0.7));
-        }
-        .konami-msg {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            max-width: 500px;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-        .konami-close {
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            border: none;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-            transition: all 0.3s ease;
-        }
-        .konami-close:hover { transform: scale(1.05); }
-
-        /* ===== COUNTDOWN MODE TOGGLE ===== */
-        .countdown-mode-toggle {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin: 20px 0 10px;
-            flex-wrap: wrap;
-        }
-        .mode-btn {
-            padding: 8px 20px;
-            border-radius: 50px;
-            border: 1px solid var(--glass-border-accent);
-            background: var(--glass-card);
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-family: 'Space Grotesk', sans-serif;
-            transition: all 0.3s ease;
-        }
-        .mode-btn.active {
-            background: linear-gradient(135deg, var(--primary), var(--accent-pink));
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 0 15px var(--glow-purple);
-        }
-        .mode-btn:hover:not(.active) {
-            border-color: var(--primary);
-            color: var(--text-bright);
-        }
-        .countdown-mode-label {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* ===== ACHIEVEMENT TOAST ===== */
-        .achievement-toast {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            background: var(--glass-card);
-            border: 1px solid var(--glass-border-accent);
-            border-radius: 16px;
-            padding: 16px 20px;
-            color: var(--text-primary);
-            font-family: 'Space Grotesk', sans-serif;
-            z-index: 9995;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 8px 32px var(--glow-purple);
-            max-width: 280px;
-            transform: translateX(120%);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .achievement-toast.show {
-            transform: translateX(0);
-        }
-        .achievement-toast .achievement-icon {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 6px;
-        }
-        .achievement-toast .achievement-name {
-            font-weight: 600;
-            font-size: 1rem;
-            color: var(--primary-light);
-        }
-        .achievement-toast .achievement-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 4px;
+            z-index: 99999;
+            background: #f472b6;
+            filter: blur(1px);
+            opacity: 0.7;
+            transition: 0.05s linear;
         }
     </style>
 </head>
 <body>
-    <!-- Three.js Particle Canvas -->
-    <canvas id="three-canvas" aria-hidden="true"></canvas>
+    <canvas id="particleCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
     
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle dark/light theme">
-        <i class="fas fa-moon" id="themeIcon"></i>
-        <span id="themeLabel" style="font-size:0.8rem;font-family:'Space Grotesk',sans-serif;">Dark</span>
-    </button>
-    
-    <!-- Scroll Quote Popup -->
-    <div class="scroll-quote" id="scrollQuote" role="status" aria-live="polite"></div>
-    
-    <!-- Konami Code Easter Egg -->
-    <div class="konami-overlay" id="konamiOverlay" role="dialog" aria-modal="true" aria-label="Secret message">
-        <div class="konami-title"><i class="fas fa-magic"></i> You Found Our Secret! <i class="fas fa-magic"></i></div>
-        <p class="konami-msg">
-            You discovered the secret portal! <i class="fas fa-heart" style="color:var(--accent-pink)"></i><br><br>
-            "Distance means so little when someone means so much."<br><br>
-            Thank you for visiting this little corner of the internet made entirely out of love for the most wonderful person &mdash; Barsha. <i class="fas fa-seedling" style="color:var(--accent-cyan)"></i>
-        </p>
-        <button class="konami-close" id="konamiClose">Close Secret Portal <i class="fas fa-star"></i></button>
-    </div>
-    
-    <!-- Achievement Toast -->
-    <div class="achievement-toast" id="achievementToast" role="alert" aria-live="assertive">
-        <span class="achievement-icon" id="achieveIcon"><i class="fas fa-trophy"></i></span>
-        <div class="achievement-name" id="achieveName">Achievement Unlocked!</div>
-        <div class="achievement-desc" id="achieveDesc"></div>
-    </div>
-    <!-- Birthday Celebration with Fireworks -->
-    <div class="birthday-celebration" id="birthdayCelebration">
-        <div id="fireworksContainer"></div>
-        <h1 class="birthday-title animate__animated animate__bounceIn">Happy Birthday!</h1>
-        <h2 class="birthday-subtitle animate__animated animate__fadeIn animate__delay-1s">My Dearest Barsha</h2>
-        <p class="birthday-message animate__animated animate__fadeIn animate__delay-2s">
-            Today, February 19th, marks the day the world was blessed with your presence.<br>
-            May this year bring you all the joy, love, and happiness you deserve.<br>
-            This celebration is just the beginning of what's to come.
-        </p>
-        <button class="birthday-continue-btn animate__animated animate__fadeIn animate__delay-3s" id="continueToWebsite">
-            Continue to Your Special Gift
-        </button>
-    </div>
-
-    <!-- Anti-screenshot overlay -->
-    <div class="anti-screenshot" id="antiScreenshot"></div>
-
-    <!-- Grand Reveal Celebration Container -->
-    <div class="reveal-celebration" id="revealCelebration"></div>
-
-    <!-- Background Music - Happy Birthday Theme -->
-    <audio id="bgMusic" loop preload="auto">
-        <source src="https://assets.codepen.io/1468070/gentle-piano.mp3" type="audio/mpeg">
-    </audio>
-    
-    <!-- Happy Birthday Music (auto-plays on celebration) -->
-    <audio id="birthdayMusic" preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- BIRTHDAY COUNTDOWN with Password Access -->
-    <div id="birthday-countdown">
-        <div class="countdown-container">
-            <h1 class="countdown-title">A Surprise for Barsha</h1>
-            <p class="countdown-subtitle">Counting down to something special just for you</p>
-            
-            <div class="birthday-date">
-                <i class="far fa-calendar-alt"></i> February 19, 2027
+    <!-- Access Gate: Romantic Password -->
+    <div class="access-lovelock" id="accessGate">
+        <div class="love-card">
+            <div class="love-lock-icon"><i class="fas fa-heart"></i></div>
+            <h2 class="love-title">A Love Story<br>Just for You</h2>
+            <p class="love-sub">Enter the day our hearts first spoke</p>
+            <div class="password-group">
+                <input type="password" id="romancePassword" class="romance-input" placeholder="YYYYMMDD" maxlength="8" autocomplete="off">
+                <button id="unlockStoryBtn" class="unlock-btn"><i class="fas fa-key"></i> Unlock Our World</button>
             </div>
-            
-            <!-- Countdown Mode Toggle -->
-            <p class="countdown-mode-label">Counting down to:</p>
-            <div class="countdown-mode-toggle">
-                <button class="mode-btn active" data-mode="birthday" onclick="setCountdownMode('birthday')"><i class="fas fa-birthday-cake"></i> Birthday</button>
-                <button class="mode-btn" data-mode="together" onclick="setCountdownMode('together')"><i class="fas fa-heart"></i> 1 Year Together</button>
-                <button class="mode-btn" data-mode="custom" onclick="setCountdownMode('custom')"><i class="fas fa-star"></i> Next Special Day</button>
-            </div>
-            
-            <div class="countdown-display">
-                <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-days">00</div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-hours">00</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-minutes">00</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-seconds">00</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
-            
-            <p class="countdown-message">
-                "My love, something beautiful is waiting for you. Every second brings us closer to February 19th, 2027, when you'll discover a special gift made just for you."
-            </p>
-            
-            <!-- Password Access Section -->
-            <div class="password-access">
-                <h3 class="password-title-small">Early Access with Password</h3>
-                <p class="access-note">
-                    <i class="fas fa-lock"></i> 
-                    You can access this special gift now by entering the password. 
-                    Hint: Think about when our journey truly began (Format: YYYYMMDD)
-                    <i class="fas fa-heart"></i>
-                </p>
-                
-                <div class="password-input-group-small">
-                    <input type="password" 
-                           id="passwordInput" 
-                           class="password-input-small" 
-                           placeholder="Enter the special date..."
-                           maxlength="8"
-                           autocomplete="off">
-                    <button type="button" class="password-toggle-small" id="passwordToggle">
-                        <i class="fas fa-eye"></i>
-                    </button>
-                </div>
-                
-                <div id="passwordError" class="password-error-small">
-                    <!-- Error messages appear here -->
-                </div>
-                
-                <button class="password-submit-small" id="passwordSubmit">
-                    <i class="fas fa-lock"></i> Unlock My Gift
-                </button>
-                
-                <div class="attempts-counter-small" id="attemptsCounter">
-                    Attempts: <span id="attemptCount">0</span>/5
-                </div>
-            </div>
-            
-            <p class="countdown-timezone">
-                Counting down in Nepal Time <span class="nepal-flag"><span class="nepal-red"></span><span class="nepal-blue"></span></span> 
-                | Current Nepal Time: <span id="current-nepal-time">Loading...</span>
-            </p>
+            <div class="love-hint"><i class="fas fa-feather-alt"></i> Hint: The day we had our first real conversation that changed everything (April 2025)</div>
+            <div id="accessError" style="color:#ffb3ba; font-size:0.8rem; margin-top:15px;"></div>
         </div>
     </div>
-
-    <!-- MAIN WEBSITE (Hidden until password is entered) -->
-    <div class="container" id="mainWebsite">
-        <div class="music-control" id="musicControl" onclick="toggleMusic()">
-            <i class="fas fa-music"></i>
+    
+    <!-- Main Romantic Website -->
+    <div class="romance-container" id="romanceWebsite">
+        <!-- Music Toggle -->
+        <div class="audio-control" id="romanceMusicToggle">
+            <i class="fas fa-play" id="musicIconRomance"></i>
         </div>
-
-        <section class="hero-section">
-            <h1 class="hero-title">Barsha</h1>
-            <p class="hero-subtitle">Born February 19, 2001 • The day my world gained meaning</p>
-            
-            <!-- Shared Time Widget -->
-            <div class="shared-time-widget">
-                <div class="time-card">
-                    <div class="time-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Germany (You)</span>
-                    </div>
-                    <div class="time-display" id="germany-time">00:00:00</div>
-                    <div class="time-date" id="germany-date">Loading...</div>
-                    <div class="time-zone">GMT+1</div>
-                </div>
-                
-                <div class="time-connection">
-                    <div class="time-connection-line"></div>
-                    <i class="fas fa-heart"></i>
-                    <div class="time-connection-line"></div>
-                </div>
-                
-                <div class="time-card">
-                    <div class="time-location">
-                        <i class="fas fa-heart"></i>
-                        <span>Nepal (Barsha)</span>
-                    </div>
-                    <div class="time-display" id="nepal-time-main">00:00:00</div>
-                    <div class="time-date" id="nepal-date">Loading...</div>
-                    <div class="time-zone">GMT+5:45</div>
-                </div>
-            </div>
-            
-            <div class="distance-note">
-                <i class="fas fa-heart"></i> 11 Months Together & Forever Connected <i class="fas fa-heart"></i>
+        
+        <section class="romantic-hero">
+            <h1 class="couple-name">Jivan & Barsha</h1>
+            <p class="hero-tagline" style="font-family:'Playfair Display'; font-size:1.3rem; margin-top:12px;">Two souls, one heartbeat — continents apart, yet endlessly close.</p>
+            <div class="distance-tag">
+                <i class="fas fa-map-marker-alt" style="color:#f472b6;"></i> Germany — Nepal
+                <i class="fas fa-heart" style="color:#f472b6; margin:0 8px;"></i> 6,500 km of love
             </div>
         </section>
-
-        <section class="story-section">
-            <h2 class="section-title">Our Story</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-video timeline-icon"></i> APRIL 3, 2025
-                    </div>
-                    <div class="timeline-content">
-                        Our first video call at 5 AM Germany time. That blurry screen that showed me the most beautiful smile I'd ever seen.
-                        <div class="timeline-quote">
-                            "The moment I saw you, I knew distance was just a number."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-calendar-day timeline-icon"></i> APRIL 11, 2025
-                    </div>
-                    <div class="timeline-content">
-                       We started talking every single day. Those conversations that stretched from dawn till dusk, connecting us through the distance.
-                        <div class="timeline-quote">
-                            "You became my sunrise and sunset, my first and last thought every day."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-heart timeline-icon"></i> MAY 2025
-                    </div>
-                    <div class="timeline-content">
-                        After a month of growing closeness, I confessed my love for you. The bravest and best decision of my life.
-                        <div class="timeline-quote">
-                            "Three words that changed everything: I love you."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-hourglass-half timeline-icon"></i> 11 MONTHS TOGETHER
-                    </div>
-                    <div class="timeline-content">
-                        Eleven months of laughter, tears, arguments, and making up. Every challenge making us stronger, every mile between us proving our resilience.
-                        <div class="timeline-quote">
-                            "We fought, we cried, but we never let go. That's our strength."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-birthday-cake timeline-icon"></i> FEBRUARY 19, 2027
-                    </div>
-                    <div class="timeline-content">
-                        Your birthday today. Celebrating the incredible woman you are, and promising to celebrate every one to come.
-                        <div class="timeline-quote">
-                            "Today, and every day, I celebrate you."
-                        </div>
-                    </div>
-                </div>
+        
+        <!-- Time Widget: He & She -->
+        <div class="time-romance-widget">
+            <div class="time-card-romance">
+                <div class="time-location"><i class="fas fa-city"></i> Germany — His Heart</div>
+                <div class="time-display-romance" id="germanyRomanceTime">--:--:--</div>
+                <div class="date-small" id="germanyRomanceDate"></div>
             </div>
-        </section>
-
-        <section class="photo-gallery">
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    <i class="fas fa-heart"></i>
-                    <span>Our First Video Call Memory</span>
-                    <span style="font-size: 0.9rem; margin-top: 10px;">April 3, 2025 • 5 AM</span>
-                </div>
+            <div class="time-card-romance">
+                <div class="time-location"><i class="fas fa-mountain"></i> Nepal — Her Soul</div>
+                <div class="time-display-romance" id="nepalRomanceTime">--:--:--</div>
+                <div class="date-small" id="nepalRomanceDate"></div>
             </div>
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    <i class="fas fa-moon"></i>
-                    <span>Late Night Conversations</span>
-                    <span style="font-size: 0.9rem; margin-top: 10px;">April 11, 2025 onwards</span>
-                </div>
+        </div>
+        
+        <!-- Our Story Timeline -->
+        <div class="story-timeline">
+            <h2 style="font-family:'Dancing Script'; font-size:3rem; text-align:center; margin-bottom:50px;"><i class="fas fa-feather-alt"></i> Our Eternal Timeline</h2>
+            <div class="timeline-item-romance">
+                <div class="timeline-date-romance"><i class="fas fa-calendar-heart"></i> April 3, 2025 — 5 AM Germany Time</div>
+                <p style="font-size:1.2rem;">The first video call. A sleepy morning, a groggy hello — but the moment your face appeared, my world stopped. That blurry screen held the most beautiful woman I had ever seen. I knew in that instant: nothing would ever be the same.</p>
+                <div style="margin-top:12px; font-style:italic; color:#fbcfe8;">✨ "A single second rewrote my destiny."</div>
             </div>
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <span>My Love Confession</span>
-                    <span style="font-size: 0.9rem; margin-top: 10px;">May 2025</span>
-                </div>
+            <div class="timeline-item-romance">
+                <div class="timeline-date-romance"><i class="fas fa-comments"></i> April 11, 2025 — Endless Talks</div>
+                <p>From sunrise till late night, we began talking every single day. You became my first thought, my last prayer. Those conversations built bridges across continents — we laughed, we opened our hearts, and slowly, I started falling for the girl with the kindest eyes.</p>
             </div>
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    <i class="fas fa-infinity"></i>
-                    <span>Our Future Together</span>
-                    <span style="font-size: 0.9rem; margin-top: 10px;">Forever</span>
-                </div>
+            <div class="timeline-item-romance">
+                <div class="timeline-date-romance"><i class="fas fa-heartbeat"></i> May 2025 — Confession Under the Stars</div>
+                <p>My heart couldn't hold the truth any longer. "I love you" — three words that felt like a thunderstorm and a gentle breeze all at once. You said it back, and the distance suddenly felt smaller, because our love became real.</p>
             </div>
-        </section>
-
-        <!-- ==================== SECRET PHOTO GALLERY ==================== -->
-        <section class="secret-gallery-section" id="secretGallerySection">
-            <h2 class="section-title">Our Secret Gallery</h2>
-
-            <!-- Lock Screen -->
-            <div class="gallery-lock-screen" id="galleryLockScreen">
-                <div class="gallery-particle" style="left:10%;top:20%;background:var(--primary);animation-delay:0s;animation-duration:5s;"></div>
-                <div class="gallery-particle" style="left:25%;top:70%;background:var(--accent-pink);animation-delay:1s;animation-duration:4s;"></div>
-                <div class="gallery-particle" style="left:75%;top:30%;background:var(--accent-cyan);animation-delay:0.5s;animation-duration:6s;"></div>
-                <div class="gallery-particle" style="left:88%;top:65%;background:var(--primary-light);animation-delay:2s;animation-duration:5.5s;"></div>
-                <div class="gallery-particle" style="left:50%;top:10%;background:var(--accent-pink);animation-delay:1.5s;animation-duration:4.5s;"></div>
-
-                <div class="gallery-lock-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <h3 class="gallery-lock-title">Locked with Love</h3>
-                <p class="gallery-lock-subtitle">Enter the secret password to reveal our most precious memories</p>
-
-                <div class="gallery-password-group" id="galleryPasswordGroup">
-                    <input type="password"
-                           id="galleryPasswordInput"
-                           class="gallery-password-input"
-                           placeholder="Enter secret password"
-                           autocomplete="off"
-                           maxlength="30">
-                    <button type="button" class="gallery-password-toggle" id="galleryPasswordToggle" aria-label="Toggle password visibility">
-                        <i class="fas fa-eye"></i>
-                    </button>
-                    <button class="gallery-unlock-btn" id="galleryUnlockBtn" disabled>
-                        <i class="fas fa-unlock-alt"></i> Unlock
-                    </button>
-                </div>
-
-                <div id="galleryError" class="gallery-error"></div>
-
-                <p class="gallery-hint">
-                    <i class="fas fa-heart"></i> Hint: Six letters, the most beautiful name I know
-                </p>
+            <div class="timeline-item-romance">
+                <div class="timeline-date-romance"><i class="fas fa-infinity"></i> Today — & Every Tomorrow</div>
+                <p>We've weathered storms, arguments, tears and joy. Each day proves that our love is not fragile; it's forged in resilience. You are my home, Barsha. Not a place on the map, but a feeling in my chest. </p>
             </div>
-
-            <!-- Gallery Content (revealed after correct password) -->
-            <div class="gallery-content" id="galleryContent">
-                <div class="gallery-unlocked-header">
-                    <p class="gallery-unlocked-title">Our Beautiful Moments</p>
-                    <p class="gallery-unlocked-subtitle">Swipe or use arrows to explore ✨</p>
-                </div>
-
-                <div class="photo-carousel-wrapper" id="photoCarouselWrapper">
-                    <div class="photo-carousel-track" id="carouselTrack">
-
-                        <!-- Slide 1: Forest Portrait -->
-                        <div class="photo-slide">
-                            <div class="photo-slide-placeholder">
-                                <i class="fas fa-tree"></i>
-                                <span class="slide-photo-title">Lost in the Forest, Found in Your Eyes</span>
-                            </div>
-                            <div class="photo-caption-overlay">
-                                <p class="photo-caption-title">The Forest Portrait</p>
-                                <p class="photo-caption-text">Where nature's beauty meets yours — a moment frozen forever 🌿</p>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2: Cultural Landmark -->
-                        <div class="photo-slide">
-                            <div class="photo-slide-placeholder" style="background: linear-gradient(135deg, rgba(34,211,238,0.12) 0%, rgba(139,92,246,0.08) 50%, rgba(236,72,153,0.08) 100%);">
-                                <i class="fas fa-landmark"></i>
-                                <span class="slide-photo-title">Rooted in Culture, Blooming in Love</span>
-                            </div>
-                            <div class="photo-caption-overlay">
-                                <p class="photo-caption-title">The Cultural Landmark</p>
-                                <p class="photo-caption-text">A piece of our heritage, a piece of your soul — timeless and beautiful 🏛️</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Navigation Buttons -->
-                    <button class="carousel-nav-btn carousel-nav-prev" id="carouselPrev" aria-label="Previous photo">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-nav-btn carousel-nav-next" id="carouselNext" aria-label="Next photo">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-
-                <!-- Dots indicator -->
-                <div class="carousel-dots" id="carouselDots">
-                    <div class="carousel-dot active" data-index="0"></div>
-                    <div class="carousel-dot" data-index="1"></div>
-                </div>
+        </div>
+        
+        <!-- Romantic Promises -->
+        <h2 style="font-family:'Dancing Script'; font-size:2.8rem; text-align:center; margin:50px 0 20px;">Promises Etched in Stars</h2>
+        <div class="promises-grid-romance">
+            <div class="promise-card-romance"><i class="fas fa-globe-asia"></i><h3>I'll close the distance</h3><p>No ocean is deep enough to keep me from you. I'm committed to building a life together — no matter the miles.</p></div>
+            <div class="promise-card-romance"><i class="fas fa-hand-sparkles"></i><h3>I'll hold you tight</h3><p>In every argument, in every silence — I will always reach for you first. Your heart is my sanctuary.</p></div>
+            <div class="promise-card-romance"><i class="fas fa-feather"></i><h3>I'll write you forever</h3><p>Words may be all I have now, but I promise to fill your days with poetry, laughter, and endless "I love you"s.</p></div>
+            <div class="promise-card-romance"><i class="fas fa-moon"></i><h3>I'll be your home</h3><p>Wherever we end up, my arms will be your safest place. Our home will be built on trust and tenderness.</p></div>
+        </div>
+        
+        <!-- Love Letter -->
+        <div class="love-letter-box">
+            <span class="letter-dropcap">M</span>y dearest Barsha,<br><br>
+            There are moments when I close my eyes and imagine the day I finally hold you. I see the airport, the crowd, and then — your smile. And in that second, every missed birthday, every lonely night, every hour of waiting will dissolve into pure, radiant joy.<br><br>
+            You are not just my girlfriend; you are my peace, my wildest dream, my reason to become better. When you laugh, I feel the sun rise even if it’s midnight in Germany. When you cry, I wish I could teleport just to wipe your tears. We've fought and made up — but each time, our love grew deeper roots.<br><br>
+            <span style="background: linear-gradient(120deg, rgba(244,114,182,0.2), transparent); padding:0 8px;"><i class="fas fa-heart" style="color:#f472b6;"></i> Remember: distance is just a test of how far love can travel.</span> And ours has crossed mountains, deserts, and time zones. Thank you for being strong when I was weak, for believing in us when I had doubts. You are the heroine of my story, and this is only the beginning.<br><br>
+            I love you more than all the stars above Nepal and Germany combined. Keep that beautiful heart of yours safe — I'm coming for it. Forever yours,<br>
+            <div class="signature">Jivan <i class="fas fa-feather-alt"></i></div>
+        </div>
+        
+        <!-- special final note and WhatsApp contact -->
+        <div style="text-align:center; margin:40px 0;">
+            <div style="background:#f472b622; border-radius:80px; padding:20px 30px; display:inline-block; backdrop-filter:blur(10px);">
+                <i class="fas fa-envelope-open-text" style="font-size:2rem; color:#f472b6;"></i>
+                <p style="margin-top:12px;">You're my always, Barsha. Every breath is a reminder I found my soulmate.</p>
+                <a href="https://wa.me/4915755197114?text=My%20love%2C%20I%20read%20every%20word%20%F0%9F%92%96" target="_blank" style="display:inline-block; margin-top:15px; background:#25D366; padding:12px 32px; border-radius:40px; color:white; text-decoration:none; font-weight:bold;"><i class="fab fa-whatsapp"></i> Send Me Your Heartbeat</a>
             </div>
-        </section>
-        <!-- ==================== END SECRET PHOTO GALLERY ==================== -->
-
-        <section class="love-letter-section">
-            <div class="letter-container">
-                <div class="letter-content">
-                    <p>
-                        <span class="letter-dropcap">M</span>y dearest Barsha,
-                    </p>
-                    
-                    <p>
-                        As I write this, I'm thinking about <span class="letter-highlight">April 3rd, 2025 at 5 AM German time</span>—the moment my world shifted on its axis. That first video call introduced me to the woman who would become my everything. I was nervous, tired, and completely unprepared for how one smile could change everything.
-                    </p>
-                    
-                    <p>
-                        Then came <span class="letter-highlight">April 11th</span>, when our conversations became daily rituals. You became the highlight of every day, the voice I waited for, the person I shared everything with. For a month, I held my feelings close, afraid to disrupt what we were building. But in <span class="letter-highlight">May 2025</span>, I couldn't hold it in anymore. Telling you I loved you was both terrifying and liberating.
-                    </p>
-                    
-                    <p>
-                        These <span class="letter-highlight">11 months</span> have been a journey I could never have imagined. There were days when the distance felt overwhelming, moments when I questioned if we could make it through the challenges. <span class="letter-highlight">But you, my love, you never wavered.</span> When I felt like giving up, you held on tighter. When I was weak, you were strong. When I doubted, you believed—for both of us.
-                    </p>
-                    
-                    <p>
-                        We've fought—oh, how we've fought—but every argument has only brought us closer. Every tear has only watered the roots of what we're growing together. The miles between you and me have taught us that love isn't about proximity; it's about connection. And our connection transcends geography, time zones, and every obstacle thrown our way.
-                    </p>
-                    
-                    <p>
-                        On your birthday, February 19th, I want you to know this: <span class="letter-highlight">You deserve every happiness this world can offer.</span> You deserve to be cherished, celebrated, and loved beyond measure. And I promise you this—I will spend my life making sure you have all the joy, peace, and love you've been missing. I will be the shelter in your storms, the laughter in your quiet moments, the hand that always reaches for yours—no matter the distance.
-                    </p>
-                    
-                    <p>
-                        Happy birthday to the woman who taught me that love knows no borders, that patience is a virtue, and that sometimes the strongest bonds are built across continents. I may not be there physically today, but my heart is entirely with you—today, tomorrow, and all the days after.
-                    </p>
-                    
-                    <div class="letter-signature">
-                        <div class="signature-name">Forever Yours,</div>
-                        <div class="signature-name">Jivan</div>
-                        <div class="signature-date">FEBRUARY 19, 2027</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="promises-section">
-            <h2 class="section-title">My Promises to You</h2>
-            
-            <div class="promises-grid">
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Never Give Up</h3>
-                    <p class="promise-text">
-                        No matter how hard it gets, no matter the distance or challenges, I will always fight for us. You held on when I was weak, and I promise to do the same.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Close the Distance</h3>
-                    <p class="promise-text">
-                        I will work tirelessly until the day I can hold you in my arms. Every mile between us is temporary, but our love is permanent.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-laugh-beam"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Bring You Joy</h3>
-                    <p class="promise-text">
-                        You deserve a lifetime of happiness, and I promise to fill your days with laughter, your heart with peace, and your life with love.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Protect Your Heart</h3>
-                    <p class="promise-text">
-                        Your trust is my most precious gift. I will honor it, cherish it, and protect it with everything I am.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Build Our Future</h3>
-                    <p class="promise-text">
-                        Together, we will create a home filled with love, understanding, and the beautiful life you deserve.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-infinity"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Love You Forever</h3>
-                    <p class="promise-text">
-                        From our first video call to our last breath, my love for you is eternal. 11 months, 11 years, 11 lifetimes—it will never fade.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="distance-section">
-            <div class="map-container">
-                <h2 class="map-title">The Distance Between Our Hearts: Zero</h2>
-                
-                <div class="map-illustration">
-                    <div class="location">
-                        <div class="location-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="location-name">Germany</div>
-                        <div class="location-detail">Where I wait for you</div>
-                    </div>
-                    
-                    <div class="distance-line"></div>
-                    
-                    <div class="location">
-                        <div class="location-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="location-name">Nepal</div>
-                        <div class="location-detail">Where my heart resides</div>
-                    </div>
-                </div>
-                
-                <p class="distance-text">
-                    "They say long-distance relationships are hard. They're right. But what they don't say is that when you find someone worth the wait, 
-                    the distance doesn't matter. Because every mile between us is just proof of how far I'm willing to go for you."
-                </p>
-            </div>
-        </section>
-
-        <section class="final-cta">
-            <h2 class="cta-title">My Love,</h2>
-            
-            <div class="cta-box">
-                <p class="cta-message">
-                    This website is my promise to you—a promise that no matter the distance, no matter the challenges, 
-                    my love for you is unwavering. I may not be there to hold you today, but I'm here in every way that matters.
-                </p>
-                
-                <a href="https://wa.me/4915755197114?text=❤️" 
-                   class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Send Me Your Response
-                </a>
-            </div>
-        </section>
-
-        <!-- QR Code Sharing Section -->
-        <section class="qr-section">
-            <button class="qr-btn" id="qrBtn" onclick="generateQRCode()">
-                <i class="fas fa-qrcode"></i> Share This Love Story
-            </button>
-            <div id="qr-code-display"></div>
-            <p class="qr-label" id="qrLabel" style="display:none;">Scan to share this special page &#x1F49C;</p>
-        </section>
-
-        <footer class="footer">
-            <div class="footer-heart">
-                <i class="fas fa-heart"></i>
-            </div>
-            <p class="footer-text">CREATED WITH ALL MY LOVE FOR BARSHA</p>
-            <p class="footer-text">From Jivan </p>
-            <p class="footer-date">Our Journey: April 3, 2025 - Forever</p>
+        </div>
+        
+        <footer class="footer-romance">
+            <i class="fas fa-heart" style="color:#f472b6; font-size:1.5rem; animation:heartbeat 1.2s infinite;"></i>
+            <p style="margin:15px 0 5px;">Our journey began April 3, 2025 — and will never end.</p>
+            <p style="opacity:0.7;">From Germany with infinite love &nbsp;→&nbsp; Nepal, my heart</p>
         </footer>
     </div>
-
-    <script>
-        // ==================== FIXED COUNTDOWN AND TIME FUNCTIONS ====================
-
-        // Fixed: Get current Nepal time (GMT+5:45)
-        function getCurrentNepalTime() {
-            const now = new Date();
-            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const nepalOffset = 5.75 * 60 * 60 * 1000; // GMT+5:45 in milliseconds
-            return new Date(utc + nepalOffset);
-        }
-
-        // Fixed: Get current Germany time (GMT+1)
-        function getCurrentGermanyTime() {
-            const now = new Date();
-            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const germanyOffset = 1 * 60 * 60 * 1000; // GMT+1
-            return new Date(utc + germanyOffset);
-        }
-
-        // Fixed: Format time as HH:MM:SS
-        function formatTime(date) {
-            const hours = date.getHours().toString().padStart(2, '0');
-            const minutes = date.getMinutes().toString().padStart(2, '0');
-            const seconds = date.getSeconds().toString().padStart(2, '0');
-            return `${hours}:${minutes}:${seconds}`;
-        }
-
-        // Fixed: Format date
-        function formatDate(date) {
-            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            
-            const dayName = days[date.getDay()];
-            const monthName = months[date.getMonth()];
-            const day = date.getDate();
-            const year = date.getFullYear();
-            
-            return `${dayName}, ${monthName} ${day}, ${year}`;
-        }
-
-        // Fixed: Update all time displays
-        function updateAllTimes() {
-            // Update Nepal time for countdown page
-            const nepalTime = getCurrentNepalTime();
-            document.getElementById('current-nepal-time').textContent = 
-                `${formatTime(nepalTime)} | ${formatDate(nepalTime)}`;
-            
-            // Update shared time widget
-            const germanyTime = getCurrentGermanyTime();
-            
-            document.getElementById('nepal-time-main').textContent = formatTime(nepalTime);
-            document.getElementById('nepal-date').textContent = formatDate(nepalTime);
-            
-            document.getElementById('germany-time').textContent = formatTime(germanyTime);
-            document.getElementById('germany-date').textContent = formatDate(germanyTime);
-        }
-
-        // Fixed: Calculate countdown to Feb 19, 2027 Nepal Time
-        function updateBirthdayCountdown() {
-            // Get current Nepal time
-            const now = getCurrentNepalTime();
-            
-            // Create Feb 19, 2027 00:00 Nepal Time
-            // February is month 1 (0-indexed)
-            const birthdayNepal = new Date(2027, 1, 19, 0, 0, 0, 0);
-            
-            // Calculate difference in milliseconds
-            const diff = birthdayNepal.getTime() - now.getTime();
-            
-            // If birthday has passed or is today
-            if (diff <= 0) {
-                document.getElementById('countdown-days').textContent = "00";
-                document.getElementById('countdown-hours').textContent = "00";
-                document.getElementById('countdown-minutes').textContent = "00";
-                document.getElementById('countdown-seconds').textContent = "00";
-                return;
-            }
-            
-            // Calculate days, hours, minutes, seconds
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            // Update display
-            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-
-        // ==================== BIRTHDAY CELEBRATION ====================
-
-        // Fireworks Class
-        class Fireworks {
-            constructor(container) {
-                this.container = container;
-                this.isActive = false;
-                this.fireworkCount = 20;
-                this.colors = ['#8b5cf6', '#c084fc', '#ec4899', '#f0abfc', '#22d3ee', '#a78bfa', '#e879f9', '#38bdf8', '#34d399', '#fbbf24'];
-            }
-
-            start() {
-                this.isActive = true;
-                this.createFireworks();
-            }
-
-            stop() {
-                this.isActive = false;
-                this.container.innerHTML = '';
-            }
-
-            createFireworks() {
-                if (!this.isActive) return;
-                
-                this.container.innerHTML = '';
-                
-                for (let i = 0; i < this.fireworkCount; i++) {
-                    setTimeout(() => {
-                        this.createFirework();
-                    }, i * 300);
-                }
-
-                setTimeout(() => {
-                    this.createFireworks();
-                }, 6000);
-            }
-
-            createFirework() {
-                const firework = document.createElement('div');
-                firework.className = 'firework';
-                
-                const x = Math.random() * 90 + 5;
-                const y = Math.random() * 90 + 5;
-                const color = this.colors[Math.floor(Math.random() * this.colors.length)];
-                
-                firework.style.left = x + '%';
-                firework.style.top = y + '%';
-                firework.style.backgroundColor = color;
-                firework.style.boxShadow = `0 0 20px ${color}, 0 0 40px ${color}`;
-                
-                this.container.appendChild(firework);
-
-                setTimeout(() => {
-                    this.createBurst(x, y, color);
-                    firework.remove();
-                }, 800);
-            }
-
-            createBurst(x, y, color) {
-                const particleCount = 12;
-                
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'firework-burst';
-                    
-                    const angle = (i / particleCount) * Math.PI * 2;
-                    const distance = 50 + Math.random() * 80;
-                    const burstX = Math.cos(angle) * distance;
-                    const burstY = Math.sin(angle) * distance;
-                    
-                    particle.style.left = x + '%';
-                    particle.style.top = y + '%';
-                    particle.style.backgroundColor = color;
-                    particle.style.setProperty('--burst-x', burstX + 'px');
-                    particle.style.setProperty('--burst-y', burstY + 'px');
-                    
-                    this.container.appendChild(particle);
-
-                    setTimeout(() => {
-                        if (particle.parentNode) {
-                            particle.remove();
-                        }
-                    }, 1000);
-                }
-            }
-        }
-
-        // Fixed: Birthday Celebration Function
-        function startBirthdayCelebration() {
-            const celebration = document.getElementById('birthdayCelebration');
-            const fireworksContainer = document.getElementById('fireworksContainer');
-            
-            // Show celebration
-            celebration.style.display = 'flex';
-            setTimeout(() => {
-                celebration.classList.add('active');
-            }, 100);
-            
-            // Start fireworks
-            const fireworks = new Fireworks(fireworksContainer);
-            fireworks.start();
-            
-            // Play birthday music
-            const birthdayMusic = document.getElementById('birthdayMusic');
-            birthdayMusic.volume = 0.6;
-            birthdayMusic.play().catch(e => {
-                console.log("Birthday music autoplay prevented");
-            });
-            
-            // Fixed: Continue button event listener
-            const continueBtn = document.getElementById('continueToWebsite');
-            continueBtn.onclick = function() {
-                // Stop fireworks and music
-                fireworks.stop();
-                birthdayMusic.pause();
-                birthdayMusic.currentTime = 0;
-                
-                // Hide celebration
-                celebration.classList.remove('active');
-                setTimeout(() => {
-                    celebration.style.display = 'none';
-                }, 1000);
-                
-                // Grant access to main website
-                grantAccess();
-            };
-        }
-
-        // ==================== FIXED: GRANT ACCESS FUNCTION ====================
-
-        function grantAccess() {
-            // Hide countdown
-            const countdownSection = document.getElementById('birthday-countdown');
-            countdownSection.style.opacity = '0';
-            countdownSection.style.visibility = 'hidden';
-            
-            setTimeout(() => {
-                countdownSection.style.display = 'none';
-                
-                // Show main website
-                const mainWebsite = document.getElementById('mainWebsite');
-                mainWebsite.style.display = 'block';
-                
-                setTimeout(() => {
-                    mainWebsite.classList.add('show');
-                    
-                    // Play background music
-                    const bgMusic = document.getElementById('bgMusic');
-                    bgMusic.volume = 0.4;
-                    bgMusic.play().then(() => {
-                        musicPlaying = true;
-                        document.getElementById('musicControl').innerHTML = '<i class="fas fa-pause"></i>';
-                    }).catch(e => {
-                        console.log("Background music autoplay prevented");
-                    });
-                    
-                    // Start floating hearts
-                    startFloatingHearts();
-                    
-                    // Enable scroll animations
-                    enableScrollAnimations();
-                    
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
-                
-            }, 1000);
-        }
-
-        // ==================== MUSIC CONTROLS ====================
-
-        let musicPlaying = false;
-        
-        function toggleMusic() {
-            const bgMusic = document.getElementById('bgMusic');
-            const musicControl = document.getElementById('musicControl');
-            
-            if (musicPlaying) {
-                bgMusic.pause();
-                musicControl.innerHTML = '<i class="fas fa-music"></i>';
-                musicPlaying = false;
-            } else {
-                bgMusic.play().then(() => {
-                    musicControl.innerHTML = '<i class="fas fa-pause"></i>';
-                    musicPlaying = true;
-                }).catch(e => {
-                    console.log("Music playback failed:", e);
-                    alert("Please click the music icon to play music.");
-                });
-            }
-        }
-
-        // ==================== FLOATING HEARTS ====================
-
-        function startFloatingHearts() {
-            const heartColors = ['#ec4899', '#c084fc', '#22d3ee', '#a78bfa', '#f0abfc', '#8b5cf6', '#34d399', '#fbbf24'];
-            
-            setInterval(() => {
-                const heart = document.createElement('div');
-                heart.className = 'floating-heart';
-                const color = heartColors[Math.floor(Math.random() * heartColors.length)];
-                heart.innerHTML = `<i class="fas fa-heart" style="color:${color}"></i>`;
-                
-                const size = Math.random() * 20 + 15;
-                const duration = Math.random() * 15 + 15;
-                const delay = Math.random() * 5;
-                const startX = Math.random() * 100;
-                
-                heart.style.left = startX + 'vw';
-                heart.style.fontSize = size + 'px';
-                heart.style.animationDuration = duration + 's';
-                heart.style.animationDelay = delay + 's';
-                
-                document.body.appendChild(heart);
-                
-                setTimeout(() => {
-                    if (heart.parentNode) {
-                        heart.parentNode.removeChild(heart);
-                    }
-                }, (duration + delay) * 1000);
-                
-            }, 500);
-        }
-
-        // ==================== SCROLL ANIMATIONS ====================
-
-        function enableScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.timeline-item, .promise-card, .photo-frame').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(el);
-            });
-        }
-
-        // ==================== SECURITY SYSTEM ====================
-
-        const CORRECT_PASSWORD = "20250403";
-        const MAX_ATTEMPTS = 5;
-        const LOCKOUT_TIME = 30000;
-        
-        let attempts = 0;
-        let isLocked = false;
-
-        function initSecuritySystem() {
-            // Hide elements initially
-            document.getElementById('mainWebsite').style.display = 'none';
-            document.getElementById('birthdayCelebration').style.display = 'none';
-            
-            // Show countdown
-            document.getElementById('birthday-countdown').style.display = 'flex';
-            
-            // Setup password input
-            const passwordInput = document.getElementById('passwordInput');
-            const passwordToggle = document.getElementById('passwordToggle');
-            const passwordSubmit = document.getElementById('passwordSubmit');
-            
-            // Password visibility toggle
-            passwordToggle.addEventListener('click', function() {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
-            });
-            
-            // Password submission
-            passwordSubmit.addEventListener('click', checkPassword);
-            
-            // Enter key support
-            passwordInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' && !passwordSubmit.disabled) {
-                    checkPassword();
-                }
-            });
-            
-            // Real-time validation
-            passwordInput.addEventListener('input', function() {
-                const value = this.value;
-                this.value = value.replace(/[^0-9]/g, '');
-                passwordSubmit.disabled = this.value.length !== 8 || isLocked;
-                
-                if (value.length > 0) {
-                    clearError();
-                }
-            });
-            
-            // Start time updates
-            setInterval(updateAllTimes, 1000);
-            setInterval(updateBirthdayCountdown, 1000);
-            updateAllTimes();
-            updateBirthdayCountdown();
-        }
-
-        // Fixed: Check Password Function
-        function checkPassword() {
-            if (isLocked) {
-                showError("Too many failed attempts. Please wait 30 seconds.");
-                return;
-            }
-            
-            const passwordInput = document.getElementById('passwordInput');
-            const enteredPassword = passwordInput.value;
-            
-            if (enteredPassword.length !== 8) {
-                showError("Password must be 8 digits (YYYYMMDD format)");
-                passwordInput.classList.add('shake');
-                setTimeout(() => passwordInput.classList.remove('shake'), 500);
-                return;
-            }
-            
-            attempts++;
-            updateAttemptsCounter();
-            
-            if (enteredPassword === CORRECT_PASSWORD) {
-                // Correct password
-                createHeartBurst();
-                
-                showSuccess("Password correct! Starting celebration...");
-                passwordSubmit.disabled = true;
-                passwordSubmit.innerHTML = '<i class="fas fa-check"></i> Access Granted';
-                
-                // Start birthday celebration
-                setTimeout(startBirthdayCelebration, 1500);
-                
-            } else {
-                // Wrong password
-                showError("Incorrect password. Hint: Think about when our journey truly began.");
-                passwordInput.classList.add('shake');
-                setTimeout(() => passwordInput.classList.remove('shake'), 500);
-                passwordInput.value = '';
-                passwordInput.focus();
-                
-                if (attempts >= MAX_ATTEMPTS) {
-                    lockoutUser();
-                }
-            }
-        }
-
-        // Heart burst animation
-        function createHeartBurst() {
-            const container = document.getElementById('revealCelebration');
-            const heartIcons = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💕', '💞', '💓', '💗', '💖', '💘'];
-            
-            container.innerHTML = '';
-            
-            for (let i = 0; i < 50; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'burst-heart';
-                heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
-                
-                const angle = Math.random() * Math.PI * 2;
-                const distance = 100 + Math.random() * 400;
-                const size = 16 + Math.random() * 32;
-                const duration = 1 + Math.random() * 1.5;
-                
-                const tx = Math.cos(angle) * distance;
-                const ty = Math.sin(angle) * distance;
-                
-                heart.style.setProperty('--tx', `${tx}px`);
-                heart.style.setProperty('--ty', `${ty}px`);
-                heart.style.fontSize = `${size}px`;
-                heart.style.animationDuration = `${duration}s`;
-                heart.style.left = '50%';
-                heart.style.top = '50%';
-                heart.style.color = getRandomColor();
-                
-                container.appendChild(heart);
-                
-                setTimeout(() => {
-                    if (heart.parentNode === container) {
-                        container.removeChild(heart);
-                    }
-                }, duration * 1000);
-            }
-        }
-
-        function getRandomColor() {
-            const colors = [
-                '#8b5cf6', '#c084fc', '#ec4899', '#f0abfc', '#22d3ee',
-                '#a78bfa', '#e879f9', '#38bdf8', '#34d399', '#fbbf24'
-            ];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        // Helper functions
-        function showError(message) {
-            const errorEl = document.getElementById('passwordError');
-            errorEl.innerHTML = `<i class="fas fa-times-circle"></i> ${message}`;
-            errorEl.style.color = 'var(--error-red)';
-        }
-        
-        function showSuccess(message) {
-            const errorEl = document.getElementById('passwordError');
-            errorEl.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
-            errorEl.style.color = 'var(--success-green)';
-        }
-        
-        function clearError() {
-            document.getElementById('passwordError').innerHTML = '';
-        }
-        
-        function updateAttemptsCounter() {
-            const counter = document.getElementById('attemptCount');
-            counter.textContent = attempts;
-            
-            if (attempts >= MAX_ATTEMPTS - 2) {
-                counter.parentElement.classList.add('attempts-warning');
-            }
-        }
-        
-        function lockoutUser() {
-            isLocked = true;
-            const passwordSubmit = document.getElementById('passwordSubmit');
-            const passwordInput = document.getElementById('passwordInput');
-            
-            passwordSubmit.disabled = true;
-            passwordInput.disabled = true;
-            
-            showError(`Too many attempts. Locked for ${LOCKOUT_TIME/1000} seconds.`);
-            
-            let timeLeft = LOCKOUT_TIME / 1000;
-            const lockoutInterval = setInterval(() => {
-                timeLeft--;
-                showError(`Too many attempts. Locked for ${timeLeft} seconds.`);
-                
-                if (timeLeft <= 0) {
-                    clearInterval(lockoutInterval);
-                    isLocked = false;
-                    attempts = 0;
-                    passwordInput.disabled = false;
-                    passwordSubmit.disabled = false;
-                    updateAttemptsCounter();
-                    clearError();
-                    passwordInput.focus();
-                    document.getElementById('attemptsCounter').classList.remove('attempts-warning');
-                }
-            }, 1000);
-        }
-
-        // ==================== INITIALIZATION ====================
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize security system
-            initSecuritySystem();
-            
-            // Initialize secret gallery
-            initSecretGallery();
-            
-            // Add floating hearts to countdown
-            setInterval(() => {
-                if (!document.getElementById('mainWebsite').classList.contains('show')) {
-                    const heart = document.createElement('div');
-                    heart.className = 'floating-heart';
-                    heart.innerHTML = '<i class="fas fa-heart" style="color:#c084fc"></i>';
-                    
-                    const size = Math.random() * 15 + 10;
-                    const duration = Math.random() * 10 + 10;
-                    const startX = Math.random() * 100;
-                    
-                    heart.style.left = startX + 'vw';
-                    heart.style.fontSize = size + 'px';
-                    heart.style.animationDuration = duration + 's';
-                    heart.style.color = '#c084fc';
-                    
-                    document.getElementById('birthday-countdown').appendChild(heart);
-                    
-                    setTimeout(() => {
-                        if (heart.parentNode) {
-                            heart.parentNode.removeChild(heart);
-                        }
-                    }, duration * 1000);
-                }
-            }, 1000);
-        });
-
-        // ==================== SECRET GALLERY ====================
-        // Note: Password is validated client-side as this is a personal gift website,
-        // not a security-sensitive application.
-        const GALLERY_PASSWORD = "barsha";
-        let galleryCurrentSlide = 0;
-        const GALLERY_TOTAL_SLIDES = 2;
-        let galleryTouchStartX = 0;
-        let galleryTouchEndX = 0;
-
-        function initSecretGallery() {
-            const input = document.getElementById('galleryPasswordInput');
-            const toggle = document.getElementById('galleryPasswordToggle');
-            const unlockBtn = document.getElementById('galleryUnlockBtn');
-
-            if (!input || !toggle || !unlockBtn) return;
-
-            // Enable/disable unlock button based on input
-            input.addEventListener('input', function() {
-                unlockBtn.disabled = this.value.trim().length === 0;
-                document.getElementById('galleryError').innerHTML = '';
-            });
-
-            // Enter key support
-            input.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' && !unlockBtn.disabled) {
-                    galleryCheckPassword();
-                }
-            });
-
-            // Toggle password visibility
-            toggle.addEventListener('click', function() {
-                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
-                input.setAttribute('type', type);
-                this.querySelector('i').className = type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
-            });
-
-            // Unlock button click
-            unlockBtn.addEventListener('click', galleryCheckPassword);
-
-            // Carousel navigation
-            document.getElementById('carouselPrev').addEventListener('click', function() {
-                galleryGoToSlide((galleryCurrentSlide - 1 + GALLERY_TOTAL_SLIDES) % GALLERY_TOTAL_SLIDES);
-            });
-            document.getElementById('carouselNext').addEventListener('click', function() {
-                galleryGoToSlide((galleryCurrentSlide + 1) % GALLERY_TOTAL_SLIDES);
-            });
-
-            // Dot navigation
-            document.querySelectorAll('.carousel-dot').forEach(function(dot) {
-                dot.addEventListener('click', function() {
-                    galleryGoToSlide(parseInt(this.dataset.index));
-                });
-            });
-
-            // Touch/swipe support
-            const wrapper = document.getElementById('photoCarouselWrapper');
-            wrapper.addEventListener('touchstart', function(e) {
-                if (e.changedTouches && e.changedTouches.length > 0) {
-                    galleryTouchStartX = e.changedTouches[0].screenX;
-                }
-            }, { passive: true });
-            wrapper.addEventListener('touchend', function(e) {
-                if (!e.changedTouches || e.changedTouches.length === 0) return;
-                galleryTouchEndX = e.changedTouches[0].screenX;
-                const diff = galleryTouchStartX - galleryTouchEndX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
-                        galleryGoToSlide((galleryCurrentSlide + 1) % GALLERY_TOTAL_SLIDES);
-                    } else {
-                        galleryGoToSlide((galleryCurrentSlide - 1 + GALLERY_TOTAL_SLIDES) % GALLERY_TOTAL_SLIDES);
-                    }
-                }
-            }, { passive: true });
-
-            // Auto-advance carousel every 5 seconds
-            setInterval(function() {
-                const content = document.getElementById('galleryContent');
-                if (content && content.classList.contains('visible')) {
-                    galleryGoToSlide((galleryCurrentSlide + 1) % GALLERY_TOTAL_SLIDES);
-                }
-            }, 5000);
-        }
-
-        function galleryCheckPassword() {
-            const input = document.getElementById('galleryPasswordInput');
-            const errorEl = document.getElementById('galleryError');
-            const entered = input.value.trim().toLowerCase();
-
-            if (entered === GALLERY_PASSWORD) {
-                // Correct — animate unlock
-                const lockScreen = document.getElementById('galleryLockScreen');
-                const content = document.getElementById('galleryContent');
-                const unlockBtn = document.getElementById('galleryUnlockBtn');
-
-                errorEl.style.color = 'var(--success-green)';
-                errorEl.innerHTML = '<i class="fas fa-check-circle"></i> Unlocked! Revealing your gallery...';
-                unlockBtn.disabled = true;
-                unlockBtn.innerHTML = '<i class="fas fa-check"></i> Unlocked!';
-
-                setTimeout(function() {
-                    lockScreen.style.opacity = '0';
-                    lockScreen.style.transform = 'scale(0.95)';
-                    setTimeout(function() {
-                        lockScreen.style.display = 'none';
-                        content.style.display = 'block';
-                        requestAnimationFrame(function() {
-                            requestAnimationFrame(function() {
-                                content.classList.add('visible');
-                            });
-                        });
-                    }, 500);
-                }, 800);
-
-            } else {
-                // Wrong password
-                errorEl.style.color = 'var(--error-red)';
-                errorEl.innerHTML = '<i class="fas fa-times-circle"></i> Incorrect password. Try again with love 💜';
-                const group = document.getElementById('galleryPasswordGroup');
-                group.classList.add('gallery-shake');
-                setTimeout(function() { group.classList.remove('gallery-shake'); }, 400);
-                input.value = '';
-                input.focus();
-                document.getElementById('galleryUnlockBtn').disabled = true;
-            }
-        }
-
-        function galleryGoToSlide(index) {
-            galleryCurrentSlide = index;
-            const track = document.getElementById('carouselTrack');
-            if (track) {
-                track.style.transform = 'translateX(-' + (index * 100) + '%)';
-            }
-            document.querySelectorAll('.carousel-dot').forEach(function(dot) {
-                dot.classList.toggle('active', parseInt(dot.dataset.index) === index);
-            });
-        }
-    </script>
-
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-            integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9"
-            crossorigin="anonymous"></script>
-    <!-- QRCode.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
-            integrity="sha384-3zSEDfvllQohrq0PHL1fOXJuC/jSOO34H46t6UQfobFOmxE5BpjjaIJY5F2/bMnU"
-            crossorigin="anonymous"></script>
     
     <script>
-        // ==================== THREE.JS PARTICLE BACKGROUND ====================
-        (function initThreeParticles() {
-            if (typeof THREE === 'undefined') return;
-            
-            const canvas = document.getElementById('three-canvas');
-            if (!canvas) return;
-            
-            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 5;
-            
-            // Create star field particles
-            const geometry = new THREE.BufferGeometry();
-            const count = 1500;
-            const positions = new Float32Array(count * 3);
-            const colors = new Float32Array(count * 3);
-            
-            const colorPalette = [
-                new THREE.Color('#8b5cf6'),
-                new THREE.Color('#ec4899'),
-                new THREE.Color('#22d3ee'),
-                new THREE.Color('#c4b5fd'),
-                new THREE.Color('#f0abfc')
-            ];
-            
-            for (let i = 0; i < count; i++) {
-                positions[i * 3]     = (Math.random() - 0.5) * 20;
-                positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
-                positions[i * 3 + 2] = (Math.random() - 0.5) * 20;
-                
-                const c = colorPalette[Math.floor(Math.random() * colorPalette.length)];
-                colors[i * 3]     = c.r;
-                colors[i * 3 + 1] = c.g;
-                colors[i * 3 + 2] = c.b;
-            }
-            
-            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-            
-            const material = new THREE.PointsMaterial({
-                size: 0.04,
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.8,
-                sizeAttenuation: true
-            });
-            
-            const particles = new THREE.Points(geometry, material);
-            scene.add(particles);
-            
-            // Animate
-            let animId;
-            function animate() {
-                animId = requestAnimationFrame(animate);
-                particles.rotation.x += 0.0003;
-                particles.rotation.y += 0.0005;
-                renderer.render(scene, camera);
-            }
-            animate();
-            
-            // Handle resize
-            window.addEventListener('resize', function() {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        })();
-
-        // ==================== DARK/LIGHT THEME TOGGLE ====================
-        (function initTheme() {
-            const toggle = document.getElementById('themeToggle');
-            const icon = document.getElementById('themeIcon');
-            const label = document.getElementById('themeLabel');
-            
-            // Restore saved theme
-            const savedTheme = localStorage.getItem('barsha-theme') || 'dark';
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-theme');
-                icon.className = 'fas fa-sun';
-                label.textContent = 'Light';
-            }
-            
-            toggle.addEventListener('click', function() {
-                const isLight = document.body.classList.toggle('light-theme');
-                icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
-                label.textContent = isLight ? 'Light' : 'Dark';
-                localStorage.setItem('barsha-theme', isLight ? 'light' : 'dark');
-            });
-        })();
-
-        // ==================== CURSOR TRAIL ====================
-        (function initCursorTrail() {
-            const colors = ['#8b5cf6', '#ec4899', '#22d3ee', '#c4b5fd', '#f0abfc'];
-            
-            document.addEventListener('mousemove', function(e) {
-                const trail = document.createElement('div');
-                trail.className = 'cursor-trail';
-                trail.style.left = (e.clientX - 4) + 'px';
-                trail.style.top = (e.clientY - 4) + 'px';
-                trail.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                trail.style.boxShadow = '0 0 6px ' + trail.style.backgroundColor;
-                document.body.appendChild(trail);
-                setTimeout(() => { if (trail.parentNode) trail.parentNode.removeChild(trail); }, 600);
-            });
-        })();
-
-        // ==================== SCROLL QUOTES ====================
-        (function initScrollQuotes() {
-            const quotes = [
-                '"Love is not about how many days you\'ve been together, but how much you\'ve grown together."',
-                '"Distance means nothing when someone means everything."',
-                '"In a sea of people, my eyes will always search for you."',
-                '"Every love story is beautiful, but ours is my favorite."',
-                '"You are my today and all of my tomorrows."',
-                '"When I saw you, I fell in love \u2014 and you smiled because you knew."',
-                '"The best thing to hold onto in life is each other."',
-                '"I love you not only for what you are, but for what I am when I am with you."'
-            ];
-            
-            const quoteEl = document.getElementById('scrollQuote');
-            if (!quoteEl) return;
-            
-            let lastScrollY = 0;
-            let quoteTimer = null;
-            let quoteIndex = 0;
-            let lastQuoteScrollY = 0;
-            
-            window.addEventListener('scroll', function() {
-                const scrollY = window.scrollY;
-                const delta = Math.abs(scrollY - lastQuoteScrollY);
-                lastScrollY = scrollY;
-                
-                if (delta > 400) {
-                    lastQuoteScrollY = scrollY;
-                    
-                    if (quoteTimer) clearTimeout(quoteTimer);
-                    
-                    quoteEl.textContent = quotes[quoteIndex % quotes.length];
-                    quoteIndex++;
-                    quoteEl.classList.add('visible');
-                    
-                    quoteTimer = setTimeout(() => {
-                        quoteEl.classList.remove('visible');
-                    }, 4000);
-                }
-            }, { passive: true });
-        })();
-
-        // ==================== KONAMI CODE EASTER EGG ====================
-        (function initKonami() {
-            const sequence = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-            let progress = 0;
-            
-            document.addEventListener('keydown', function(e) {
-                if (e.key === sequence[progress]) {
-                    progress++;
-                    if (progress === sequence.length) {
-                        progress = 0;
-                        document.getElementById('konamiOverlay').classList.add('active');
-                    }
-                } else {
-                    progress = e.key === sequence[0] ? 1 : 0;
-                }
-            });
-            
-            document.getElementById('konamiClose').addEventListener('click', function() {
-                document.getElementById('konamiOverlay').classList.remove('active');
-                showAchievement('<i class="fas fa-gamepad"></i>', 'Secret Explorer!', 'You discovered the Konami code easter egg!');
-            });
-        })();
-
-        // ==================== ACHIEVEMENT SYSTEM ====================
-        function showAchievement(icon, name, desc) {
-            const toast = document.getElementById('achievementToast');
-            document.getElementById('achieveIcon').innerHTML = icon;
-            document.getElementById('achieveName').textContent = name;
-            document.getElementById('achieveDesc').textContent = desc;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 4000);
+        // Correct romantic password: first meaningful day of connection (April 3, 2025)
+        const SECRET_LOVE_PASSWORD = "20250403";
+        let musicPlaying = false;
+        let bgAudio = null;
+        
+        // Helper time (Nepal GMT+5:45 , Germany GMT+1)
+        function getNepalTime() {
+            let now = new Date();
+            let utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            return new Date(utc + (5.75 * 60 * 60 * 1000));
         }
-
-        // Track scroll achievements
-        (function initAchievements() {
-            const achievements = {
-                halfway: false,
-                bottom: false
-            };
-            
-            window.addEventListener('scroll', function() {
-                const scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-                if (!achievements.halfway && scrollPct >= 50) {
-                    achievements.halfway = true;
-                    showAchievement('<i class="fas fa-star"></i>', 'Halfway Explorer!', 'You reached the middle of this love story.');
-                }
-                if (!achievements.bottom && scrollPct >= 95) {
-                    achievements.bottom = true;
-                    showAchievement('<i class="fas fa-heart"></i>', 'Love Story Complete!', 'You read every word of this heartfelt journey.');
-                }
-            }, { passive: true });
-        })();
-
-        // ==================== MULTIPLE COUNTDOWN MODES ====================
-        let countdownMode = 'birthday';
-        // April 3, 2026 = 1 year together
-        const countdownTargets = {
-            birthday: new Date(2027, 1, 19, 0, 0, 0),    // Feb 19, 2027
-            together: new Date(2026, 3, 3, 0, 0, 0),       // April 3, 2026 (1yr together)
-            custom:   new Date(2026, 5, 1, 0, 0, 0)        // Jun 1, 2026 (next special day placeholder)
-        };
-        const countdownLabels = {
-            birthday: ['Birthday', 'Feb 19, 2027'],
-            together: ['1 Year Together', 'Apr 3, 2026'],
-            custom:   ['Next Special Day', 'Jun 1, 2026']
-        };
-
-        function setCountdownMode(mode) {
-            countdownMode = mode;
-            // Update active button
-            document.querySelectorAll('.mode-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.mode === mode);
-            });
-            // Update date display
-            const dateEl = document.querySelector('.birthday-date');
-            if (dateEl) {
-                const labels = countdownLabels[mode];
-                dateEl.innerHTML = `<i class="far fa-calendar-alt"></i> ${labels[1]}`;
-            }
+        function getGermanyTime() {
+            let now = new Date();
+            let utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            return new Date(utc + (1 * 60 * 60 * 1000));
         }
-
-        // Override the existing updateBirthdayCountdown to use mode
-        window.updateBirthdayCountdown = function() {
-            const now = getCurrentNepalTime();
-            const target = countdownTargets[countdownMode] || countdownTargets.birthday;
-            const diff = target.getTime() - now.getTime();
-            
-            if (diff <= 0) {
-                ['days','hours','minutes','seconds'].forEach(u => {
-                    document.getElementById('countdown-' + u).textContent = '00';
-                });
-                return;
-            }
-            
-            const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('countdown-days').textContent    = days.toString().padStart(2, '0');
-            document.getElementById('countdown-hours').textContent   = hours.toString().padStart(2, '0');
-            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
-        };
-
-        // ==================== QR CODE GENERATOR ====================
-        function generateQRCode() {
-            const display = document.getElementById('qr-code-display');
-            const label = document.getElementById('qrLabel');
-            const btn = document.getElementById('qrBtn');
-            
-            if (display.classList.contains('visible')) {
-                display.classList.remove('visible');
-                display.innerHTML = '';
-                label.style.display = 'none';
-                btn.innerHTML = '<i class="fas fa-qrcode"></i> Share This Love Story';
-                return;
-            }
-            
-            display.innerHTML = '';
-            
-            if (typeof QRCode !== 'undefined') {
-                new QRCode(display, {
-                    text: window.location.href,
-                    width: 180,
-                    height: 180,
-                    colorDark: '#8b5cf6',
-                    colorLight: '#ffffff',
-                    correctLevel: QRCode.CorrectLevel.M
-                });
-                display.classList.add('visible');
-                label.style.display = 'block';
-                btn.innerHTML = '<i class="fas fa-times"></i> Hide QR Code';
-                showAchievement('<i class="fas fa-qrcode"></i>', 'Share the Love!', 'QR code generated for sharing!');
+        function formatTime(date) {
+            return date.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute:'2-digit', second:'2-digit' });
+        }
+        function formatDateNice(date) {
+            return date.toLocaleDateString('en-US', { weekday:'short', year:'numeric', month:'short', day:'numeric' });
+        }
+        
+        function updateRomanceTimes() {
+            let nepal = getNepalTime();
+            let germany = getGermanyTime();
+            document.getElementById('nepalRomanceTime') && (document.getElementById('nepalRomanceTime').innerText = formatTime(nepal));
+            document.getElementById('germanyRomanceTime') && (document.getElementById('germanyRomanceTime').innerText = formatTime(germany));
+            document.getElementById('nepalRomanceDate') && (document.getElementById('nepalRomanceDate').innerText = formatDateNice(nepal));
+            document.getElementById('germanyRomanceDate') && (document.getElementById('germanyRomanceDate').innerText = formatDateNice(germany));
+        }
+        
+        // Unlock story
+        function unlockLoveStory() {
+            const inputPass = document.getElementById('romancePassword').value.trim();
+            const errorDiv = document.getElementById('accessError');
+            if (inputPass === SECRET_LOVE_PASSWORD) {
+                errorDiv.innerHTML = '<i class="fas fa-check-circle"></i> Access granted, my love 💖';
+                errorDiv.style.color = '#b9f6ca';
+                setTimeout(() => {
+                    document.getElementById('accessGate').style.opacity = '0';
+                    setTimeout(() => {
+                        document.getElementById('accessGate').style.display = 'none';
+                        document.getElementById('romanceWebsite').classList.add('show');
+                        startRomanceMusic();
+                        createFloatingHearts();
+                        initParticleTrail();
+                    }, 1000);
+                }, 500);
             } else {
-                display.innerHTML = '<p style="color:var(--text-muted);font-size:0.9rem;">QR code library loading…</p>';
-                display.classList.add('visible');
+                errorDiv.innerHTML = '<i class="fas fa-heart-broken"></i> Wrong date, love. Try the day our souls first spoke (April 3, 2025 format: YYYYMMDD)';
+                errorDiv.style.color = '#ffb3ba';
+                document.getElementById('romancePassword').classList.add('shake');
+                setTimeout(() => document.getElementById('romancePassword').classList.remove('shake'), 400);
+                document.getElementById('romancePassword').value = '';
             }
         }
-
-        // ==================== SERVICE WORKER REGISTRATION ====================
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js').catch(function(err) {
-                    console.log('SW registration failed (normal in dev):', err);
+        
+        // Romantic background music (soft piano)
+        function startRomanceMusic() {
+            if (bgAudio) return;
+            bgAudio = new Audio('https://assets.mixkit.co/music/preview/mixkit-romantic-love-melody-2345.mp3');
+            bgAudio.loop = true;
+            bgAudio.volume = 0.4;
+            bgAudio.play().catch(e => console.log("Music autoplay blocked"));
+            musicPlaying = true;
+            const icon = document.getElementById('musicIconRomance');
+            if(icon) icon.className = 'fas fa-pause';
+        }
+        
+        function toggleRomanceMusic() {
+            if (!bgAudio) {
+                bgAudio = new Audio('https://assets.mixkit.co/music/preview/mixkit-romantic-love-melody-2345.mp3');
+                bgAudio.loop = true;
+                bgAudio.volume = 0.4;
+                bgAudio.play();
+                musicPlaying = true;
+                document.getElementById('musicIconRomance').className = 'fas fa-pause';
+                return;
+            }
+            if (musicPlaying) {
+                bgAudio.pause();
+                musicPlaying = false;
+                document.getElementById('musicIconRomance').className = 'fas fa-play';
+            } else {
+                bgAudio.play().catch(e=>{});
+                musicPlaying = true;
+                document.getElementById('musicIconRomance').className = 'fas fa-pause';
+            }
+        }
+        
+        // floating hearts animation
+        function createFloatingHearts() {
+            setInterval(() => {
+                let heart = document.createElement('div');
+                heart.innerHTML = '<i class="fas fa-heart" style="color:#f472b6; filter:drop-shadow(0 0 6px #ff99cc);"></i>';
+                heart.style.position = 'fixed';
+                heart.style.bottom = '-20px';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.fontSize = (Math.random() * 24 + 16) + 'px';
+                heart.style.opacity = '0.8';
+                heart.style.zIndex = '999';
+                heart.style.pointerEvents = 'none';
+                heart.style.transition = 'all 5s linear';
+                document.body.appendChild(heart);
+                setTimeout(() => {
+                    heart.style.transform = 'translateY(-110vh) rotate(15deg)';
+                    heart.style.opacity = '0';
+                }, 50);
+                setTimeout(() => { if(heart && heart.remove) heart.remove(); }, 5200);
+            }, 800);
+        }
+        
+        // particle canvas (romantic stars)
+        function initParticleTrail() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = window.innerWidth, height = window.innerHeight;
+            let particles = [];
+            canvas.width = width; canvas.height = height;
+            
+            for(let i=0;i<180;i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 2.5 + 1,
+                    alpha: Math.random() * 0.5 + 0.2,
+                    speedX: (Math.random() - 0.5) * 0.3,
+                    speedY: (Math.random() - 0.5) * 0.2
                 });
+            }
+            function animateStars() {
+                ctx.clearRect(0,0,width,height);
+                for(let p of particles) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2);
+                    ctx.fillStyle = `rgba(244, 114, 182, ${p.alpha})`;
+                    ctx.fill();
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+                    if(p.x<0) p.x = width;
+                    if(p.x>width) p.x=0;
+                    if(p.y<0) p.y=height;
+                    if(p.y>height) p.y=0;
+                }
+                requestAnimationFrame(animateStars);
+            }
+            window.addEventListener('resize',()=>{
+                width = window.innerWidth; height=window.innerHeight;
+                canvas.width=width; canvas.height=height;
+            });
+            animateStars();
+        }
+        
+        // cursor trail
+        function cursorRomanceTrail() {
+            document.addEventListener('mousemove', (e) => {
+                let trail = document.createElement('div');
+                trail.className = 'cursor-trail-romance';
+                trail.style.left = e.clientX - 4 + 'px';
+                trail.style.top = e.clientY - 4 + 'px';
+                document.body.appendChild(trail);
+                setTimeout(() => { if(trail && trail.remove) trail.remove(); }, 400);
             });
         }
+        
+        // Event listeners
+        document.getElementById('unlockStoryBtn').addEventListener('click', unlockLoveStory);
+        document.getElementById('romancePassword').addEventListener('keypress', (e) => { if(e.key === 'Enter') unlockLoveStory(); });
+        document.getElementById('romanceMusicToggle').addEventListener('click', toggleRomanceMusic);
+        
+        setInterval(updateRomanceTimes, 1000);
+        updateRomanceTimes();
+        cursorRomanceTrail();
+        
+        // add floating hearts to background before unlock?
+        setInterval(() => {
+            if(document.getElementById('accessGate') && getComputedStyle(document.getElementById('accessGate')).display !== 'none') {
+                let preHeart = document.createElement('div');
+                preHeart.innerHTML = '❤️';
+                preHeart.style.position = 'fixed';
+                preHeart.style.bottom = '-10px';
+                preHeart.style.left = Math.random() * 100 + '%';
+                preHeart.style.fontSize = '18px';
+                preHeart.style.opacity = '0.6';
+                preHeart.style.pointerEvents = 'none';
+                preHeart.style.zIndex = '10001';
+                document.body.appendChild(preHeart);
+                setTimeout(() => { preHeart.style.transform = 'translateY(-80vh)'; preHeart.style.opacity = '0'; }, 20);
+                setTimeout(() => preHeart.remove(), 5000);
+            }
+        }, 1500);
     </script>
+    <style>
+        .shake {
+            animation: shakeAnim 0.3s ease-in-out;
+        }
+        @keyframes shakeAnim {
+            0%,100%{ transform: translateX(0);}
+            25%{ transform: translateX(-6px);}
+            75%{ transform: translateX(6px);}
+        }
+        .date-small {
+            font-size: 0.8rem;
+            color: #c4b5fd;
+        }
+    </style>
 </body>
 </html>
