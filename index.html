@@ -1,2509 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https: data:; img-src 'self' https: data:; media-src 'self' https:; connect-src 'self' https:">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="description" content="Our Love Story Across Continents | A romantic journey of two hearts connected beyond distance">
+    <title>Our Love Story | Hearts Across Continents</title>
     
-    <title>For Barsha | Our Love Across Continents</title>
-    
-    <!-- Disable text selection and context menu -->
-    <style>
-        * {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        input, textarea {
-            -webkit-user-select: text;
-            -khtml-user-select: text;
-            -moz-user-select: text;
-            -ms-user-select: text;
-            user-select: text;
-        }
-        
-        body {
-            -webkit-tap-highlight-color: transparent;
-            cursor: default;
-        }
-    </style>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Montserrat:wght@200;300;400;500&family=Pinyon+Script&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Secure Fonts & Libraries -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=[...]"
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     
     <style>
-        /* Add to existing :root variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         :root {
-            --rose-gold: #e5b3a3;
-            --rose-gold-light: #f4dcd1;
-            --rose-gold-dark: #d9987e;
-            --ivory: #fdfaf7;
-            --deep-text: #4a3f3b;
-            --soft-brown: #8b7355;
-            --love-red: #d4a5a5;
-            --gold: #d4af37;
-            --glass: rgba(255, 255, 255, 0.85);
-            --shadow-light: rgba(0, 0, 0, 0.05);
-            --shadow-medium: rgba(0, 0, 0, 0.1);
-            --nepal-red: #dc143c;
-            --nepal-blue: #003893;
-            --error-red: #ff6b6b;
-            --success-green: #51cf66;
+            --romance-pink: #f472b6;
+            --romance-deep: #db2777;
+            --romance-lavender: #c084fc;
+            --romance-gold: #fbbf24;
+            --romance-bg-dark: #0b081a;
+            --romance-bg-mid: #19113b;
+            --romance-bg-light: #2a1e5c;
+            --glass: rgba(255,255,255,0.05);
+            --glass-card: rgba(244, 114, 182, 0.08);
+            --text-bright: #fdf8ff;
+            --text-soft: #fbcfe8;
+            --text-muted: #c4b5fd;
+            --glow-pink: rgba(236, 72, 153, 0.6);
+            --glow-purple: rgba(139, 92, 246, 0.5);
         }
-
-        /* NEW: Birthday Celebration Animation */
-        .birthday-celebration {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            z-index: 99999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 1s ease, visibility 1s ease;
-            overflow: hidden;
-        }
-
-        .birthday-celebration.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .birthday-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 6rem;
-            margin-bottom: 20px;
-            color: var(--rose-gold);
-            text-shadow: 0 0 30px rgba(229, 179, 163, 0.8);
-            z-index: 10;
-        }
-
-        .birthday-subtitle {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 40px;
-            z-index: 10;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .birthday-message {
-            font-size: 1.5rem;
-            max-width: 700px;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
-            z-index: 10;
-            padding: 0 20px;
-        }
-
-        .birthday-continue-btn {
-            background: transparent;
-            border: 2px solid var(--rose-gold);
-            color: var(--rose-gold);
-            padding: 20px 50px;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            border-radius: 50px;
-            margin-top: 30px;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-            z-index: 10;
-        }
-
-        .birthday-continue-btn:hover {
-            background: var(--rose-gold);
-            color: #16213e;
-            letter-spacing: 5px;
-            padding: 20px 55px;
-            box-shadow: 0 0 40px rgba(229, 179, 163, 0.6);
-        }
-
-        /* Fireworks */
-        .firework {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 5;
-        }
-
-        .firework-burst {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: burst 1s ease-out forwards;
-        }
-
-        @keyframes burst {
-            0% {
-                opacity: 1;
-                transform: translate(0, 0) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translate(var(--burst-x), var(--burst-y)) scale(0);
-            }
-        }
-
-        /* Magic Cursor Trail */
-        .cursor-star {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            font-size: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .cursor-star::before {
-            content: '✦';
-            font-size: 16px;
-            color: var(--rose-gold);
-            text-shadow: 0 0 10px rgba(229, 179, 163, 0.8),
-                        0 0 20px rgba(229, 179, 163, 0.5),
-                        0 0 30px rgba(229, 179, 163, 0.3);
-            display: block;
-            animation: starTwinkle 1.5s infinite alternate;
-        }
-
-        @keyframes starTwinkle {
-            0% { opacity: 0.3; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1.1); }
-        }
-
-        /* Grand Reveal Celebration */
-        .reveal-celebration {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9998;
-            overflow: hidden;
-        }
-
-        .burst-heart {
-            position: absolute;
-            font-size: 24px;
-            opacity: 0;
-            pointer-events: none;
-            animation: burstAnimation 2s ease-out forwards;
-        }
-
-        @keyframes burstAnimation {
-            0% {
-                opacity: 0;
-                transform: translate(0, 0) scale(0) rotate(0deg);
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                opacity: 0;
-                transform: translate(var(--tx), var(--ty)) scale(1.5) rotate(360deg);
-            }
-        }
-
-        /* Shared Time Widget */
-        .shared-time-widget {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px auto 60px;
-            max-width: 600px;
-            flex-wrap: wrap;
-        }
-
-        .time-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(229, 179, 163, 0.2);
-            text-align: center;
-            min-width: 220px;
-            transition: transform 0.3s ease;
-        }
-
-        .time-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .time-location {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            color: var(--deep-text);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .time-location i {
-            color: var(--rose-gold);
-            font-size: 1.2rem;
-        }
-
-        .time-display {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 300;
-            color: var(--rose-gold);
-            margin: 15px 0;
-            letter-spacing: 2px;
-        }
-
-        .time-date {
-            font-size: 0.9rem;
-            color: var(--soft-brown);
-            letter-spacing: 1px;
-        }
-
-        .time-zone {
-            font-size: 0.8rem;
-            color: var(--soft-brown);
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-
-        .time-connection {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .time-connection-line {
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--rose-gold), var(--gold), var(--rose-gold));
-            margin: 0 10px;
-        }
-
-        .time-connection i {
-            color: var(--rose-gold);
-            font-size: 1.2rem;
-            animation: heartbeat 1.5s infinite;
-        }
-
-        /* Fix scroll issue */
-        html, body {
-            overflow-x: hidden;
-            overflow-y: auto;
-            height: 100%;
-        }
-
-        #mainWebsite.show {
-            overflow: visible;
-        }
-
-        /* Password access section in countdown */
-        .password-access {
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
-
-        .password-title-small {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            color: var(--rose-gold-light);
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .password-input-group-small {
-            position: relative;
-            max-width: 400px;
-            margin: 0 auto 20px;
-        }
-
-        .password-input-small {
-            width: 100%;
-            padding: 18px 25px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            color: white;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            text-align: center;
-            transition: all 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .password-input-small:focus {
-            outline: none;
-            border-color: var(--rose-gold);
-            box-shadow: 0 0 20px rgba(229, 179, 163, 0.3);
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .password-input-small::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-            letter-spacing: 1px;
-        }
-
-        .password-toggle-small {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
-
-        .password-toggle-small:hover {
-            color: var(--rose-gold);
-        }
-
-        .password-submit-small {
-            background: transparent;
-            border: 2px solid var(--rose-gold);
-            color: var(--rose-gold);
-            padding: 15px 40px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            border-radius: 50px;
-            margin-top: 10px;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .password-submit-small:hover:not(:disabled) {
-            background: var(--rose-gold);
-            color: #16213e;
-            letter-spacing: 3px;
-            box-shadow: 0 0 20px rgba(229, 179, 163, 0.4);
-        }
-
-        .password-submit-small:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .password-error-small {
-            color: var(--error-red);
-            font-size: 0.85rem;
-            margin-top: 15px;
-            min-height: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .password-success-small {
-            color: var(--success-green);
-            font-size: 0.85rem;
-            margin-top: 15px;
-            min-height: 25px;
-        }
-
-        .attempts-counter-small {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 20px;
-            letter-spacing: 1px;
-        }
-
-        .attempts-warning {
-            color: #ffd43b;
-            animation: pulse 1.5s infinite;
-        }
-
-        .access-note {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 30px;
-            line-height: 1.6;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .access-note i {
-            color: var(--rose-gold);
-            margin: 0 5px;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-
-        .shake {
-            animation: shake 0.5s ease-in-out;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-
-        /* Anti-screenshot overlay */
-        .anti-screenshot {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(255, 0, 0, 0.03) 0px,
-                rgba(255, 0, 0, 0.03) 1px,
-                transparent 1px,
-                transparent 3px
-            );
-            pointer-events: none;
-            z-index: 999999;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .anti-screenshot.active {
-            opacity: 1;
-        }
-
-        /* Add to existing body styles */
+        
         body {
-            background: var(--ivory);
-            color: var(--deep-text);
-            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0b081a 0%, #19113b 50%, #2a1e5c 100%);
+            background-attachment: fixed;
+            color: var(--text-bright);
+            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(229, 179, 163, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 20%);
         }
-
-        /* Prevent mobile reading mode */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: var(--ivory) !important;
-                color: var(--deep-text) !important;
-            }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(244, 114, 182, 0.12) 0%, transparent 55%),
+                        radial-gradient(circle at 85% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            animation: softBreathing 12s infinite alternate;
         }
-
-        /* Add to existing responsive design */
-        @media (max-width: 768px) {
-            .password-input-small {
-                padding: 16px 20px;
-                font-size: 1rem;
-            }
-            
-            .password-submit-small {
-                padding: 14px 30px;
-                font-size: 0.85rem;
-            }
-            
-            .password-title-small {
-                font-size: 1rem;
-            }
-
-            .shared-time-widget {
-                gap: 20px;
-            }
-
-            .time-card {
-                min-width: 180px;
-                padding: 20px;
-            }
-
-            .time-display {
-                font-size: 1.8rem;
-            }
-
-            .birthday-title {
-                font-size: 4rem;
-            }
-
-            .birthday-subtitle {
-                font-size: 2rem;
-            }
-
-            .birthday-message {
-                font-size: 1.2rem;
-            }
+        
+        @keyframes softBreathing {
+            0% { opacity: 0.5; transform: scale(1);}
+            100% { opacity: 1; transform: scale(1.08);}
         }
-
-        @media (max-width: 480px) {
-            .password-input-small {
-                padding: 14px 18px;
-                font-size: 0.95rem;
-            }
-            
-            .password-submit-small {
-                padding: 12px 25px;
-                font-size: 0.8rem;
-            }
-            
-            .access-note {
-                font-size: 0.8rem;
-                padding: 0 10px;
-            }
-
-            .shared-time-widget {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .time-card {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .birthday-title {
-                font-size: 3rem;
-            }
-
-            .birthday-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .birthday-message {
-                font-size: 1rem;
-            }
-        }
-
-        /* Existing styles continue below... */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* --- BIRTHDAY COUNTDOWN --- */
-        #birthday-countdown {
+        
+        /* Heart lock screen (romantic access) */
+        .access-lovelock {
             position: fixed;
             inset: 0;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(145deg, #0a041a, #1e1245);
             z-index: 10000;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 20px;
-            color: white;
-            transition: opacity 1.5s ease, visibility 1.5s ease;
-            overflow-y: auto;
+            transition: opacity 1.5s ease;
+            backdrop-filter: blur(2px);
         }
-
-        .countdown-container {
-            max-width: 800px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        
+        .love-card {
+            max-width: 500px;
+            padding: 50px 40px;
+            background: rgba(244, 114, 182, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 48px;
+            border: 1px solid rgba(244, 114, 182, 0.3);
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(236,72,153,0.2);
             margin: 20px;
         }
-
-        .countdown-title {
+        
+        .love-lock-icon {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #f472b6, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .love-title {
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            color: var(--rose-gold);
-            text-shadow: 0 0 20px rgba(229, 179, 163, 0.5);
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #f472b6, #fbcfe8, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
         }
-
-        .countdown-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.8);
-            letter-spacing: 2px;
+        
+        .love-sub {
+            color: var(--text-soft);
+            margin-bottom: 35px;
+            font-size: 0.95rem;
         }
-
-        .birthday-date {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 50px;
-            padding: 15px 30px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            display: inline-block;
-        }
-
-        .countdown-display {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
-
-        .countdown-unit {
+        
+        .password-group {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 15px;
+            max-width: 300px;
+            margin: 0 auto;
         }
-
-        .countdown-number {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4rem;
-            font-weight: 300;
+        
+        .romance-input {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(244,114,182,0.4);
+            border-radius: 60px;
+            padding: 14px 20px;
             color: white;
-            min-width: 120px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 15px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .countdown-label {
             font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--rose-gold-light);
+            text-align: center;
+            letter-spacing: 2px;
+            outline: none;
+            transition: all 0.3s;
         }
-
-        .countdown-message {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            font-style: italic;
+        
+        .romance-input:focus {
+            border-color: #f472b6;
+            box-shadow: 0 0 20px rgba(244,114,182,0.4);
         }
-
-        .enter-btn {
-            background: transparent;
-            border: 2px solid var(--rose-gold);
-            color: var(--rose-gold);
-            padding: 18px 50px;
-            font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+        
+        .unlock-btn {
+            background: linear-gradient(90deg, #db2777, #c084fc);
+            border: none;
+            padding: 14px;
+            border-radius: 60px;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 2px;
             cursor: pointer;
-            transition: all 0.5s ease;
-            border-radius: 50px;
-            margin-top: 20px;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(219,39,119,0.4);
         }
-
-        .enter-btn:hover {
-            background: var(--rose-gold);
-            color: #16213e;
-            letter-spacing: 5px;
-            padding: 18px 55px;
-            box-shadow: 0 0 30px rgba(229, 179, 163, 0.5);
+        
+        .unlock-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(219,39,119,0.6);
         }
-
-        .enter-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .enter-btn:disabled:hover {
-            background: transparent;
-            color: var(--rose-gold);
-            letter-spacing: 3px;
-            padding: 18px 50px;
-            box-shadow: none;
-        }
-
-        .countdown-timezone {
+        
+        .love-hint {
             font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 30px;
-            letter-spacing: 1px;
+            color: #c4b5fd;
+            margin-top: 20px;
         }
-
-        .nepal-flag {
-            display: inline-flex;
-            margin: 0 10px;
-        }
-
-        .nepal-flag span {
-            display: inline-block;
-            width: 15px;
-            height: 10px;
-            margin: 0 2px;
-        }
-
-        .nepal-red {
-            background-color: var(--nepal-red);
-        }
-
-        .nepal-blue {
-            background-color: var(--nepal-blue);
-        }
-
-     
-        /* --- MAIN WEBSITE --- */
-        .container {
+        
+        /* Main romantic story container */
+        .romance-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 24px;
             position: relative;
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 2s ease;
+            z-index: 5;
             display: none;
         }
-
-        .container.show {
-            opacity: 1;
+        
+        .romance-container.show {
             display: block;
+            animation: fadeRise 1.2s ease;
         }
-
-        /* --- HERO SECTION --- */
-        .hero-section {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
+        
+        @keyframes fadeRise {
+            0% { opacity: 0; transform: translateY(30px);}
+            100% { opacity: 1; transform: translateY(0);}
         }
-
-        .hero-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 5.5rem;
-            color: var(--deep-text);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
-        }
-
-        .hero-subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--soft-brown);
-            margin-bottom: 40px;
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        .distance-note {
-            display: inline-block;
-            padding: 15px 30px;
-            background: rgba(229, 179, 163, 0.1);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: var(--soft-brown);
-            border: 1px solid rgba(229, 179, 163, 0.3);
-            margin-bottom: 40px;
-        }
-
-        /* --- OUR STORY SECTION --- */
-        .story-section {
-            margin-bottom: 100px;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
+        
+        /* Hero romantic section */
+        .romantic-hero {
             text-align: center;
             margin-bottom: 70px;
-            color: var(--deep-text);
-            position: relative;
         }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
+        
+        .couple-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5.2rem;
+            background: linear-gradient(135deg, #fbcfe8, #f472b6, #c084fc);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmerText 4s infinite;
         }
-
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 0;
+        
+        @keyframes shimmerText {
+            0% { background-position: 0% center;}
+            100% { background-position: 200% center;}
         }
-
-        .timeline:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, var(--rose-gold), transparent);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 80px;
-            width: 45%;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border: 1px solid rgba(229, 179, 163, 0.2);
-            transition: transform 0.5s ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .timeline-item:nth-child(odd) {
-            margin-left: 0;
-            margin-right: auto;
-        }
-
-        .timeline-item:nth-child(even) {
-            margin-left: auto;
-            margin-right: 0;
-        }
-
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: var(--rose-gold);
-            box-shadow: 0 0 0 8px var(--ivory);
-            z-index: 2;
-        }
-
-        .timeline-item:nth-child(odd):before {
-            right: -47px;
-        }
-
-        .timeline-item:nth-child(even):before {
-            left: -47px;
-        }
-
-        .timeline-date {
+        
+        .distance-tag {
+            display: inline-flex;
+            margin-top: 20px;
+            gap: 12px;
+            background: rgba(244,114,182,0.12);
+            backdrop-filter: blur(12px);
+            padding: 12px 28px;
+            border-radius: 60px;
+            border: 1px solid rgba(244,114,182,0.3);
             font-size: 0.9rem;
-            color: var(--rose-gold);
-            margin-bottom: 15px;
-            font-weight: 600;
-            letter-spacing: 2px;
+        }
+        
+        /* Shared time widget */
+        .time-romance-widget {
             display: flex;
-            align-items: center;
-        }
-
-        .timeline-icon {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        .timeline-content {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: var(--deep-text);
-        }
-
-        .timeline-quote {
-            font-style: italic;
-            padding-left: 20px;
-            border-left: 3px solid var(--rose-gold-light);
-            margin-top: 15px;
-            color: var(--soft-brown);
-        }
-
-        /* --- PHOTO GALLERY --- */
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 100px;
-        }
-
-        .photo-frame {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            height: 300px;
-            transition: transform 0.5s ease;
-        }
-
-        .photo-frame:hover {
-            transform: translateY(-10px);
-        }
-
-        .photo-frame:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(229, 179, 163, 0.1), transparent);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--rose-gold-light), var(--ivory));
-            display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            color: var(--soft-brown);
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
+            gap: 35px;
+            margin: 45px auto;
+            flex-wrap: wrap;
         }
-
-        .photo-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--rose-gold);
+        
+        .time-card-romance {
+            background: var(--glass-card);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            padding: 22px 30px;
+            border: 1px solid rgba(244,114,182,0.2);
+            min-width: 210px;
+            text-align: center;
+            transition: all 0.3s;
         }
-
-        /* --- LOVE LETTER --- */
-        .love-letter-section {
-            margin-bottom: 100px;
+        
+        .time-location i { color: #f472b6; margin-right: 8px; }
+        .time-display-romance { font-size: 2rem; font-weight: 600; color: #fbcfe8; letter-spacing: 2px; margin: 12px 0; }
+        
+        /* Story timeline romantic */
+        .story-timeline {
             position: relative;
+            margin: 70px 0;
         }
-
-        .letter-container {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 60px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
-            border: 1px solid rgba(255,255,255,0.8);
+        
+        .timeline-item-romance {
+            background: rgba(255,255,255,0.04);
+            border-radius: 32px;
+            padding: 28px 30px;
+            margin-bottom: 35px;
+            border-left: 8px solid #f472b6;
+            transition: all 0.3s;
+        }
+        
+        .timeline-item-romance:hover {
+            transform: translateX(8px);
+            background: rgba(244,114,182,0.08);
+        }
+        
+        .timeline-date-romance {
+            color: #f472b6;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+        }
+        
+        .promises-grid-romance {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .promise-card-romance {
+            background: rgba(244,114,182,0.05);
+            padding: 35px 25px;
+            border-radius: 32px;
+            text-align: center;
+            border: 1px solid rgba(244,114,182,0.2);
+            transition: 0.3s;
+        }
+        
+        .promise-card-romance i { font-size: 2.8rem; color: #f472b6; margin-bottom: 20px; }
+        
+        .love-letter-box {
+            background: rgba(0,0,0,0.3);
+            padding: 55px 45px;
+            border-radius: 48px;
+            margin: 60px 0;
             position: relative;
-            overflow: hidden;
-        }
-
-        .letter-container:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: linear-gradient(90deg, var(--rose-gold), var(--gold), var(--rose-gold));
-        }
-
-        .letter-content {
+            border: 1px solid rgba(244,114,182,0.3);
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
-            line-height: 2.2;
-            color: var(--deep-text);
-            position: relative;
-            z-index: 2;
+            line-height: 1.7;
         }
-
-        .letter-content p {
-            margin-bottom: 35px;
-        }
-
+        
         .letter-dropcap {
             font-size: 5rem;
             float: left;
             line-height: 0.8;
-            margin-right: 15px;
-            margin-bottom: 10px;
-            color: var(--rose-gold);
+            margin-right: 20px;
+            color: #f472b6;
             font-family: 'Dancing Script', cursive;
-            font-weight: 600;
         }
-
-        .letter-highlight {
-            background: linear-gradient(120deg, rgba(229, 179, 163, 0.2) 0%, rgba(229, 179, 163, 0.2) 100%);
-            background-position: 0 88%;
-            background-repeat: no-repeat;
-            background-size: 100% 0.4em;
-            transition: background-size 0.5s ease;
-        }
-
-        .letter-highlight:hover {
-            background-size: 100% 88%;
-        }
-
-        .letter-signature {
+        
+        .signature {
             text-align: right;
-            margin-top: 60px;
-        }
-
-        .signature-name {
+            margin-top: 40px;
             font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: var(--rose-gold);
-            margin-bottom: 10px;
-        }
-
-        .signature-date {
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            color: var(--soft-brown);
-        }
-
-        /* --- PROMISES SECTION --- */
-        .promises-section {
-            margin-bottom: 100px;
-        }
-
-        .promises-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .promise-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border: 1px solid rgba(229, 179, 163, 0.2);
-            text-align: center;
-            transition: transform 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .promise-card:hover {
-            transform: translateY(-15px);
-        }
-
-        .promise-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--rose-gold), var(--gold));
-        }
-
-        .promise-icon {
-            font-size: 2.5rem;
-            color: var(--rose-gold);
-            margin-bottom: 25px;
-        }
-
-        .promise-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--deep-text);
-        }
-
-        .promise-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--soft-brown);
-        }
-
-        /* --- DISTANCE MAP --- */
-        .distance-section {
-            margin-bottom: 100px;
-            text-align: center;
-        }
-
-        .map-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-container:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(229, 179, 163, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .map-title {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--deep-text);
+            color: #fbcfe8;
         }
-
-        .map-illustration {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 50px;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .location {
-            text-align: center;
-        }
-
-        .location-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--rose-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 10px 25px rgba(229, 179, 163, 0.3);
-        }
-
-        .location-name {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--deep-text);
-            margin-bottom: 10px;
-        }
-
-        .location-detail {
-            font-size: 0.9rem;
-            color: var(--soft-brown);
-        }
-
-        .distance-line {
-            flex-grow: 1;
-            height: 3px;
-            background: linear-gradient(90deg, var(--rose-gold), var(--gold), var(--rose-gold));
-            margin: 0 30px;
-            position: relative;
-        }
-
-        .distance-line:before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: 0;
-            width: 100%;
-            height: 13px;
-            background: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(229, 179, 163, 0.5) 10px, rgba(229, 179, 163, 0.5) 20px);
-        }
-
-        .distance-text {
-            font-size: 1.2rem;
-            color: var(--soft-brown);
-            font-style: italic;
-            margin-top: 20px;
-        }
-
-        /* --- FINAL CTA --- */
-        .final-cta {
-            text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .cta-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            color: var(--deep-text);
-            margin-bottom: 30px;
-        }
-
-        .cta-box {
-            display: inline-block;
-            padding: 50px;
-            background: linear-gradient(135deg, rgba(229, 179, 163, 0.1), rgba(212, 175, 55, 0.1));
-            border-radius: 20px;
-            border: 2px dashed var(--rose-gold);
-            max-width: 700px;
-            margin-bottom: 40px;
-        }
-
-        .cta-message {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            line-height: 1.8;
-            color: var(--deep-text);
-            margin-bottom: 40px;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #25D366;
-            color: white;
-            padding: 22px 50px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            font-weight: 500;
-            transition: all 0.5s ease;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
-            letter-spacing: 4px;
-        }
-
-        .whatsapp-btn i {
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-
-        /* --- FOOTER --- */
-        .footer {
-            text-align: center;
-            padding: 60px 0 40px;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            position: relative;
-        }
-
-        .footer-heart {
-            color: var(--rose-gold);
-            font-size: 2rem;
-            animation: heartbeat 1.5s infinite;
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        .footer-text {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            color: var(--soft-brown);
-            margin-bottom: 10px;
-        }
-
-        .footer-date {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            color: var(--soft-brown);
-            opacity: 0.7;
-        }
-
-        /* --- MUSIC CONTROL --- */
-        .music-control {
+        
+        .floating-hearts-container {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        .audio-control {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #db2777, #c084fc);
             border-radius: 50%;
-            background: var(--rose-gold);
-            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            z-index: 100;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
+            z-index: 1001;
+            box-shadow: 0 0 20px var(--glow-pink);
         }
-
-        .music-control:hover {
-            transform: scale(1.1);
-            background: var(--rose-gold-dark);
+        
+        .footer-romance {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px 0;
+            border-top: 1px solid rgba(244,114,182,0.2);
         }
-
-        .music-control i {
-            font-size: 1.5rem;
+        
+        /* responsive */
+        @media (max-width: 700px) {
+            .couple-name { font-size: 3.2rem; }
+            .love-letter-box { padding: 30px 25px; font-size: 1.3rem; }
         }
-
-        /* --- FLOATING HEARTS --- */
-        .floating-heart {
-            position: fixed;
-            pointer-events: none;
-            z-index: 5;
-            opacity: 0;
-            font-size: 24px;
-            animation: float linear infinite;
+        
+        .heart-beat {
+            animation: heartbeat 1.2s infinite;
         }
-
-        @keyframes float {
-            0% {
-                transform: translateY(110vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-10vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 4rem;
-            }
-            
-            .countdown-number {
-                font-size: 3rem;
-                min-width: 100px;
-            }
-            
-            .timeline:before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: calc(100% - 80px);
-                margin-left: 80px !important;
-                margin-right: 0 !important;
-            }
-            
-            .timeline-item:before {
-                left: -47px !important;
-                right: auto !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 60px 15px;
-            }
-            
-            .countdown-number {
-                font-size: 2.5rem;
-                min-width: 80px;
-                padding: 15px;
-            }
-            
-            .countdown-display {
-                gap: 15px;
-            }
-            
-            .letter-content {
-                font-size: 1.3rem;
-                padding: 30px;
-            }
-            
-            .letter-container {
-                padding: 40px 30px;
-            }
-            
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .cta-title {
-                font-size: 2.5rem;
-            }
-            
-            .map-illustration {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .distance-line {
-                width: 3px;
-                height: 100px;
-                margin: 20px 0;
-            }
-            
-            .distance-line:before {
-                width: 13px;
-                height: 100%;
-                background: repeating-linear-gradient(180deg, transparent, transparent 10px, rgba(229, 179, 163, 0.5) 10px, rgba(229, 179, 163, 0.5) 20px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .countdown-title {
-                font-size: 2.5rem;
-            }
-            
-            .countdown-number {
-                font-size: 2rem;
-                min-width: 70px;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .letter-dropcap {
-                font-size: 3.5rem;
-            }
-            
-            .cta-box {
-                padding: 30px 20px;
-            }
-            
-            .cta-message {
-                font-size: 1.4rem;
-            }
-        }
-
+        
         @keyframes heartbeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% { transform: scale(1);}
+            50% { transform: scale(1.2);}
+            100% { transform: scale(1);}
+        }
+        
+        .cursor-trail-romance {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99999;
+            background: #f472b6;
+            filter: blur(1px);
+            opacity: 0.7;
+            transition: 0.05s linear;
         }
     </style>
 </head>
 <body>
-    <!-- Birthday Celebration with Fireworks -->
-    <div class="birthday-celebration" id="birthdayCelebration">
-        <div id="fireworksContainer"></div>
-        <h1 class="birthday-title animate__animated animate__bounceIn">Happy Birthday!</h1>
-        <h2 class="birthday-subtitle animate__animated animate__fadeIn animate__delay-1s">My Dearest Barsha</h2>
-        <p class="birthday-message animate__animated animate__fadeIn animate__delay-2s">
-            Today, February 19th, marks the day the world was blessed with your presence.<br>
-            May this year bring you all the joy, love, and happiness you deserve.<br>
-            This celebration is just the beginning of what's to come.
-        </p>
-        <button class="birthday-continue-btn animate__animated animate__fadeIn animate__delay-3s" id="continueToWebsite">
-            Continue to Your Special Gift
-        </button>
-    </div>
-
-    <!-- Anti-screenshot overlay -->
-    <div class="anti-screenshot" id="antiScreenshot"></div>
-
-    <!-- Grand Reveal Celebration Container -->
-    <div class="reveal-celebration" id="revealCelebration"></div>
-
-    <!-- Background Music - Happy Birthday Theme -->
-    <audio id="bgMusic" loop preload="auto">
-        <source src="https://assets.codepen.io/1468070/gentle-piano.mp3" type="audio/mpeg">
-    </audio>
+    <canvas id="particleCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
     
-    <!-- Happy Birthday Music (auto-plays on celebration) -->
-    <audio id="birthdayMusic" preload="auto">
-        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- BIRTHDAY COUNTDOWN with Password Access -->
-    <div id="birthday-countdown">
-        <div class="countdown-container">
-            <h1 class="countdown-title">A Surprise for Barsha</h1>
-            <p class="countdown-subtitle">Counting down to something special just for you</p>
-            
-            <div class="birthday-date">
-                <i class="far fa-calendar-alt"></i> February 19, 2027
+    <!-- Access Gate: Romantic Password -->
+    <div class="access-lovelock" id="accessGate">
+        <div class="love-card">
+            <div class="love-lock-icon"><i class="fas fa-heart"></i></div>
+            <h2 class="love-title">A Love Story<br>Just for You</h2>
+            <p class="love-sub">Enter the day our hearts first spoke</p>
+            <div class="password-group">
+                <input type="password" id="romancePassword" class="romance-input" placeholder="YYYYMMDD" maxlength="8" autocomplete="off">
+                <button id="unlockStoryBtn" class="unlock-btn"><i class="fas fa-key"></i> Unlock Our World</button>
             </div>
-            
-            <div class="countdown-display">
-                <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-days">00</div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-hours">00</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-minutes">00</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-unit">
-                    <div class="countdown-number" id="countdown-seconds">00</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
-            
-            <p class="countdown-message">
-                "My love, something beautiful is waiting for you. Every second brings us closer to February 19th, 2027, when you'll discover a special gift made just for you."
-            </p>
-            
-            <!-- Password Access Section -->
-            <div class="password-access">
-                <h3 class="password-title-small">Early Access with Password</h3>
-                <p class="access-note">
-                    <i class="fas fa-lock"></i> 
-                    You can access this special gift now by entering the password. 
-                    Hint: Think about when our journey truly began (Format: YYYYMMDD)
-                    <i class="fas fa-heart"></i>
-                </p>
-                
-                <div class="password-input-group-small">
-                    <input type="password" 
-                           id="passwordInput" 
-                           class="password-input-small" 
-                           placeholder="Enter the special date..."
-                           maxlength="8"
-                           autocomplete="off">
-                    <button type="button" class="password-toggle-small" id="passwordToggle">
-                        <i class="fas fa-eye"></i>
-                    </button>
-                </div>
-                
-                <div id="passwordError" class="password-error-small">
-                    <!-- Error messages appear here -->
-                </div>
-                
-                <button class="password-submit-small" id="passwordSubmit">
-                    <i class="fas fa-lock"></i> Unlock My Gift
-                </button>
-                
-                <div class="attempts-counter-small" id="attemptsCounter">
-                    Attempts: <span id="attemptCount">0</span>/5
-                </div>
-            </div>
-            
-            <p class="countdown-timezone">
-                Counting down in Nepal Time <span class="nepal-flag"><span class="nepal-red"></span><span class="nepal-blue"></span></span> 
-                | Current Nepal Time: <span id="current-nepal-time">Loading...</span>
-            </p>
+            <div class="love-hint"><i class="fas fa-feather-alt"></i> Hint: The day we had our first real conversation that changed everything (April 2025)</div>
+            <div id="accessError" style="color:#ffb3ba; font-size:0.8rem; margin-top:15px;"></div>
         </div>
     </div>
-
-    <!-- MAIN WEBSITE (Hidden until password is entered) -->
-    <div class="container" id="mainWebsite">
-        <div class="music-control" id="musicControl" onclick="toggleMusic()">
-            <i class="fas fa-music"></i>
+    
+    <!-- Main Romantic Website -->
+    <div class="romance-container" id="romanceWebsite">
+        <!-- Music Toggle -->
+        <div class="audio-control" id="romanceMusicToggle">
+            <i class="fas fa-play" id="musicIconRomance"></i>
         </div>
-
-        <section class="hero-section">
-            <h1 class="hero-title">Barsha</h1>
-            <p class="hero-subtitle">Born February 19, 2001 • The day my world gained meaning</p>
-            
-            <!-- Shared Time Widget -->
-            <div class="shared-time-widget">
-                <div class="time-card">
-                    <div class="time-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Germany (You)</span>
-                    </div>
-                    <div class="time-display" id="germany-time">00:00:00</div>
-                    <div class="time-date" id="germany-date">Loading...</div>
-                    <div class="time-zone">GMT+1</div>
-                </div>
-                
-                <div class="time-connection">
-                    <div class="time-connection-line"></div>
-                    <i class="fas fa-heart"></i>
-                    <div class="time-connection-line"></div>
-                </div>
-                
-                <div class="time-card">
-                    <div class="time-location">
-                        <i class="fas fa-heart"></i>
-                        <span>Nepal (Barsha)</span>
-                    </div>
-                    <div class="time-display" id="nepal-time-main">00:00:00</div>
-                    <div class="time-date" id="nepal-date">Loading...</div>
-                    <div class="time-zone">GMT+5:45</div>
-                </div>
-            </div>
-            
-            <div class="distance-note">
-                <i class="fas fa-heart"></i> 11 Months Together & Forever Connected <i class="fas fa-heart"></i>
+        
+        <section class="romantic-hero">
+            <h1 class="couple-name">Jivan & Barsha</h1>
+            <p class="hero-tagline" style="font-family:'Playfair Display'; font-size:1.3rem; margin-top:12px;">Two souls, one heartbeat — continents apart, yet endlessly close.</p>
+            <div class="distance-tag">
+                <i class="fas fa-map-marker-alt" style="color:#f472b6;"></i> Germany — Nepal
+                <i class="fas fa-heart" style="color:#f472b6; margin:0 8px;"></i> 6,500 km of love
             </div>
         </section>
-
-        <section class="story-section">
-            <h2 class="section-title">Our Story</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-video timeline-icon"></i> APRIL 3, 2025
-                    </div>
-                    <div class="timeline-content">
-                        Our first video call at 5 AM Germany time. That blurry screen that showed me the most beautiful smile I'd ever seen.
-                        <div class="timeline-quote">
-                            "The moment I saw you, I knew distance was just a number."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-calendar-day timeline-icon"></i> APRIL 11, 2025
-                    </div>
-                    <div class="timeline-content">
-                       We started talking every single day. Those conversations that stretched from dawn till dusk, connecting us through the distance.
-                        <div class="timeline-quote">
-                            "You became my sunrise and sunset, my first and last thought every day."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-heart timeline-icon"></i> MAY 2025
-                    </div>
-                    <div class="timeline-content">
-                        After a month of growing closeness, I confessed my love for you. The bravest and best decision of my life.
-                        <div class="timeline-quote">
-                            "Three words that changed everything: I love you."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-hourglass-half timeline-icon"></i> 11 MONTHS TOGETHER
-                    </div>
-                    <div class="timeline-content">
-                        Eleven months of laughter, tears, arguments, and making up. Every challenge making us stronger, every mile between us proving our resilience.
-                        <div class="timeline-quote">
-                            "We fought, we cried, but we never let go. That's our strength."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <i class="fas fa-birthday-cake timeline-icon"></i> FEBRUARY 19, 2027
-                    </div>
-                    <div class="timeline-content">
-                        Your birthday today. Celebrating the incredible woman you are, and promising to celebrate every one to come.
-                        <div class="timeline-quote">
-                            "Today, and every day, I celebrate you."
-                        </div>
-                    </div>
-                </div>
+        
+        <!-- Time Widget: He & She -->
+        <div class="time-romance-widget">
+            <div class="time-card-romance">
+                <div class="time-location"><i class="fas fa-city"></i> Germany — His Heart</div>
+                <div class="time-display-romance" id="germanyRomanceTime">--:--:--</div>
+                <div class="date-small" id="germanyRomanceDate"></div>
             </div>
-        </section>
-
-        <section class="photo-gallery">
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    <i class="fas fa-heart"></i>
-                    <span>Our First Video Call Memory</span>
-                    <span style="font-size: 0.9rem; margin-top: 10px;">April 3, 2025 • 5 AM</span>
-                </div>
+            <div class="time-card-romance">
+                <div class="time-location"><i class="fas fa-mountain"></i> Nepal — Her Soul</div>
+                <div class="time-display-romance" id="nepalRomanceTime">--:--:--</div>
+                <div class="date-small" id="nepalRomanceDate"></div>
             </div>
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    <i class="fas fa-moon"></i>
-                    <span>Late Night Conversations</span>
-                    <span style="font-size: 0.9rem; margin-top: 10px;">April 11, 2025 onwards</span>
-                </div>
+        </div>
+        
+        <!-- Our Story Timeline -->
+        <div class="story-timeline">
+            <h2 style="font-family:'Dancing Script'; font-size:3rem; text-align:center; margin-bottom:50px;"><i class="fas fa-feather-alt"></i> Our Eternal Timeline</h2>
+            <div class="timeline-item-romance">
+                <div class="timeline-date-romance"><i class="fas fa-calendar-heart"></i> April 3, 2025 — 5 AM Germany Time</div>
+                <p style="font-size:1.2rem;">The first video call. A sleepy morning, a groggy hello — but the moment your face appeared, my world stopped. That blurry screen held the most beaut[...]
+                <div style="margin-top:12px; font-style:italic; color:#fbcfe8;">✨ "A single second rewrote my destiny."</div>
             </div>
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <span>My Love Confession</span>
-                    <span style="font-size: 0.9rem; margin-top: 10px;">May 2025</span>
-                </div>
+            <div class="timeline-item-romance">
+                <div class="timeline-date-romance"><i class="fas fa-comments"></i> April 11, 2025 — Endless Talks</div>
+                <p>From sunrise till late night, we began talking every single day. You became my first thought, my last prayer. Those conversations built bridges across continents — we laughed[...]
             </div>
-            <div class="photo-frame">
-                <div class="photo-placeholder">
-                    <i class="fas fa-infinity"></i>
-                    <span>Our Future Together</span>
-                    <span style="font-size: 0.9rem; margin-top: 10px;">Forever</span>
-                </div>
+            <div class="timeline-item-romance">
+                <div class="timeline-date-romance"><i class="fas fa-heartbeat"></i> May 2025 — Confession Under the Stars</div>
+                <p>My heart couldn't hold the truth any longer. "I love you" — three words that felt like a thunderstorm and a gentle breeze all at once. You said it back, and the distance sudd[...]
             </div>
-        </section>
-
-        <section class="love-letter-section">
-            <div class="letter-container">
-                <div class="letter-content">
-                    <p>
-                        <span class="letter-dropcap">M</span>y dearest Barsha,
-                    </p>
-                    
-                    <p>
-                        As I write this, I'm thinking about <span class="letter-highlight">April 3rd, 2025 at 5 AM German time</span>—the moment my world shifted on its axis. That first video call introduced me to the woman who would become my everything. I was nervous, tired, and completely unprepared for how one smile could change everything.
-                    </p>
-                    
-                    <p>
-                        Then came <span class="letter-highlight">April 11th</span>, when our conversations became daily rituals. You became the highlight of every day, the voice I waited for, the person I shared everything with. For a month, I held my feelings close, afraid to disrupt what we were building. But in <span class="letter-highlight">May 2025</span>, I couldn't hold it in anymore. Telling you I loved you was both terrifying and liberating.
-                    </p>
-                    
-                    <p>
-                        These <span class="letter-highlight">11 months</span> have been a journey I could never have imagined. There were days when the distance felt overwhelming, moments when I questioned if we could make it through the challenges. <span class="letter-highlight">But you, my love, you never wavered.</span> When I felt like giving up, you held on tighter. When I was weak, you were strong. When I doubted, you believed—for both of us.
-                    </p>
-                    
-                    <p>
-                        We've fought—oh, how we've fought—but every argument has only brought us closer. Every tear has only watered the roots of what we're growing together. The miles between you and me have taught us that love isn't about proximity; it's about connection. And our connection transcends geography, time zones, and every obstacle thrown our way.
-                    </p>
-                    
-                    <p>
-                        On your birthday, February 19th, I want you to know this: <span class="letter-highlight">You deserve every happiness this world can offer.</span> You deserve to be cherished, celebrated, and loved beyond measure. And I promise you this—I will spend my life making sure you have all the joy, peace, and love you've been missing. I will be the shelter in your storms, the laughter in your quiet moments, the hand that always reaches for yours—no matter the distance.
-                    </p>
-                    
-                    <p>
-                        Happy birthday to the woman who taught me that love knows no borders, that patience is a virtue, and that sometimes the strongest bonds are built across continents. I may not be there physically today, but my heart is entirely with you—today, tomorrow, and all the days after.
-                    </p>
-                    
-                    <div class="letter-signature">
-                        <div class="signature-name">Forever Yours,</div>
-                        <div class="signature-name">Jivan</div>
-                        <div class="signature-date">FEBRUARY 19, 2027</div>
-                    </div>
-                </div>
+            <div class="timeline-item-romance">
+                <div class="timeline-date-romance"><i class="fas fa-infinity"></i> Today — & Every Tomorrow</div>
+                <p>We've weathered storms, arguments, tears and joy. Each day proves that our love is not fragile; it's forged in resilience. You are my home, Barsha. Not a place on the map, but [...]
             </div>
-        </section>
-
-        <section class="promises-section">
-            <h2 class="section-title">My Promises to You</h2>
-            
-            <div class="promises-grid">
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Never Give Up</h3>
-                    <p class="promise-text">
-                        No matter how hard it gets, no matter the distance or challenges, I will always fight for us. You held on when I was weak, and I promise to do the same.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Close the Distance</h3>
-                    <p class="promise-text">
-                        I will work tirelessly until the day I can hold you in my arms. Every mile between us is temporary, but our love is permanent.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-laugh-beam"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Bring You Joy</h3>
-                    <p class="promise-text">
-                        You deserve a lifetime of happiness, and I promise to fill your days with laughter, your heart with peace, and your life with love.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Protect Your Heart</h3>
-                    <p class="promise-text">
-                        Your trust is my most precious gift. I will honor it, cherish it, and protect it with everything I am.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Build Our Future</h3>
-                    <p class="promise-text">
-                        Together, we will create a home filled with love, understanding, and the beautiful life you deserve.
-                    </p>
-                </div>
-                
-                <div class="promise-card">
-                    <div class="promise-icon">
-                        <i class="fas fa-infinity"></i>
-                    </div>
-                    <h3 class="promise-title">I Will Love You Forever</h3>
-                    <p class="promise-text">
-                        From our first video call to our last breath, my love for you is eternal. 11 months, 11 years, 11 lifetimes—it will never fade.
-                    </p>
-                </div>
+        </div>
+        
+        <!-- Romantic Promises -->
+        <h2 style="font-family:'Dancing Script'; font-size:2.8rem; text-align:center; margin:50px 0 20px;">Promises Etched in Stars</h2>
+        <div class="promises-grid-romance">
+            <div class="promise-card-romance"><i class="fas fa-globe-asia"></i><h3>I'll close the distance</h3><p>No ocean is deep enough to keep me from you. I'm committed to building a life tog[...]
+            <div class="promise-card-romance"><i class="fas fa-hand-sparkles"></i><h3>I'll hold you tight</h3><p>In every argument, in every silence — I will always reach for you first. Your he[...]
+            <div class="promise-card-romance"><i class="fas fa-feather"></i><h3>I'll write you forever</h3><p>Words may be all I have now, but I promise to fill your days with poetry, laughter, a[...]
+            <div class="promise-card-romance"><i class="fas fa-moon"></i><h3>I'll be your home</h3><p>Wherever we end up, my arms will be your safest place. Our home will be built on trust and te[...]
+        </div>
+        
+        <!-- Love Letter -->
+        <div class="love-letter-box">
+            <span class="letter-dropcap">M</span>y dearest Barsha,<br><br>
+            There are moments when I close my eyes and imagine the day I finally hold you. I see the airport, the crowd, and then — your smile. And in that second, every missed birthday, every [...]
+            You are not just my girlfriend; you are my peace, my wildest dream, my reason to become better. When you laugh, I feel the sun rise even if it’s midnight in Germany. When you cry, I[...]
+            <span style="background: linear-gradient(120deg, rgba(244,114,182,0.2), transparent); padding:0 8px;"><i class="fas fa-heart" style="color:#f472b6;"></i> Remember: distance is just a [...]
+            I love you more than all the stars above Nepal and Germany combined. Keep that beautiful heart of yours safe — I'm coming for it. Forever yours,<br>
+            <div class="signature">Jivan <i class="fas fa-feather-alt"></i></div>
+        </div>
+        
+        <!-- special final note and WhatsApp contact -->
+        <div style="text-align:center; margin:40px 0;">
+            <div style="background:#f472b622; border-radius:80px; padding:20px 30px; display:inline-block; backdrop-filter:blur(10px);">
+                <i class="fas fa-envelope-open-text" style="font-size:2rem; color:#f472b6;"></i>
+                <p style="margin-top:12px;">You're my always, Barsha. Every breath is a reminder I found my soulmate.</p>
+                <a href="https://wa.me/4915755197114?text=My%20love%2C%20I%20read%20every%20word%20%F0%9F%92%96" target="_blank" style="display:inline-block; margin-top:15px; background:#25D366; [...]
             </div>
-        </section>
-
-        <section class="distance-section">
-            <div class="map-container">
-                <h2 class="map-title">The Distance Between Our Hearts: Zero</h2>
-                
-                <div class="map-illustration">
-                    <div class="location">
-                        <div class="location-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="location-name">Germany</div>
-                        <div class="location-detail">Where I wait for you</div>
-                    </div>
-                    
-                    <div class="distance-line"></div>
-                    
-                    <div class="location">
-                        <div class="location-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div class="location-name">Nepal</div>
-                        <div class="location-detail">Where my heart resides</div>
-                    </div>
-                </div>
-                
-                <p class="distance-text">
-                    "They say long-distance relationships are hard. They're right. But what they don't say is that when you find someone worth the wait, 
-                    the distance doesn't matter. Because every mile between us is just proof of how far I'm willing to go for you."
-                </p>
-            </div>
-        </section>
-
-        <section class="final-cta">
-            <h2 class="cta-title">My Love,</h2>
-            
-            <div class="cta-box">
-                <p class="cta-message">
-                    This website is my promise to you—a promise that no matter the distance, no matter the challenges, 
-                    my love for you is unwavering. I may not be there to hold you today, but I'm here in every way that matters.
-                </p>
-                
-                <a href="https://wa.me/4915755197114?text=❤️" 
-                   class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Send Me Your Response
-                </a>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div class="footer-heart">
-                <i class="fas fa-heart"></i>
-            </div>
-            <p class="footer-text">CREATED WITH ALL MY LOVE FOR BARSHA</p>
-            <p class="footer-text">From Jivan </p>
-            <p class="footer-date">Our Journey: April 3, 2025 - Forever</p>
+        </div>
+        
+        <footer class="footer-romance">
+            <i class="fas fa-heart" style="color:#f472b6; font-size:1.5rem; animation:heartbeat 1.2s infinite;"></i>
+            <p style="margin:15px 0 5px;">Our journey began April 3, 2025 — and will never end.</p>
+            <p style="opacity:0.7;">From Germany with infinite love &nbsp;→&nbsp; Nepal, my heart</p>
         </footer>
     </div>
-
+    
     <script>
-        // ==================== FIXED COUNTDOWN AND TIME FUNCTIONS ====================
-
-        // Fixed: Get current Nepal time (GMT+5:45)
-        function getCurrentNepalTime() {
-            const now = new Date();
-            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const nepalOffset = 5.75 * 60 * 60 * 1000; // GMT+5:45 in milliseconds
-            return new Date(utc + nepalOffset);
-        }
-
-        // Fixed: Get current Germany time (GMT+1)
-        function getCurrentGermanyTime() {
-            const now = new Date();
-            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const germanyOffset = 1 * 60 * 60 * 1000; // GMT+1
-            return new Date(utc + germanyOffset);
-        }
-
-        // Fixed: Format time as HH:MM:SS
-        function formatTime(date) {
-            const hours = date.getHours().toString().padStart(2, '0');
-            const minutes = date.getMinutes().toString().padStart(2, '0');
-            const seconds = date.getSeconds().toString().padStart(2, '0');
-            return `${hours}:${minutes}:${seconds}`;
-        }
-
-        // Fixed: Format date
-        function formatDate(date) {
-            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            
-            const dayName = days[date.getDay()];
-            const monthName = months[date.getMonth()];
-            const day = date.getDate();
-            const year = date.getFullYear();
-            
-            return `${dayName}, ${monthName} ${day}, ${year}`;
-        }
-
-        // Fixed: Update all time displays
-        function updateAllTimes() {
-            // Update Nepal time for countdown page
-            const nepalTime = getCurrentNepalTime();
-            document.getElementById('current-nepal-time').textContent = 
-                `${formatTime(nepalTime)} | ${formatDate(nepalTime)}`;
-            
-            // Update shared time widget
-            const germanyTime = getCurrentGermanyTime();
-            
-            document.getElementById('nepal-time-main').textContent = formatTime(nepalTime);
-            document.getElementById('nepal-date').textContent = formatDate(nepalTime);
-            
-            document.getElementById('germany-time').textContent = formatTime(germanyTime);
-            document.getElementById('germany-date').textContent = formatDate(germanyTime);
-        }
-
-        // Fixed: Calculate countdown to Feb 19, 2027 Nepal Time
-        function updateBirthdayCountdown() {
-            // Get current Nepal time
-            const now = getCurrentNepalTime();
-            
-            // Create Feb 19, 2027 00:00 Nepal Time using same method as getCurrentNepalTime()
-            // Feb 19, 2027 00:00 Nepal = Feb 18, 2027 18:15 UTC (subtract GMT+5:45 offset)
-            const nepalOffset = 5.75 * 60 * 60 * 1000; // GMT+5:45 in milliseconds
-            const birthdayRealUtcMs = Date.UTC(2027, 1, 19, 0, 0, 0) - nepalOffset;
-            const tempBirthday = new Date(birthdayRealUtcMs);
-            const birthdayNepal = new Date(birthdayRealUtcMs + (tempBirthday.getTimezoneOffset() * 60000) + nepalOffset);
-            
-            // Calculate difference in milliseconds
-            const diff = birthdayNepal.getTime() - now.getTime();
-            
-            // If birthday has passed or is today
-            if (diff <= 0) {
-                document.getElementById('countdown-days').textContent = "00";
-                document.getElementById('countdown-hours').textContent = "00";
-                document.getElementById('countdown-minutes').textContent = "00";
-                document.getElementById('countdown-seconds').textContent = "00";
-                return;
-            }
-            
-            // Calculate days, hours, minutes, seconds
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            // Update display
-            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-
-        // ==================== BIRTHDAY CELEBRATION ====================
-
-        // Fireworks Class
-        class Fireworks {
-            constructor(container) {
-                this.container = container;
-                this.isActive = false;
-                this.fireworkCount = 20;
-                this.colors = ['#e5b3a3', '#f4dcd1', '#d9987e', '#d4a5a5', '#d4af37', '#ff6b8b', '#ff8e53', '#ffd166', '#06d6a0', '#118ab2'];
-            }
-
-            start() {
-                this.isActive = true;
-                this.createFireworks();
-            }
-
-            stop() {
-                this.isActive = false;
-                this.container.innerHTML = '';
-            }
-
-            createFireworks() {
-                if (!this.isActive) return;
-                
-                this.container.innerHTML = '';
-                
-                for (let i = 0; i < this.fireworkCount; i++) {
-                    setTimeout(() => {
-                        this.createFirework();
-                    }, i * 300);
-                }
-
-                setTimeout(() => {
-                    this.createFireworks();
-                }, 6000);
-            }
-
-            createFirework() {
-                const firework = document.createElement('div');
-                firework.className = 'firework';
-                
-                const x = Math.random() * 90 + 5;
-                const y = Math.random() * 90 + 5;
-                const color = this.colors[Math.floor(Math.random() * this.colors.length)];
-                
-                firework.style.left = x + '%';
-                firework.style.top = y + '%';
-                firework.style.backgroundColor = color;
-                firework.style.boxShadow = `0 0 20px ${color}, 0 0 40px ${color}`;
-                
-                this.container.appendChild(firework);
-
-                setTimeout(() => {
-                    this.createBurst(x, y, color);
-                    firework.remove();
-                }, 800);
-            }
-
-            createBurst(x, y, color) {
-                const particleCount = 12;
-                
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'firework-burst';
-                    
-                    const angle = (i / particleCount) * Math.PI * 2;
-                    const distance = 50 + Math.random() * 80;
-                    const burstX = Math.cos(angle) * distance;
-                    const burstY = Math.sin(angle) * distance;
-                    
-                    particle.style.left = x + '%';
-                    particle.style.top = y + '%';
-                    particle.style.backgroundColor = color;
-                    particle.style.setProperty('--burst-x', burstX + 'px');
-                    particle.style.setProperty('--burst-y', burstY + 'px');
-                    
-                    this.container.appendChild(particle);
-
-                    setTimeout(() => {
-                        if (particle.parentNode) {
-                            particle.remove();
-                        }
-                    }, 1000);
-                }
-            }
-        }
-
-        // Fixed: Birthday Celebration Function
-        function startBirthdayCelebration() {
-            const celebration = document.getElementById('birthdayCelebration');
-            const fireworksContainer = document.getElementById('fireworksContainer');
-            
-            // Show celebration
-            celebration.style.display = 'flex';
-            setTimeout(() => {
-                celebration.classList.add('active');
-            }, 100);
-            
-            // Start fireworks
-            const fireworks = new Fireworks(fireworksContainer);
-            fireworks.start();
-            
-            // Play birthday music
-            const birthdayMusic = document.getElementById('birthdayMusic');
-            birthdayMusic.volume = 0.6;
-            birthdayMusic.play().catch(e => {
-                console.log("Birthday music autoplay prevented");
-            });
-            
-            // Fixed: Continue button event listener
-            const continueBtn = document.getElementById('continueToWebsite');
-            continueBtn.onclick = function() {
-                // Stop fireworks and music
-                fireworks.stop();
-                birthdayMusic.pause();
-                birthdayMusic.currentTime = 0;
-                
-                // Hide celebration
-                celebration.classList.remove('active');
-                setTimeout(() => {
-                    celebration.style.display = 'none';
-                }, 1000);
-                
-                // Grant access to main website
-                grantAccess();
-            };
-        }
-
-        // ==================== FIXED: GRANT ACCESS FUNCTION ====================
-
-        function grantAccess() {
-            // Hide countdown
-            const countdownSection = document.getElementById('birthday-countdown');
-            countdownSection.style.opacity = '0';
-            countdownSection.style.visibility = 'hidden';
-            
-            setTimeout(() => {
-                countdownSection.style.display = 'none';
-                
-                // Show main website
-                const mainWebsite = document.getElementById('mainWebsite');
-                mainWebsite.style.display = 'block';
-                
-                setTimeout(() => {
-                    mainWebsite.classList.add('show');
-                    
-                    // Play background music
-                    const bgMusic = document.getElementById('bgMusic');
-                    bgMusic.volume = 0.4;
-                    bgMusic.play().then(() => {
-                        musicPlaying = true;
-                        document.getElementById('musicControl').innerHTML = '<i class="fas fa-pause"></i>';
-                    }).catch(e => {
-                        console.log("Background music autoplay prevented");
-                    });
-                    
-                    // Start floating hearts
-                    startFloatingHearts();
-                    
-                    // Enable scroll animations
-                    enableScrollAnimations();
-                    
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
-                
-            }, 1000);
-        }
-
-        // ==================== MUSIC CONTROLS ====================
-
+        // Correct romantic password: first meaningful day of connection (April 3, 2025)
+        const SECRET_LOVE_PASSWORD = "20250403";
         let musicPlaying = false;
-        
-        function toggleMusic() {
-            const bgMusic = document.getElementById('bgMusic');
-            const musicControl = document.getElementById('musicControl');
-            
-            if (musicPlaying) {
-                bgMusic.pause();
-                musicControl.innerHTML = '<i class="fas fa-music"></i>';
-                musicPlaying = false;
-            } else {
-                bgMusic.play().then(() => {
-                    musicControl.innerHTML = '<i class="fas fa-pause"></i>';
-                    musicPlaying = true;
-                }).catch(e => {
-                    console.log("Music playback failed:", e);
-                    alert("Please click the music icon to play music.");
-                });
-            }
-        }
+        let bgAudio = null;
 
-        // ==================== FLOATING HEARTS ====================
+        // Timezone-safe formatting
+        const TZ_NEPAL = 'Asia/Kathmandu';
+        const TZ_GERMANY = 'Europe/Berlin';
 
-        function startFloatingHearts() {
-            const heartIcons = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💕', '💞', '💓', '💗', '💖', '💘'];
-            
-            setInterval(() => {
-                const heart = document.createElement('div');
-                heart.className = 'floating-heart';
-                heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
-                
-                const size = Math.random() * 20 + 15;
-                const duration = Math.random() * 15 + 15;
-                const delay = Math.random() * 5;
-                const startX = Math.random() * 100;
-                
-                heart.style.left = startX + 'vw';
-                heart.style.fontSize = size + 'px';
-                heart.style.animationDuration = duration + 's';
-                heart.style.animationDelay = delay + 's';
-                
-                document.body.appendChild(heart);
-                
-                setTimeout(() => {
-                    if (heart.parentNode) {
-                        heart.parentNode.removeChild(heart);
-                    }
-                }, (duration + delay) * 1000);
-                
-            }, 500);
-        }
-
-        // ==================== SCROLL ANIMATIONS ====================
-
-        function enableScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.timeline-item, .promise-card, .photo-frame').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(el);
-            });
-        }
-
-        // ==================== SECURITY SYSTEM ====================
-
-        const CORRECT_PASSWORD = "20250403";
-        const MAX_ATTEMPTS = 5;
-        const LOCKOUT_TIME = 30000;
-        
-        let attempts = 0;
-        let isLocked = false;
-
-        function initSecuritySystem() {
-            // Hide elements initially
-            document.getElementById('mainWebsite').style.display = 'none';
-            document.getElementById('birthdayCelebration').style.display = 'none';
-            
-            // Show countdown
-            document.getElementById('birthday-countdown').style.display = 'flex';
-            
-            // Setup password input
-            const passwordInput = document.getElementById('passwordInput');
-            const passwordToggle = document.getElementById('passwordToggle');
-            const passwordSubmit = document.getElementById('passwordSubmit');
-            
-            // Password visibility toggle
-            passwordToggle.addEventListener('click', function() {
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-                this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
-            });
-            
-            // Password submission
-            passwordSubmit.addEventListener('click', checkPassword);
-            
-            // Enter key support
-            passwordInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' && !passwordSubmit.disabled) {
-                    checkPassword();
-                }
-            });
-            
-            // Real-time validation
-            passwordInput.addEventListener('input', function() {
-                const value = this.value;
-                this.value = value.replace(/[^0-9]/g, '');
-                passwordSubmit.disabled = this.value.length !== 8 || isLocked;
-                
-                if (value.length > 0) {
-                    clearError();
-                }
-            });
-            
-            // Start time updates
-            setInterval(updateAllTimes, 1000);
-            setInterval(updateBirthdayCountdown, 1000);
-            updateAllTimes();
-            updateBirthdayCountdown();
-        }
-
-        // Fixed: Check Password Function
-        function checkPassword() {
-            if (isLocked) {
-                showError("Too many failed attempts. Please wait 30 seconds.");
-                return;
-            }
-            
-            const passwordInput = document.getElementById('passwordInput');
-            const enteredPassword = passwordInput.value;
-            
-            if (enteredPassword.length !== 8) {
-                showError("Password must be 8 digits (YYYYMMDD format)");
-                passwordInput.classList.add('shake');
-                setTimeout(() => passwordInput.classList.remove('shake'), 500);
-                return;
-            }
-            
-            attempts++;
-            updateAttemptsCounter();
-            
-            if (enteredPassword === CORRECT_PASSWORD) {
-                // Correct password
-                createHeartBurst();
-                
-                showSuccess("Password correct! Starting celebration...");
-                passwordSubmit.disabled = true;
-                passwordSubmit.innerHTML = '<i class="fas fa-check"></i> Access Granted';
-                
-                // Start birthday celebration
-                setTimeout(startBirthdayCelebration, 1500);
-                
-            } else {
-                // Wrong password
-                showError("Incorrect password. Hint: Think about when our journey truly began.");
-                passwordInput.classList.add('shake');
-                setTimeout(() => passwordInput.classList.remove('shake'), 500);
-                passwordInput.value = '';
-                passwordInput.focus();
-                
-                if (attempts >= MAX_ATTEMPTS) {
-                    lockoutUser();
-                }
-            }
-        }
-
-        // Heart burst animation
-        function createHeartBurst() {
-            const container = document.getElementById('revealCelebration');
-            const heartIcons = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍', '💕', '💞', '💓', '💗', '💖', '💘'];
-            
-            container.innerHTML = '';
-            
-            for (let i = 0; i < 50; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'burst-heart';
-                heart.innerHTML = heartIcons[Math.floor(Math.random() * heartIcons.length)];
-                
-                const angle = Math.random() * Math.PI * 2;
-                const distance = 100 + Math.random() * 400;
-                const size = 16 + Math.random() * 32;
-                const duration = 1 + Math.random() * 1.5;
-                
-                const tx = Math.cos(angle) * distance;
-                const ty = Math.sin(angle) * distance;
-                
-                heart.style.setProperty('--tx', `${tx}px`);
-                heart.style.setProperty('--ty', `${ty}px`);
-                heart.style.fontSize = `${size}px`;
-                heart.style.animationDuration = `${duration}s`;
-                heart.style.left = '50%';
-                heart.style.top = '50%';
-                heart.style.color = getRandomColor();
-                
-                container.appendChild(heart);
-                
-                setTimeout(() => {
-                    if (heart.parentNode === container) {
-                        container.removeChild(heart);
-                    }
-                }, duration * 1000);
-            }
-        }
-
-        function getRandomColor() {
-            const colors = [
-                '#e5b3a3', '#f4dcd1', '#d9987e', '#d4a5a5', '#d4af37',
-                '#ff6b8b', '#ff8e53', '#ffd166', '#06d6a0', '#118ab2'
-            ];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        // Helper functions
-        function showError(message) {
-            const errorEl = document.getElementById('passwordError');
-            errorEl.innerHTML = `<i class="fas fa-times-circle"></i> ${message}`;
-            errorEl.style.color = 'var(--error-red)';
-        }
-        
-        function showSuccess(message) {
-            const errorEl = document.getElementById('passwordError');
-            errorEl.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
-            errorEl.style.color = 'var(--success-green)';
-        }
-        
-        function clearError() {
-            document.getElementById('passwordError').innerHTML = '';
-        }
-        
-        function updateAttemptsCounter() {
-            const counter = document.getElementById('attemptCount');
-            counter.textContent = attempts;
-            
-            if (attempts >= MAX_ATTEMPTS - 2) {
-                counter.parentElement.classList.add('attempts-warning');
-            }
-        }
-        
-        function lockoutUser() {
-            isLocked = true;
-            const passwordSubmit = document.getElementById('passwordSubmit');
-            const passwordInput = document.getElementById('passwordInput');
-            
-            passwordSubmit.disabled = true;
-            passwordInput.disabled = true;
-            
-            showError(`Too many attempts. Locked for ${LOCKOUT_TIME/1000} seconds.`);
-            
-            let timeLeft = LOCKOUT_TIME / 1000;
-            const lockoutInterval = setInterval(() => {
-                timeLeft--;
-                showError(`Too many attempts. Locked for ${timeLeft} seconds.`);
-                
-                if (timeLeft <= 0) {
-                    clearInterval(lockoutInterval);
-                    isLocked = false;
-                    attempts = 0;
-                    passwordInput.disabled = false;
-                    passwordSubmit.disabled = false;
-                    updateAttemptsCounter();
-                    clearError();
-                    passwordInput.focus();
-                    document.getElementById('attemptsCounter').classList.remove('attempts-warning');
-                }
-            }, 1000);
-        }
-
-        // ==================== INITIALIZATION ====================
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize security system
-            initSecuritySystem();
-            
-            // Add floating hearts to countdown
-            setInterval(() => {
-                if (!document.getElementById('mainWebsite').classList.contains('show')) {
-                    const heart = document.createElement('div');
-                    heart.className = 'floating-heart';
-                    heart.innerHTML = '❤️';
-                    
-                    const size = Math.random() * 15 + 10;
-                    const duration = Math.random() * 10 + 10;
-                    const startX = Math.random() * 100;
-                    
-                    heart.style.left = startX + 'vw';
-                    heart.style.fontSize = size + 'px';
-                    heart.style.animationDuration = duration + 's';
-                    heart.style.color = '#e5b3a3';
-                    
-                    document.getElementById('birthday-countdown').appendChild(heart);
-                    
-                    setTimeout(() => {
-                        if (heart.parentNode) {
-                            heart.parentNode.removeChild(heart);
-                        }
-                    }, duration * 1000);
-                }
-            }, 1000);
+        const fmtTime = (tz) => new Intl.DateTimeFormat('en-GB', {
+            timeZone: tz,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
         });
+
+        const fmtDate = (tz) => new Intl.DateTimeFormat('en-US', {
+            timeZone: tz,
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+
+        function updateRomanceTimes() {
+            const now = new Date();
+            const nepalTimeEl = document.getElementById('nepalRomanceTime');
+            const germanyTimeEl = document.getElementById('germanyRomanceTime');
+            const nepalDateEl = document.getElementById('nepalRomanceDate');
+            const germanyDateEl = document.getElementById('germanyRomanceDate');
+
+            if (nepalTimeEl) nepalTimeEl.innerText = fmtTime(TZ_NEPAL).format(now);
+            if (germanyTimeEl) germanyTimeEl.innerText = fmtTime(TZ_GERMANY).format(now);
+            if (nepalDateEl) nepalDateEl.innerText = fmtDate(TZ_NEPAL).format(now);
+            if (germanyDateEl) germanyDateEl.innerText = fmtDate(TZ_GERMANY).format(now);
+        }
+        
+        // Unlock story
+        function unlockLoveStory() {
+            const inputPass = document.getElementById('romancePassword').value.trim();
+            const errorDiv = document.getElementById('accessError');
+            if (inputPass === SECRET_LOVE_PASSWORD) {
+                errorDiv.innerHTML = '<i class="fas fa-check-circle"></i> Access granted, my love 💖';
+                errorDiv.style.color = '#b9f6ca';
+                setTimeout(() => {
+                    document.getElementById('accessGate').style.opacity = '0';
+                    setTimeout(() => {
+                        document.getElementById('accessGate').style.display = 'none';
+                        document.getElementById('romanceWebsite').classList.add('show');
+                        startRomanceMusic();
+                        createFloatingHearts();
+                        initParticleTrail();
+                    }, 1000);
+                }, 500);
+            } else {
+                errorDiv.innerHTML = '<i class="fas fa-heart-broken"></i> Wrong date, love. Try the day our souls first spoke (April 3, 2025 format: YYYYMMDD)';
+                errorDiv.style.color = '#ffb3ba';
+                document.getElementById('romancePassword').classList.add('shake');
+                setTimeout(() => document.getElementById('romancePassword').classList.remove('shake'), 400);
+                document.getElementById('romancePassword').value = '';
+            }
+        }
+        
+        // Romantic background music (soft piano)
+        function startRomanceMusic() {
+            if (bgAudio) return;
+            bgAudio = new Audio('https://assets.mixkit.co/music/preview/mixkit-romantic-love-melody-2345.mp3');
+            bgAudio.loop = true;
+            bgAudio.volume = 0.4;
+            bgAudio.play().catch(e => console.log("Music autoplay blocked"));
+            musicPlaying = true;
+            const icon = document.getElementById('musicIconRomance');
+            if(icon) icon.className = 'fas fa-pause';
+        }
+        
+        function toggleRomanceMusic() {
+            if (!bgAudio) {
+                bgAudio = new Audio('https://assets.mixkit.co/music/preview/mixkit-romantic-love-melody-2345.mp3');
+                bgAudio.loop = true;
+                bgAudio.volume = 0.4;
+                bgAudio.play();
+                musicPlaying = true;
+                document.getElementById('musicIconRomance').className = 'fas fa-pause';
+                return;
+            }
+            if (musicPlaying) {
+                bgAudio.pause();
+                musicPlaying = false;
+                document.getElementById('musicIconRomance').className = 'fas fa-play';
+            } else {
+                bgAudio.play().catch(e=>{});
+                musicPlaying = true;
+                document.getElementById('musicIconRomance').className = 'fas fa-pause';
+            }
+        }
+        
+        // floating hearts animation
+        function createFloatingHearts() {
+            setInterval(() => {
+                let heart = document.createElement('div');
+                heart.innerHTML = '<i class="fas fa-heart" style="color:#f472b6; filter:drop-shadow(0 0 6px #ff99cc);"></i>';
+                heart.style.position = 'fixed';
+                heart.style.bottom = '-20px';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.fontSize = (Math.random() * 24 + 16) + 'px';
+                heart.style.opacity = '0.8';
+                heart.style.zIndex = '999';
+                heart.style.pointerEvents = 'none';
+                heart.style.transition = 'all 5s linear';
+                document.body.appendChild(heart);
+                setTimeout(() => {
+                    heart.style.transform = 'translateY(-110vh) rotate(15deg)';
+                    heart.style.opacity = '0';
+                }, 50);
+                setTimeout(() => { if(heart && heart.remove) heart.remove(); }, 5200);
+            }, 800);
+        }
+        
+        // particle canvas (romantic stars)
+        function initParticleTrail() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = window.innerWidth, height = window.innerHeight;
+            let particles = [];
+            canvas.width = width; canvas.height = height;
+            
+            for(let i=0;i<180;i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 2.5 + 1,
+                    alpha: Math.random() * 0.5 + 0.2,
+                    speedX: (Math.random() - 0.5) * 0.3,
+                    speedY: (Math.random() - 0.5) * 0.2
+                });
+            }
+            function animateStars() {
+                ctx.clearRect(0,0,width,height);
+                for(let p of particles) {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2);
+                    ctx.fillStyle = `rgba(244, 114, 182, ${p.alpha})`;
+                    ctx.fill();
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+                    if(p.x<0) p.x = width;
+                    if(p.x>width) p.x=0;
+                    if(p.y<0) p.y=height;
+                    if(p.y>height) p.y=0;
+                }
+                requestAnimationFrame(animateStars);
+            }
+            window.addEventListener('resize',()=>{
+                width = window.innerWidth; height=window.innerHeight;
+                canvas.width=width; canvas.height=height;
+            });
+            animateStars();
+        }
+        
+        // cursor trail
+        function cursorRomanceTrail() {
+            document.addEventListener('mousemove', (e) => {
+                let trail = document.createElement('div');
+                trail.className = 'cursor-trail-romance';
+                trail.style.left = e.clientX - 4 + 'px';
+                trail.style.top = e.clientY - 4 + 'px';
+                document.body.appendChild(trail);
+                setTimeout(() => { if(trail && trail.remove) trail.remove(); }, 400);
+            });
+        }
+        
+        // Event listeners
+        document.getElementById('unlockStoryBtn').addEventListener('click', unlockLoveStory);
+        document.getElementById('romancePassword').addEventListener('keydown', (e) => { if(e.key === 'Enter') unlockLoveStory(); });
+        document.getElementById('romanceMusicToggle').addEventListener('click', toggleRomanceMusic);
+        
+        setInterval(updateRomanceTimes, 1000);
+        updateRomanceTimes();
+        cursorRomanceTrail();
+        
+        // add floating hearts to background before unlock?
+        setInterval(() => {
+            if(document.getElementById('accessGate') && getComputedStyle(document.getElementById('accessGate')).display !== 'none') {
+                let preHeart = document.createElement('div');
+                preHeart.innerHTML = '❤️';
+                preHeart.style.position = 'fixed';
+                preHeart.style.bottom = '-10px';
+                preHeart.style.left = Math.random() * 100 + '%';
+                preHeart.style.fontSize = '18px';
+                preHeart.style.opacity = '0.6';
+                preHeart.style.pointerEvents = 'none';
+                preHeart.style.zIndex = '10001';
+                document.body.appendChild(preHeart);
+                setTimeout(() => { preHeart.style.transform = 'translateY(-80vh)'; preHeart.style.opacity = '0'; }, 20);
+                setTimeout(() => preHeart.remove(), 5000);
+            }
+        }, 1500);
     </script>
+    <style>
+        .shake {
+            animation: shakeAnim 0.3s ease-in-out;
+        }
+        @keyframes shakeAnim {
+            0%,100%{ transform: translateX(0);}
+            25%{ transform: translateX(-6px);}
+            75%{ transform: translateX(6px);}
+        }
+        .date-small {
+            font-size: 0.8rem;
+            color: #c4b5fd;
+        }
+    </style>
 </body>
 </html>
